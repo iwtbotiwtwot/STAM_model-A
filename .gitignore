@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+
+# Generated outputs
+results/**/*.png
+results/**/*.csv
+results/**/*.json
+results/**/*.txt
+results/*.png
+results/*.csv
+results/*.json
+results/*.txt
+!results/README.md
+
+# Local notebooks
+.ipynb_checkpoints/
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/

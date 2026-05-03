@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stam-model-a"
+version = "0.1.0"
+description = "Research scaffold for STAM Model-A variable spacetime accumulation field."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Sean Brady" }]
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
