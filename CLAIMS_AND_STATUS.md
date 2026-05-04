@@ -1,17 +1,8 @@
 # Claims and Status — STAM Model-A
 
-This document records the current claim set for STAM Model-A and separates:
+This document records the current working structure of STAM Model-A: what the model defines, what has been checked numerically, what remains diagnostic, and what still needs stronger testing.
 
-```text
-claimed structure
-verified identities
-numerical tests already run
-diagnostic/catalog results
-open problems
-items not yet claimed
-```
-
-It is intended as a project ledger, not as proof that the model is established physics.
+It is a project ledger, not a declaration that the model is established physics.
 
 ---
 
@@ -24,7 +15,7 @@ It is intended as a project ledger, not as proof that the model is established p
 | **Numerically checked** | Verified by a script in this repository or generated test output. |
 | **Catalog diagnostic** | Comparison against current observational catalog data; interpretation still open. |
 | **Open** | Needed for a complete theory or stronger empirical validation. |
-| **Not claimed** | Explicitly not claimed at this stage. |
+| **Boundary / open extension** | Active topic, but not yet completed or formalized. |
 
 ---
 
@@ -372,19 +363,65 @@ Lensing deflection:   M ≈ αc²b / 4G
 
 **Claim type:** Core cosmological structure
 
-Earlier SU notation:
+The geometric/SU layer is defined from the Hubble-scale normalization, not from an arbitrary fitted coefficient.
+
+In Mpc:
+
+```text
+D_geo,Mpc(z) = H⁻¹ z(1 + 0.15z)
+```
+
+with:
+
+```text
+H = 0.000243635
+H⁻¹ = 4104.500584 Mpc
+```
+
+So:
+
+```text
+D_geo,Mpc(z) = 4104.500584 z(1 + 0.15z)
+```
+
+In million light-years:
+
+```text
+D_geo,Mly(z) = (C/H) z(1 + 0.15z)
+```
+
+where:
+
+```text
+C = 3.261563776 Mly/Mpc
+L = C/H = 13387.090426 Mly
+```
+
+so:
+
+```text
+D_geo,Mly(z) = Lz(1 + 0.15z)
+```
+
+The earlier SU notation:
 
 ```text
 SU(z) = 1231.350175 × (3.33333z + 0.50000z²)
 ```
 
-is equivalent to:
+is the same Mpc-scale relation written in anchored form:
 
 ```text
-D_geo(z) = Lz(1 + 0.15z)
+1231.350175 = H⁻¹ / 3.33333
+0.50000 / 3.33333 = 0.15
 ```
 
-up to unit normalization.
+Therefore:
+
+```text
+1231.350175 × (3.33333z + 0.50000z²)
+= H⁻¹ z(1 + 0.15z)
+```
 
 **Status:** Retained as the geometric spine.
 
@@ -410,23 +447,24 @@ D_excess,0(z) = 0.35Lz²
 
 ---
 
-### 4.3 Historical b bridge
+### 4.3 Historical supernova bridge term
 
-**Claim type:** Catalog diagnostic, not core physics
+**Claim type:** Catalog comparison history / diagnostic record
 
-Historical catalog comparison form:
+During earlier supernova-distance comparisons, the form:
 
 ```text
 D_catalog(z) ≈ D_adj,0(z) + bz
 ```
 
-Current interpretation:
+was used as a bridge between current catalog-inferred distances and the no-b Model-A relation.
+
+The useful role of `b` is historical and diagnostic:
 
 ```text
-b
+b helped show how current supernova catalogs sit relative to the no-b Model-A curve.
+b helped identify that Pantheon/Union3 and DES behave like different catalog families.
 ```
-
-is a catalog-bridge diagnostic measuring the difference between current supernova catalog-inferred distances and the no-b Model-A distance relation.
 
 Retained historical values:
 
@@ -436,9 +474,13 @@ Original retained bridge:    b ≈ 461.3626922
 DES-style bridge:            b ≈ 1335.412792
 ```
 
-**Status:** Retained as diagnostic/historical record.
+**Status:** Retained as catalog-comparison history.
 
-**Not claimed:** `b` is not currently treated as a fundamental Model-A physical constant.
+Forward Model-A testing prioritizes the no-b distance relation:
+
+```text
+D_adj,0(z) = Lz(1 + 0.5z)
+```
 
 ---
 
@@ -502,22 +544,22 @@ STAM residual against DES is similar in size and structure to the DES-vs-Pantheo
 
 ---
 
-### 5.3 b sensitivity
+### 5.3 Historical bridge sensitivity
 
-**Claim tested:**
+**Question tested:**
 
-Whether a small change in `b` can bring Union3, Pantheon, and DES into agreement.
+Whether small changes to the historical bridge term bring Union3, Pantheon, and DES into agreement.
 
 **Result summary:**
 
 ```text
-Small b adjustments do not bring all three catalogs into agreement.
-A DES-style high b improves DES only by damaging the Pantheon/Union3 relation.
+Small bridge adjustments do not bring all three catalogs into agreement.
+A DES-style high bridge value improves DES only by damaging the Pantheon/Union3 relation.
 ```
 
 **Status:** Catalog diagnostic.
 
-**Current interpretation:** Supports treating `b` as a catalog bridge rather than a core physical parameter.
+**Current interpretation:** The bridge term is useful for studying catalog behavior, but it should not drive the forward Model-A distance law.
 
 ---
 
@@ -753,22 +795,22 @@ To move this from scratch theory to a formal Model-A claim, future tests should:
 **Status:** Open.
 
 
-## 8. Not currently claimed
+## 8. Active boundaries and open extensions
 
-STAM Model-A does **not** currently claim:
+These items remain active areas of development rather than completed Model-A results:
 
 ```text
-1. full replacement of general relativity;
-2. complete strong-field metric formulation;
-3. complete black-hole interior dynamics;
-4. derivation of the no-b cosmological distance law from first principles;
-5. complete BAO/CMB theory;
-6. completed galaxy-rotation solution;
-7. full GPS operational navigation model;
-8. full gravitational-wave waveform theory;
-9. that DES is wrong solely because STAM says so;
-10. that b is fundamental physics.
+1. Full strong-field metric formulation.
+2. Black-hole interior / A>1 dynamics beyond the threshold identity.
+3. First-principles derivation of the no-b cosmological distance law.
+4. Full BAO/CMB distance-observable framework.
+5. Completed galaxy-rotation reconstruction from real datasets.
+6. Full GPS operational navigation model.
+7. Full gravitational-wave waveform theory.
+8. Independent explanation of DES/Pantheon/Union3 catalog-family behavior.
 ```
+
+The historical supernova bridge term is kept as catalog-comparison history, not as a claim-boundary item.
 
 ---
 
@@ -798,7 +840,7 @@ A is the core Model-A variable.
 
 The no-b distance law is the preferred forward-testing cosmological form.
 
-b is retained as a catalog-bridge diagnostic and historical record.
+Historical bridge results are retained as catalog-comparison history.
 
 Non-distance tests currently support the internal consistency of Model-A in:
     local gravity,
