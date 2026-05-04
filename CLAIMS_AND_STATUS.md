@@ -562,29 +562,196 @@ b = 0
 
 ---
 
-## 7. Exploratory galaxy accumulation work
+## 7. Exploratory galaxy accumulation theory
 
-**Claim type:** Exploratory only
+**Claim type:** Exploratory / scratch theory
 
-A scratch SPARC-style reconstruction tested:
+This section records the current STAM-native idea for galaxy-scale behavior. It is not yet a formal Model-A claim and is not currently presented as a completed solution to galaxy rotation curves.
 
-```text
-ε(r) = 2v(r)²/c²
-```
+### 7.1 Motivation
 
-as an outer accumulation-gradient proxy.
+Original STAM intuition treated accumulation as invisible and difficult to measure directly. In cosmology, redshift became the working coordinate for expressing path accumulation. For galaxies, the analogous question is whether many small, individually unobservable accumulation contributions can combine into an observable galaxy-scale effect.
 
-Preliminary scratch result:
+The working idea is:
 
 ```text
-central concentration proxy correlated with outer ε
+Mass-energy produces nonzero A even at distances where each individual contribution is too small to observe directly.
+
+In a galaxy, many stars, gas clouds, compact objects, and central mass concentrations may contribute tiny A values that sum into a coherent galaxy-scale accumulation field.
 ```
 
-**Status:** Shelved exploratory result.
+### 7.2 Linear cumulative A
 
-**Not claimed:** Model-A does not currently claim to solve galaxy rotation curves.
+**Claim type:** Model-A-native exploratory calculation
 
----
+The linear cumulative version is:
+
+```text
+A_total(x) = Σ 2Gm_i / (c² |x - x_i|)
+```
+
+This is the direct extension of the local spherical Model-A expression:
+
+```text
+A(r) = 2GM/(c²r)
+```
+
+to many sources.
+
+Current scratch-test result:
+
+```text
+A from one solar mass at 10 kpc      ≈ 9.571121e-18
+A from 1e11 solar masses at 10 kpc   ≈ 9.571121e-7
+```
+
+The compact-source circular speed associated with:
+
+```text
+A ≈ 9.571121e-7
+```
+
+is approximately:
+
+```text
+v ≈ 207.39 km/s
+```
+
+using:
+
+```text
+v² ≈ (c²/2)A
+```
+
+**Status:** Numerically checked as a scale demonstration.
+
+**Interpretation:** Individually tiny A contributions can accumulate into a galaxy-scale quantity. Decimal precision preserves tiny nonzero values, but the physical effect comes from cumulative summation, not from precision alone.
+
+### 7.3 Toy visible-galaxy calculation
+
+A simple toy visible galaxy was tested with:
+
+```text
+disk  = 6e10 solar masses
+gas   = 1e10 solar masses
+bulge = 1e10 solar masses
+```
+
+The linear visible cumulative-A toy produced:
+
+```text
+outer 15–35 kpc median speed ≈ 121.08 km/s
+outer slope                  ≈ -2.82 km/s/kpc
+```
+
+**Status:** Scratch numerical test.
+
+**Interpretation:** Linear cumulative A from visible toy components produces galaxy-scale orbital speeds, but the tested toy model does not by itself guarantee flat edge behavior.
+
+### 7.4 Collective A-envelope possibility
+
+**Claim type:** Exploratory extension, not core Model-A
+
+The stronger idea is that a galaxy may behave as a coherent accumulation domain, not merely as a linear sum of independent point-source contributions.
+
+This would require an additional term:
+
+```text
+A_total = A_linear + A_collective
+```
+
+where:
+
+```text
+A_collective
+```
+
+could represent a galaxy-scale accumulation envelope, coherence effect, long-lived structure effect, central-density seeding, or path-memory-like accumulation.
+
+One exploratory toy used a small logarithmic-style envelope. Fitting a target edge speed of:
+
+```text
+220 km/s
+```
+
+near:
+
+```text
+20 kpc
+```
+
+gave:
+
+```text
+epsilon ≈ 5.775256e-7
+```
+
+At approximately 20 kpc:
+
+```text
+A_linear      ≈ 4.04e-7
+A_collective  ≈ 9.10e-7
+```
+
+With this exploratory envelope:
+
+```text
+outer 15–35 kpc median speed ≈ 198.69 km/s
+outer slope                  ≈ -1.71 km/s/kpc
+```
+
+**Status:** Scratch exploratory calculation only.
+
+**Not claimed:** Model-A does not currently claim that `A_collective` is proven, derived, or required. It is a candidate direction if linear visible accumulation is insufficient.
+
+### 7.5 Working galaxy hypothesis
+
+Current scratch hypothesis:
+
+```text
+A galaxy can behave as a single accumulation object because many individually tiny A fields combine into a coherent galaxy-scale A field.
+
+If observed edge-star behavior requires more than the linear sum, STAM may need a collective A-envelope term.
+```
+
+A stronger speculative form is:
+
+```text
+A_total = A_linear + A_collective
+```
+
+where the collective term may be related to central concentration, disk coherence, long-lived orbital structure, or accumulated galaxy-scale organization.
+
+### 7.6 Connection to dark-matter interpretation
+
+**Claim type:** Interpretive target / not established
+
+STAM may eventually investigate whether dark-matter-like galaxy behavior is an interpretation of galaxy-scale accumulation effects.
+
+Current careful statement:
+
+```text
+Dark-matter-like behavior may be a target for STAM reinterpretation through cumulative or collective A.
+
+This is not yet a completed Model-A result.
+```
+
+### 7.7 Required future tests
+
+To move this from scratch theory to a formal Model-A claim, future tests should:
+
+```text
+1. Use real galaxy rotation-curve datasets.
+2. Compute A_required from observed v(r).
+3. Compute A_linear from visible baryonic components.
+4. Examine A_required - A_linear as an A_collective candidate.
+5. Test whether A_collective has a stable shape across galaxies.
+6. Test whether A_collective correlates with central concentration, disk structure, or total visible mass.
+7. Pre-declare pass/fail criteria before claiming a galaxy-scale result.
+```
+
+**Status:** Open.
+
 
 ## 8. Not currently claimed
 
