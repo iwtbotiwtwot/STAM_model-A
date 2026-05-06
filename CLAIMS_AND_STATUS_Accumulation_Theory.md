@@ -2,14 +2,172 @@
 
 ## 0. Notable findings
 
-This section records the strongest current findings before the longer claims ledger.
+### What A is and how Model-A gets there
 
+STAM Model-A begins with the dimensionless accumulation field:
 
-This document records the current working structure of STAM Model-A: what the model defines, what has been checked numerically, what remains diagnostic, and what still needs stronger testing.
+```text
+A(r) = Rs/r = 2GM/(c²r)
+```
 
-It is a project ledger, not a declaration that the model is established physics.
+This is not introduced as a detached fitting variable. It comes from comparing an object's Schwarzschild radius to the radius being tested. That makes `A` a compact measure of how much mass-energy accumulation is present at a location.
 
----
+The same expression also equals the squared escape-speed fraction:
+
+```text
+A = v_escape²/c²
+```
+
+So `A` immediately links mass, radius, escape condition, gravity, delay, clocks, and horizon behavior:
+
+```text
+A < 1  → escape speed below c
+A = 1  → escape speed equals c
+A > 1  → escape would require faster than c
+```
+
+From there, Model-A treats:
+
+```text
+∇A      → gravity / acceleration
+∫A ds   → traversal delay / path excess
+A = 1   → horizon threshold
+```
+
+This is the core reason `A` is useful: the same dimensionless quantity keeps reappearing across local gravity, Shapiro delay, GPS clocks, black-hole thresholds, and cosmological distance-layer tests.
+
+### A is a compact organizing variable
+
+STAM Model-A continues to show that the same dimensionless variable:
+
+```text
+A(r) = 2GM/(c²r)
+```
+
+organizes several local gravitational, timing, traversal, and horizon effects.
+
+Key identities:
+
+```text
+A = v_escape²/c²
+g = (c²/2)∇A
+Δt = (1/c)∫A ds
+A = 1 ⇔ r = Rs
+```
+
+### Local gravity and horizon behavior are clean
+
+The local spherical limit recovers Newtonian acceleration:
+
+```text
+g = GM/r²
+```
+
+through the A-gradient bridge.
+
+The horizon threshold is also clean:
+
+```text
+A < 1 ⇔ v_escape < c
+A = 1 ⇔ v_escape = c
+A > 1 ⇔ v_escape > c
+```
+
+This makes the black-hole horizon an `A = 1` accumulation threshold rather than a separate add-on.
+
+### Shapiro delay and GPS clocks remain strong non-distance checks
+
+STAM reproduces the weak-field Shapiro delay structure with:
+
+```text
+Δt = (1/c)∫A ds
+```
+
+The GPS clock test also lands at the correct scale:
+
+```text
+gravitational gain ≈ +45.8 μs/day
+kinematic loss ≈ -7.2 μs/day
+net ≈ +38.6 μs/day
+```
+
+These checks do not depend on the supernova distance controversy.
+
+### Traversal Excess gives the distance work a clean internal ledger
+
+The no-b distance split is:
+
+```text
+D_geo(z) = Lz(1 + 0.15z)
+D_adj,0(z) = Lz(1 + 0.5z)
+TE(z) = D_adj,0 - D_geo = 0.35Lz²
+```
+
+TE is the built-in traversal-excess layer of Model-A. It is not the historical `b` bridge.
+
+### BAO appears to see a partial accumulation layer
+
+The refined BAO test improved when BAO was allowed to see a partial accumulation layer:
+
+```text
+D_BAO(z) = D_geo(z) + λ(z)TE(z)
+```
+
+The best all-z BAO result found a smooth declining form:
+
+```text
+λ(z) ≈ 1.228 - 0.296z
+```
+
+This suggests BAO may not see pure geometry or the full supernova-style accumulation layer, but a partial observable layer.
+
+### Historical b has a derivation candidate without becoming core physics
+
+The strongest current `b` interpretation is:
+
+```text
+b may be the linear shadow of TE around an effective low-z catalog anchor.
+```
+
+Since:
+
+```text
+TE(z) = 0.35Lz²
+dTE/dz = 0.70Lz
+```
+
+a catalog anchor can predict:
+
+```text
+b_pred = 0.70L z_anchor
+```
+
+For Pantheon+Union3:
+
+```text
+weighted q25 z ≈ 0.037250
+b_pred ≈ 349.07 Mly
+historical b ≈ 354.95 Mly
+error ≈ -1.66%
+```
+
+This keeps `b` in the historical/catalog-bridge lane while giving it a possible non-arbitrary origin.
+
+### Distance remains the active diagnostic frontier
+
+STAM does not treat distance discrepancies as simple errors. It treats them as observable-mapping diagnostics:
+
+```text
+observable/catalog-inferred distance
+≠ automatically the same as
+STAM geometric/accumulation distance
+```
+
+The open distance question is:
+
+```text
+Which observable sees which STAM layer?
+```
 
 ## 1. Status labels
 
