@@ -1,0 +1,2 @@
+test,x_m_from_earth,x_earth_moon_units,distance_to_moon_m,accel_newton_x_m_s2_at_nearest_grid,accel_from_A_gradient_x_m_s2_at_nearest_grid,A_total_at_nearest_grid
+"Earth-Moon balance point, no rotation",346033024.30446976,0.9001899695745832,38366975.695530236,-1.6096928869167512e-06,-1.6096928869166746e-06,2.84758660245317e-11
