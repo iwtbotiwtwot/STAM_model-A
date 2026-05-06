@@ -2,15 +2,13 @@
 
 ## 0. Notable findings
 
-### What A is and how Model-A gets there
+### Accumulation (A)
 
 STAM Model-A begins with the dimensionless accumulation field:
 
 ```text
 A(r) = Rs/r = 2GM/(c²r)
 ```
-
-This is not introduced as a detached fitting variable. It comes from comparing an object's Schwarzschild radius to the radius being tested. That makes `A` a compact measure of how much mass-energy accumulation is present at a location.
 
 The same expression also equals the squared escape-speed fraction:
 
