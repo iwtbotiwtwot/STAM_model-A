@@ -2,7 +2,7 @@
 
 ## 0. Notable findings
 
-This section records the strongest current findings and newly useful diagnostics before the longer claims ledger.
+This section records the strongest current findings before the longer claims ledger.
 
 
 This document records the current working structure of STAM Model-A: what the model defines, what has been checked numerically, what remains diagnostic, and what still needs stronger testing.
@@ -10,98 +10,6 @@ This document records the current working structure of STAM Model-A: what the mo
 It is a project ledger, not a declaration that the model is established physics.
 
 ---
-
-### TE anchor derivation path for historical b
-
-A new diagnostic tested whether the historical bridge term `b` can be understood as the linear shadow of the quadratic Traversal Excess term.
-
-Core relation:
-
-```text
-TE(z) = D_excess,0(z) = 0.35Lz²
-```
-
-The local slope of TE is:
-
-```text
-dTE/dz = 0.70Lz
-```
-
-So an effective low-redshift catalog anchor can predict:
-
-```text
-b_pred = 0.70L z_anchor
-```
-
-This gives a possible derivation path for `b` without treating it as core physics or simply fitting it to the catalog distance curve.
-
-For the Pantheon/Union-style historical value:
-
-```text
-b ≈ 354.95 Mly
-```
-
-the reverse-derived anchor is:
-
-```text
-z_anchor ≈ 0.037878
-```
-
-The catalog anchor test found close matches:
-
-```text
-Pantheon+Union3 weighted q25 z ≈ 0.037250
-b_pred ≈ 349.07 Mly
-error ≈ -1.66%
-
-Pantheon weighted q25 z ≈ 0.037234
-b_pred ≈ 348.92 Mly
-error ≈ -1.70%
-```
-
-For the original retained value:
-
-```text
-b ≈ 461.3626922 Mly
-```
-
-the reverse-derived anchor is:
-
-```text
-z_anchor ≈ 0.049233
-```
-
-Several low-z anchor definitions landed near this value, including weighted/low-z Pantheon+Union3 anchors.
-
-**Current interpretation:**
-
-```text
-b may be the tangent/linearization of TE around an effective low-z catalog anchor.
-```
-
-This is currently the strongest derivation candidate for `b`. It does not make `b` core Model-A physics. It makes `b` a possible catalog-anchor / low-z linearization bridge for the no-b TE structure.
-
-### GPS/Shapiro scale check for b
-
-A separate scale sniff tested whether GPS clock fractions or Solar-System Shapiro delay fractions numerically derive `b`.
-
-Result:
-
-```text
-GPS/Shapiro validate the categories:
-    clock/process comparison
-    path/traversal delay
-
-But their direct dimensionless magnitudes are many orders too small to derive historical b.
-```
-
-So the useful result is structural:
-
-```text
-GPS and Shapiro justify separating clock/process and traversal categories.
-The numerical value of b is more plausibly tied to TE curvature and catalog/observable anchoring.
-```
-
 
 ## 1. Status labels
 
@@ -628,6 +536,8 @@ D_adj,0(z) = Lz(1 + 0.5z)
 
 **Claim type:** Diagnostic / derivation candidate
 
+This section keeps `b` in its proper place: historical catalog bridge analysis. It is not placed in the headline findings and it is not part of the forward physical no-b distance law.
+
 The historical bridge term:
 
 ```text
@@ -647,13 +557,13 @@ b_pred = dTE/dz | z=z_anchor
        = 0.70L z_anchor
 ```
 
-This gives a direct derivation candidate:
+This gives a derivation candidate:
 
 ```text
 b = 0.70L z_anchor
 ```
 
-where `z_anchor` is not chosen to fit `b`, but derived from catalog/calibration structure.
+where `z_anchor` is derived from catalog/calibration structure rather than chosen to fit `b`.
 
 Reverse-derived anchors:
 
@@ -677,7 +587,7 @@ error ≈ -1.70%
 
 **Status:** Strong derivation candidate, not final proof.
 
-**Current interpretation:** `b` may be the linear shadow of quadratic TE around an effective low-z catalog anchor. This keeps `b` out of the forward physical distance law while explaining why historical catalog bridge values appeared meaningful.
+**Current interpretation:** `b` may be the linear shadow of quadratic TE around an effective low-z catalog anchor. This keeps `b` as catalog bridge history while giving it a possible non-arbitrary origin.
 
 
 ## 5. Supernova catalog tests
@@ -1340,9 +1250,9 @@ negative-A traversal
 
 They should be allowed to develop without forcing premature final wording. The next useful step is to keep calculating toy models and then decide which pieces deserve formal Model-A status.
 
-## Script additions from latest b diagnostics
+## Latest diagnostic scripts
 
-The following scripts/results were added after the prior bundle:
+Recent b-diagnostic scripts:
 
 ```text
 25_TE_clock_shapiro_b_bridge_derivation.py
@@ -1354,8 +1264,8 @@ Summary:
 
 ```text
 25:
-    Separates TE from the historical bz bridge.
-    Shows bridge/TE = b/(0.35Lz), so b behaves like a low-z/local bridge relative to TE.
+    Separates TE from historical bz bridge.
+    Shows bridge/TE = b/(0.35Lz).
 
 26:
     Tests whether GPS or Shapiro magnitudes derive b.
