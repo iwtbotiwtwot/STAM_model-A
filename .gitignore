@@ -21,6 +21,12 @@ results/*.json
 results/*.txt
 !results/README.md
 
+# Generated plots (binary artifacts; markdown summaries reference them by path)
+plots/*.png
+plots/*.jpg
+plots/*.pdf
+plots/*.svg
+
 # Local notebooks
 .ipynb_checkpoints/
 
@@ -28,3 +34,6 @@ results/*.txt
 .DS_Store
 .vscode/
 .idea/
+
+# Claude Code local settings (machine-specific)
+.claude/
