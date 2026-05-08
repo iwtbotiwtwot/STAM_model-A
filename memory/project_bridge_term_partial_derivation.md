@@ -29,7 +29,7 @@ A_0 = b/L = 354.95 / 13387 = 0.02651
 
 2. **A_0 = M_shell_at_horizon / M_critical_universe** — interpreting A_0 as coming from a thin shell of mass at the cosmological boundary (Newton-shell-theorem analog), gives shell mass = 2.65% of cosmic critical mass. Close to but not exactly baryonic fraction `Ω_b ≈ 5%`. Possibly meaningful, possibly coincidence.
 
-**What this upgrade gives bold STAM:**
+**What this upgrade gives Model-A:**
 
 The bridge term's status changes:
 - *Before this session*: "b is an arbitrary fit parameter; nothing in STAM theory predicts its value."
@@ -42,7 +42,7 @@ This is strictly partial — form derived, value still empirical — but it's su
 - **Where does A_0 = 0.0265 come from physically?** Three candidate origins:
   - Cosmic-boundary mass shell (bubble picture's outer rim) — would need to specify shell mass distribution.
   - Newton-shell-theorem analog from cosmic-mean matter outside any local volume.
-  - F3-extended Friedmann dynamics — bold-STAM effective stress-energy producing a constant background contribution.
+  - F3-extended Friedmann dynamics — Model-A effective stress-energy producing a constant background contribution.
 
 - **Is the 1/(12π) match real or coincidence?** First-principles derivation would tell us.
 

@@ -1,6 +1,6 @@
 ---
 name: STAM as completion of GR (framing principle)
-description: Bold STAM is GR + boundary ontology, not modified gravity. Right up to A=1 the metric is identical to Schwarzschild and every GR observational test passes identically. Where STAM departs is at and beyond A=1, where GR has a singular interior and STAM has no interior at all. Frame STAM as "completing" what GR cannot address (singularity, information paradox, firewall, holographic principle), not as competing with GR.
+description: Model-A is GR + boundary ontology, not modified gravity. Right up to A=1 the metric is identical to Schwarzschild and every GR observational test passes identically. Where STAM departs is at and beyond A=1, where GR has a singular interior and STAM has no interior at all. Frame STAM as "completing" what GR cannot address (singularity, information paradox, firewall, holographic principle), not as competing with GR.
 type: project
 ---
 
@@ -10,7 +10,7 @@ STAM is not a competitor to GR — it is the completion of what GR cannot addres
 
 **The shared territory (STAM = GR exactly):**
 
-For all observations probing the region outside the Schwarzschild radius (A < 1), the bold STAM metric `g_tt = -(1-A)c²`, `g_rr = 1/[(1-A)(1-A²)²]` reduces to Schwarzschild when one identifies A = Rs/r and works to leading order in (1-A). Therefore:
+For all observations probing the region outside the Schwarzschild radius (A < 1), the Model-A metric `g_tt = -(1-A)c²`, `g_rr = 1/[(1-A)(1-A²)²]` reduces to Schwarzschild when one identifies A = Rs/r and works to leading order in (1-A). Therefore:
 
 | Observational test                               | GR prediction | STAM prediction |
 |--------------------------------------------------|---------------|-----------------|
@@ -57,7 +57,7 @@ When discussing STAM:
 
 **Implication for empirical case:**
 
-Every observation that confirms GR confirms STAM. The empirical evidence for relativistic gravity (a century of solar-system tests, binary pulsar timing, LIGO/Virgo events, EHT imaging, GRAVITY measurements) is *automatically* the empirical evidence for bold STAM. STAM does not need to win these battles separately — it inherits them.
+Every observation that confirms GR confirms STAM. The empirical evidence for relativistic gravity (a century of solar-system tests, binary pulsar timing, LIGO/Virgo events, EHT imaging, GRAVITY measurements) is *automatically* the empirical evidence for Model-A. STAM does not need to win these battles separately — it inherits them.
 
 The remaining tests are *theoretical* (information paradox resolution, singularity avoidance, holographic structure derivation), and on each STAM provides a cleaner answer than GR.
 

@@ -72,7 +72,7 @@ The variational potential V(A) → ∞ at A=1 means the field cannot actually at
 This makes the boundary structure cleaner: the manifold is smooth everywhere with A < 1 strictly, and has an asymptotic boundary as A → 1. Standard differential-geometry tools work throughout. The "no interior" claim is precise: the manifold IS the locus where A < 1; A=1 is the asymptotic boundary; nothing exists beyond.
 
 **Companion commitments (Sean, 2026-05-07):**
-- *Variational problem*: reduces to calibration. Coupling κ = 8πG/c² fixed by weak-field GR consistency; V(A) shape and metric construction g_μν(A) determined by bold-STAM specifications. Once these are set, no additional free parameters.
+- *Variational problem*: reduces to calibration. Coupling κ = 8πG/c² fixed by weak-field GR consistency; V(A) shape and metric construction g_μν(A) determined by Model-A specifications. Once these are set, no additional free parameters.
 - *GW propagation*: at c intrinsically, regardless of local A (because GW IS space-perturbation, not matter on space).
 - *V(A) shape is naturally spherical*: for spherically symmetric matter, the action-minimizing A field is spherically symmetric and the asymptotic bubble surface is a sphere. Spherical structure is dynamical, not postulated.
 - *Hawking from unresolved A*: vacuum fluctuations in the asymptotic region approaching A=1 are unresolved (cannot reach the boundary). Asymmetric outward flux from this unresolved region IS Hawking radiation. The thermal temperature emerges from the asymptotic structure.

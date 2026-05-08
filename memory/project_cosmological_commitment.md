@@ -1,10 +1,10 @@
 ---
 name: STAM cosmological commitment (pre-formula position)
-description: Sean's bold STAM cosmology, committed 2026-05-07 BEFORE the SU formula was tested and broke the simple-A version. Universe is matter-only Einstein-de Sitter. Dark energy is remitted as a misinterpretation of photon-A traversal in the SN distance modulus. H_0 tension resolved at H_0 = 73 (local distance ladder is correct; Planck H_0 = 67.4 is biased by LCDM not having a photon-A term). Single cosmic photon-A field (with line-of-sight structure dependence) explains both effects with one mechanism.
+description: Sean's Model-A cosmology, committed 2026-05-07 BEFORE the SU formula was tested and broke the simple-A version. Universe is matter-only Einstein-de Sitter. Dark energy is remitted as a misinterpretation of photon-A traversal in the SN distance modulus. H_0 tension resolved at H_0 = 73 (local distance ladder is correct; Planck H_0 = 67.4 is biased by LCDM not having a photon-A term). Single cosmic photon-A field (with line-of-sight structure dependence) explains both effects with one mechanism.
 type: project
 ---
 
-**Sean Brady's bold STAM cosmological commitment (2026-05-07):**
+**Sean Brady's Model-A cosmological commitment (2026-05-07):**
 
 Going back to the moment BEFORE the SU polynomial formula was tested and partially broken by BAO data, this is the conceptual STAM cosmological position that should be preserved as the framework's commitment going forward.
 

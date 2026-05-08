@@ -1,59 +1,46 @@
 ---
-name: GW are space, not traveling along it (Framework D refinement)
-description: Author's category distinction — GWs are perturbations of space itself, not propagating things on space. Light is matter on space, slowed by A. This naturally resolves F5 (tensor character) and explains GW170817 consistency. Also requires STAM cosmological A to be sourced by matter (≈0 in voids), abandoning the de Sitter ansatz.
+name: GW as metric perturbations — surviving content from the "GW are space" framing
+description: Original Framework D had two parts: (a) GWs inherit tensor character from being metric perturbations [KEEP — fixes F5 polarization], (b) GWs propagate at c intrinsically while light is slowed by A [DROP — F5c falsified by predicting 3 years over 40 Mpc vs observed 1.74 s]. What survives: GWs are metric perturbations (tensor by construction); both messengers feel A symmetrically as null phenomena on the same metric. Multi-messenger consistency is automatic.
 type: project
 ---
 
-**Author's framing (2026-05-07):** GWs ARE space (perturbations of the metric itself). They don't travel "along" space; they are the propagation of space. Light, by contrast, is electromagnetic — photons travel ON space and can be slowed by traversing A.
+**Original framing (2026-05-07):** GWs ARE space (perturbations of the metric itself). Light is matter on space, slowed by A. Two-field structure: g_μν tensor (gives h₊, h× modes natively); A scalar (matter-sourced, slows light only).
 
-**This is a category distinction, not just a phrasing distinction.**
+**What survives (post-F5c, 2026-05-08):**
 
-**Framework D (a refinement of Framework C):**
+- **GWs are metric perturbations.** Tensor character is automatic because the metric is a (0,2) tensor field. h₊, h× polarizations emerge from the tensor structure. This dissolves F5's original polarization issue.
+- **A is matter-sourced.** ∇²A = (8πG/c²)ρ_matter. Source equation unchanged.
+- **A ≈ 0 in matter-free voids.** Replaces the de Sitter A_cosmo(r) = (r/R_dS)² ansatz from Q8. Cosmological A is path-dependent: small in voids, larger near matter, structure-weighted along any line of sight.
+- **The metric itself carries the tensor degrees of freedom.** Model-A is a metric theory with an additional scalar A field, not a pure scalar theory.
 
-```text
-THE METRIC g_μν:
-    Geometric structure of space.
-    Has tensor character (gives h_+, h_× modes naturally).
-    GWs ARE propagating perturbations of g_μν, with c speed intrinsically.
+**What was dropped (F5c, 2026-05-08):**
 
-THE FIELD A:
-    A scalar feature of space, sourced by matter:
-        ∇²A = (8πG/c²) ρ_matter   (Framework C source equation, unchanged)
-    A determines:
-        - Local clock rates: dτ/dt = √(1-A) (× ...)
-        - Light propagation: Shapiro-style slowing through A field
+The asymmetric-propagation claim — "GWs propagate at c intrinsically; light is slowed by ∫A ds along the path" — was tested against GW170817 in scripts/F5c_gw170817_arrival_test.py. Taking the strong form at face value and integrating along the 40 Mpc path to NGC 4993:
+- Milky Way contribution: 2.74 × 10¹⁶ m → 2.9 years
+- NGC 4993 contribution: 1.17 × 10¹⁵ m → 45 days
+- Total predicted: 3.02 years
+- Observed: 1.74 s
+- Falsification ratio: ~5.5 × 10⁷
 
-ASYMMETRY between GW and light:
-    GWs propagate at c intrinsically (they ARE space, not on space).
-    Light propagates at c × slowing-factor where A > 0 (Shapiro/SU).
-    Both messengers consistent with GW170817 because cosmic voids
-    have A ≈ 0 (Poisson with no matter source → Laplace → bounded
-    solutions are A = 0).
-```
+The asymmetric-propagation claim is falsified by ~8 orders of magnitude. **GWs and light are NOT predicted to differ in propagation speed in Model-A.** Both are null phenomena on the same metric and feel the same Shapiro/SU integral.
 
-**Why this resolves F5:**
+**Multi-messenger consistency in current Model-A:**
 
-In Framework D, GWs are tensor metric perturbations by construction. They have h_+, h_× polarizations because that's what tensor-character perturbations of a (0,2) metric naturally produce. LIGO sees these tensor modes. F5 is no longer a falsification — bold STAM with Framework D produces tensor GWs natively.
+- Both messengers follow null geodesics on the same metric.
+- Both pick up identical Shapiro/SU delay through galactic and intergalactic A.
+- The integrated delay cancels in the differential.
+- GW170817's 1.74 s is the astrophysical jet-launch timing, same outcome as GR.
+- This is automatic, not a special prediction.
 
-The scalar A field is still there, sourcing local effects (clock, light slowing, bubble picture, no-crossing), but it doesn't claim to BE the GW. The metric is the GW, and the metric has tensor structure.
+**Cosmology implications (still valid):**
 
-**Why this fixes GW170817 consistency by construction:**
-
-- GW propagates at c (intrinsic to space).
-- Light propagates at c through A=0 voids (Framework C with no cosmological background).
-- Both arrive together over cosmic distances because most of the path is A=0.
-- Near matter (galaxies, BHs) light is slowed; GW is not. But the "near matter" portion is a tiny fraction of the cosmic path, so the integrated differential is below 10⁻¹⁵.
-
-**What this implies for STAM cosmology:**
-
-The de Sitter ansatz `A_cosmo(r) = (r/R_dS)²` used in Q8 (de Sitter horizon temperature) was a postulate, not a derivation. **STAM's actual cosmology (Framework C/D) has A ≈ 0 in cosmic voids.** This means:
-
-- Q8's de Sitter-temperature calculation may not apply to actual STAM cosmology (Schwarzschild and Unruh derivations are unaffected).
-- Script 31's bold-STAM cosmological distance was based on the wrong ansatz; the real STAM cosmological propagation is closer to "speed c through voids" than "slowed by smooth background."
-- Cosmological-distance bridge term b might come from local A near galaxies along the line of sight, not from a smooth cosmological A field.
+- The cosmological coupling V(A) = β/(1-A) and the supernova-distance work are unaffected. Both depend on the cosmological A field's effect on photon paths integrated over the line of sight, not on a propagation asymmetry between GW and light.
+- A_0 ≈ 0.0265 (calibrated cosmological coupling, derived bridge term b = 354.95 Mly) still stands.
+- The structure-dependent A_LoS picture (high near galaxies/filaments, low in voids) is the open path for explaining BAO, CMB acoustic scale at H_0 = 73, and SN distance-redshift jointly.
 
 **How to apply:**
-- When discussing STAM's GW prediction: GWs are tensor metric perturbations (h_+, h_×), traveling at c. Don't say "GWs slow like light" — that was the wrong framing. GWs and light differ categorically.
-- When discussing GW170817 consistency: it's automatic because both messengers travel at c through the A=0 cosmic voids (and through any small A regions near matter, the differential between messengers is bounded by the integrated A which is tiny).
-- When discussing F5 / LIGO: Framework D has tensor GWs by construction; F5's bite is dissolved.
-- When discussing STAM cosmology: don't use the de Sitter A_cosmo ansatz. Use Framework C: A is matter-sourced, ≈0 in voids.
+
+- Don't say "GWs propagate at c intrinsically while light is slowed by A." That's the falsified position.
+- Do say "GWs are metric perturbations with tensor character; both messengers feel A symmetrically as null phenomena on the same metric."
+- F5 is resolved by recognizing GWs as metric perturbations, not by giving GWs and light different propagation speeds.
+- Multi-messenger consistency (GW170817-class observations) is not a STAM-specific prediction — it works for the same reason it works in GR.
