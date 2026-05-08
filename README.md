@@ -4,7 +4,13 @@
 
 Author: **Sean Brady**
 
-Status: **proposed theoretical framework / active testbed**. As of this snapshot, weak-field gravitation, strong-field metric structure (bold-STAM commitment), no-crossing infall geometry, multi-source A and binary merger topology, and the full Hawking / Bekenstein thermodynamic sector have been derived from STAM-native ingredients and numerically checked. All standard GR weak-field tests pass automatically by orders of magnitude; all standard black-hole thermodynamic results are reproduced exactly via a fundamentally different physical mechanism (phase-boundary equilibrium and 2D bubble surfaces, not Schwarzschild Wick rotation and 3D interior physics). Cosmological distance is predicted to differ from LCDM-fitted catalogs by design and remains an active diagnostic branch. Galaxy rotation remains exploratory.
+Status: **proposed theoretical framework / active testbed** (snapshot 2026-05-07).
+
+**Bold-STAM strong-field**: weak-field gravitation, strong-field metric structure, no-crossing infall geometry, multi-source A and binary merger topology, and the full Hawking/Bekenstein thermodynamic sector have been derived from STAM-native ingredients and numerically checked. All standard GR weak-field tests pass automatically by orders of magnitude; all standard black-hole thermodynamic results are reproduced exactly via a fundamentally different physical mechanism (phase-boundary equilibrium and 2D bubble surfaces, not Schwarzschild Wick rotation and 3D interior physics).
+
+**STAM cosmological commitment (bold)**: the universe is matter-only Einstein–de Sitter; dark energy is remitted as a misinterpretation of photon-A **traversal excess (TE)** accumulating along the cosmic line of sight; the Hubble tension is resolved at **H₀ = 73 km/s/Mpc** (local distance ladder is correct; Planck H₀ = 67.4 is biased low because LCDM has no photon-A term). One cosmic A field with structure-dependent line-of-sight TE integration explains all three observables (low-z H₀, SN dark-energy-equivalent dimming, and CMB-inferred H₀ tension). The simple constant-A quantitative version was tested against BAO and falsified at 22σ; the structure-dependent TE path-integration version is the open path forward.
+
+**Galaxy rotation** remains exploratory.
 
 > **STAM Model-B** is a refinement of Model-A introducing one category distinction — *gravitational waves ARE space (tensor metric perturbations), light is matter ON space (scalar-coupled to A)*. Model-B carries every Model-A result unchanged and resolves the F5 fatality (GW polarization) by giving GWs native tensor character through the metric. See [scripts/STAM_Model_B_specification.py](scripts/STAM_Model_B_specification.py) and [results/STAM_Model_B_specification_summary.md](results/STAM_Model_B_specification_summary.md) for the formal specification. Sections below describe Model-A in detail; refinements specific to Model-B are flagged where they apply.
 

@@ -1,0 +1,293 @@
+"""
+Script 43 - Attempt to derive Sean's SU(z) formula from STAM principles
+
+Sean's empirical formula (script 42 spreadsheet, fixed H_0 = 73.05):
+    SU(z) = (c/H_0) * z * (1 + 3z/20)
+          = (c/H_0) * z * (1 + A_local * z / 2)   with A_local = 3/10
+
+Goal: derive (1 + A_local * z / 2) from Einstein matter-only EdS cosmology
+plus STAM photon-A traversal physics.
+
+Approach:
+  1. Compute d_L_EdS(z) at H_0 = 73 (matter-only flat).
+  2. Taylor-expand around z = 0:  d_L_EdS = (c/H_0) * z * (1 + z/4 - z^2/8 + ...)
+     EdS quadratic coefficient = 1/4 = 5/20.
+  3. Sean's SU has quadratic coefficient 3/20.
+  4. Difference: 5/20 - 3/20 = 2/20 = 1/10 = A_local/3.
+  5. So Sean's SU = d_L_EdS minus a STAM-correction that scales as
+     (A_local / 3) * (c/H_0) * z^2 at quadratic order.
+
+  Now check: does STAM photon-A traversal naturally produce this correction?
+
+  Candidate physical mechanism:
+  - Photon clocks tick slowly in cosmic ambient A: dtau_photon = sqrt(1-A_local) dt
+  - This effectively reduces the "amount of cosmic spacetime" the photon
+    has access to per unit cosmic time.
+  - Integrated over EdS expansion history, the photon arrives "younger"
+    than the matter-only FRW prediction would say.
+
+  Compute the photon-time integral and see if it matches Sean's formula.
+"""
+
+from __future__ import annotations
+import numpy as np
+import matplotlib.pyplot as plt
+from pathlib import Path
+
+C_KMS = 299792.458
+H0_SH0ES = 73.05    # SH0ES local distance ladder
+H_NORM = H0_SH0ES / C_KMS   # = 0.000243635 per Mpc, matches Sean's spreadsheet
+A_LOCAL = 3.0/10.0
+D_H_Mpc = C_KMS / H0_SH0ES
+
+def cumtrapz0(y, x):
+    dx = np.diff(x); midy = 0.5*(y[1:]+y[:-1])
+    return np.concatenate([[0.0], np.cumsum(midy*dx)])
+
+# ==================================================================
+# Sean's empirical formula
+# ==================================================================
+def SU_Sean(z):
+    return D_H_Mpc * z * (1.0 + A_LOCAL * z / 2.0)
+
+# ==================================================================
+# Einstein-de Sitter (matter-only flat) luminosity distance
+# Closed-form:
+#   d_L_EdS(z) = (2 c / H_0) * (1 + z) * [1 - 1/sqrt(1 + z)]
+# ==================================================================
+def d_L_EdS(z):
+    return 2.0 * D_H_Mpc * (1.0 + z) * (1.0 - 1.0/np.sqrt(1.0 + z))
+
+# ==================================================================
+# Bold STAM metric correction at constant ambient A
+#   sqrt(g_rr) = 1/sqrt[(1-A)(1-A^2)^2]
+# ==================================================================
+def sqrt_grr(A):
+    return 1.0 / np.sqrt((1.0 - A) * (1.0 - A**2)**2)
+
+# Constant-A traversal multiplier (no z-dependence):
+F_constA = sqrt_grr(A_LOCAL)
+print(f"Constant-A traversal multiplier at A_local = {A_LOCAL}:  F = {F_constA:.6f}")
+print(f"  (At z = 1, this would give Delta_mu = {5.0*np.log10(F_constA):.4f} mag)")
+
+# ==================================================================
+# Compute series coefficients to verify
+# ==================================================================
+print("\n" + "=" * 72)
+print("Taylor expansion of d_L(z) around z = 0:")
+print("=" * 72)
+print(f"  EdS:       d_L = (c/H_0) * z * [1 + z/4 - z^2/8 + 5z^3/64 - ...]")
+print(f"             quadratic coefficient = 1/4 = 5/20 = 0.2500")
+print(f"  Sean's SU: SU  = (c/H_0) * z * [1 + 3z/20]")
+print(f"             quadratic coefficient = 3/20 = 0.1500")
+print(f"  Difference (EdS minus SU at quadratic order): 1/4 - 3/20 = 1/10 = {1/10:.4f}")
+print(f"  In terms of A_local = 3/10:  difference = A_local / 3 = {A_LOCAL/3:.4f}")
+print()
+
+# So:  SU(z) = d_L_EdS(z) - (A_local/3) * (c/H_0) * z^2  + O(z^3)
+# The "STAM correction" relative to EdS is a NEGATIVE z^2 term with
+# coefficient A_local / 3 = 1/10.
+
+# ==================================================================
+# What physical mechanism produces a -z^2 * (A_local/3) correction?
+#
+# Hypothesis: photon travels through cosmic ambient A_local with
+# clock running at sqrt(1-A) of cosmic time. Integrated, the photon
+# "experiences" less cosmic time than vacuum FRW predicts.
+#
+# In EdS with constant ambient A_local, the photon proper time from
+# emission at z to observation at z=0:
+#   tau_photon = sqrt(1 - A_local) * Delta_t_cosmic
+# where Delta_t_cosmic = integral_z^0 dt = integral_0^z dz' / [(1+z') H(z')]
+#
+# In EdS:  H(z) = H_0 (1+z)^(3/2),  so
+#   Delta_t = (2/(3 H_0)) * [1 - 1/(1+z)^(3/2)]
+# Expand:  Delta_t ~ (2/(3 H_0)) * (3z/2 - ...) = z/H_0 - ...
+#
+# If we interpret SU(z) as some combination of d_L_EdS scaled by
+# sqrt(1-A_local) factor, plus a Hubble-flow piece:
+# ==================================================================
+print("=" * 72)
+print("Test physical hypotheses for the STAM correction:")
+print("=" * 72)
+
+z = np.linspace(0.001, 2.0, 400)
+SU_target = SU_Sean(z)
+dL_EdS = d_L_EdS(z)
+delta_STAM = SU_target - dL_EdS    # what STAM correction must provide
+
+# Hypothesis A: SU(z) = d_L_EdS(z) * sqrt(1 - A_local)
+#   i.e., photon-clock-scaling argument
+SU_A = dL_EdS * np.sqrt(1.0 - A_LOCAL)
+res_A = SU_target - SU_A
+print(f"  (A) SU = d_L_EdS * sqrt(1-A_local):   max residual = {np.max(np.abs(res_A)):.2f} Mpc")
+print(f"      Multiplier sqrt(1-A_local) = sqrt(0.7) = {np.sqrt(0.7):.4f}")
+
+# Hypothesis B: SU(z) = (c/H_0) * z * sqrt_grr(A_local * z) -- ambient A grows with z
+A_growing = np.minimum(A_LOCAL * z, 0.99)
+SU_B = D_H_Mpc * z / np.sqrt((1.0 - A_growing) * (1.0 - A_growing**2)**2)
+res_B = SU_target - SU_B
+print(f"  (B) SU = (c/H_0)*z * sqrt_grr(A_local*z):  max residual = {np.max(np.abs(res_B)):.2f} Mpc")
+
+# Hypothesis C: SU(z) = (c/H_0) * z * (1 + A_local*z/2)
+#               (= Sean's formula, just verifying)
+SU_C = D_H_Mpc * z * (1.0 + A_LOCAL * z / 2.0)
+res_C = SU_target - SU_C
+print(f"  (C) SU = (c/H_0)*z*(1 + A_local*z/2)  [Sean]:  max residual = {np.max(np.abs(res_C)):.2e} Mpc")
+
+# Hypothesis D: SU(z) = (c/H_0) * z + (A_local/2) * (c/H_0) * z^2
+SU_D = D_H_Mpc * z + (A_LOCAL/2.0) * D_H_Mpc * z**2
+res_D = SU_target - SU_D
+print(f"  (D) SU = Hubble flow + (A_local/2)*(c/H_0)*z^2:  max residual = {np.max(np.abs(res_D)):.2e} Mpc")
+
+# Hypothesis E: a derivation from EdS minus correction
+# From series: SU = d_L_EdS - (A_local/3)*(c/H_0)*z^2 to leading order,
+# but this only works at small z. Let's see how it extends.
+SU_E = dL_EdS - (A_LOCAL/3.0) * D_H_Mpc * z**2
+res_E = SU_target - SU_E
+print(f"  (E) SU = d_L_EdS - (A_local/3)*(c/H_0)*z^2:  max residual = {np.max(np.abs(res_E)):.2f} Mpc")
+
+# ==================================================================
+# Most promising route: integrate the photon-time formula in EdS
+# Hypothesis F: SU(z) = (c/H_0) * z * (1 + A(z) * z / 2)
+# with A(z) = A_local (constant)  -- this IS Sean's formula
+# ==================================================================
+print()
+print("=" * 72)
+print("Series expansion check: where does (1 + A*z/2) come from?")
+print("=" * 72)
+
+# Sean's formula expanded:
+#   (c/H_0) * z * (1 + A * z / 2)
+#   = (c/H_0) * [z + A * z^2 / 2]
+#
+# This is NOT a Taylor expansion of a simple function of (1+z) — it has
+# only z and z^2 terms, no higher orders. That makes it a TWO-PARAMETER
+# truncated polynomial.
+#
+# Compare to EdS expansion:
+#   d_L_EdS = (c/H_0) * (z + z^2/4 - z^3/8 + 5z^4/64 - ...)
+# Higher-order EdS terms beyond z^2 are non-zero. Sean's formula
+# truncates at z^2 by design.
+
+# Within the regime z <= 0.3 (low-z, where Pantheon has many SN):
+mask = z <= 0.3
+print(f"  Maximum |residual| of Sean's formula vs d_L_EdS in z <= 0.3:")
+print(f"    Sean's SU - d_L_EdS:  {np.max(np.abs(SU_target[mask] - dL_EdS[mask])):.2f} Mpc")
+print(f"  Maximum |residual| of Sean's formula vs d_L_EdS in z <= 1.0:")
+mask1 = z <= 1.0
+print(f"    Sean's SU - d_L_EdS:  {np.max(np.abs(SU_target[mask1] - dL_EdS[mask1])):.2f} Mpc")
+
+# ==================================================================
+# Plotting
+# ==================================================================
+fig, axes = plt.subplots(2, 2, figsize=(13, 10))
+
+# (a) The two curves
+ax = axes[0,0]
+ax.plot(z, dL_EdS, lw=2.2, color='C2', label='d_L_EdS  (matter-only EdS at H_0=73)')
+ax.plot(z, SU_target, lw=2.2, ls='--', color='C0', label='Sean SU = (c/H_0)*z*(1 + 3z/20)')
+ax.set_xlabel('z'); ax.set_ylabel('d_L (Mpc)')
+ax.set_title('Sean SU vs d_L_EdS at H_0 = 73')
+ax.legend(); ax.grid(alpha=0.3)
+
+# (b) Difference
+ax = axes[0,1]
+ax.plot(z, SU_target - dL_EdS, lw=2.2, color='C3')
+ax.axhline(0, color='gray', alpha=0.5)
+ax.set_xlabel('z'); ax.set_ylabel('SU - d_L_EdS (Mpc)')
+ax.set_title('STAM correction needed: SU_Sean(z) - d_L_EdS(z)')
+ax.grid(alpha=0.3)
+
+# Theoretical correction at quadratic order:
+delta_quad = -(A_LOCAL/3.0) * D_H_Mpc * z**2
+ax.plot(z, delta_quad, lw=1.5, ls=':', color='k',
+        label=f'-(A_local/3) (c/H_0) z^2  [quadratic prediction]')
+ax.legend()
+
+# (c) ratio
+ax = axes[1,0]
+ax.plot(z, SU_target / dL_EdS, lw=2.2, color='C0')
+ax.axhline(1.0, color='gray', alpha=0.5)
+ax.set_xlabel('z'); ax.set_ylabel('SU / d_L_EdS')
+ax.set_title('Ratio Sean-SU / EdS')
+ax.grid(alpha=0.3)
+
+# (d) The cosmological consequence: Hubble parameter implied
+# If d_L = SU(z) and we solve for an effective H(z), what does it look like?
+# d_L = (1+z) D_C, D_C = integral c dz/H(z)
+# d/dz [SU/(1+z)] gives c/H_eff(z)
+SU_over_1pz = SU_target / (1.0 + z)
+# numerical derivative
+dD_dz = np.gradient(SU_over_1pz, z)
+H_eff = C_KMS / dD_dz
+ax = axes[1,1]
+ax.plot(z, H_eff, lw=2.2, color='C4', label='H_eff(z) implied by SU formula')
+H_EdS = H0_SH0ES * (1.0 + z)**1.5
+ax.plot(z, H_EdS, lw=1.5, ls='--', color='C2', label='EdS: H_0(1+z)^(3/2)')
+ax.set_xlabel('z'); ax.set_ylabel('H_eff(z) (km/s/Mpc)')
+ax.set_title('Implied expansion history H(z)')
+ax.legend(); ax.grid(alpha=0.3)
+
+plt.suptitle(
+    f"Deriving SU(z) = (c/H_0)*z*(1 + A_local*z/2) at A_local = 3/10",
+    fontsize=13
+)
+plt.tight_layout(rect=[0, 0, 1, 0.96])
+
+outdir = Path('reports/script_43')
+outdir.mkdir(parents=True, exist_ok=True)
+plt.savefig(outdir/'SU_derivation.png', dpi=130, bbox_inches='tight')
+
+# ==================================================================
+# Final summary
+# ==================================================================
+print()
+print("=" * 72)
+print("Derivation status")
+print("=" * 72)
+print("""
+What we have CLEAN:
+
+  1. Sean's formula SU(z) = (c/H_0) * z * (1 + A_local * z / 2)
+     can be written as:
+        SU(z) = Hubble_flow(z)  +  (A_local / 2) * (c/H_0) * z^2
+
+  2. Compared to EdS at quadratic order:
+        d_L_EdS(z) = (c/H_0) * z * (1 + z/4 + ...)
+        SU(z)      = (c/H_0) * z * (1 + A_local*z/2)
+     The shape coefficient at z^2 is:
+        A_local / 2  vs  1/4
+        For A_local = 3/10:  3/20  vs  5/20
+     Ratio is exactly 3/5.
+
+  3. q_0 = 1 - 2*(A_local/2) = 1 - A_local = 7/10 (a clean STAM relation).
+
+What is STILL OPEN (the actual derivation):
+
+  4. WHY is the SU quadratic coefficient exactly A_local / 2?
+     We have the structural relation but not yet a derivation from a
+     specific STAM Lagrangian or photon-path integral.
+
+  5. The simplest physical hypotheses tested above (sqrt(1-A_local)
+     scaling, ambient A growing with z, etc.) do NOT exactly reproduce
+     SU(z) = (c/H_0)*z*(1 + A_local*z/2). The closest is the formula
+     itself.
+
+  6. The most natural reading: SU(z) is a phenomenological STAM-internal
+     formula whose CLEAN-FRACTION shape (linear coef = 1/A_local,
+     quadratic coef = 1/2) suggests an exact STAM origin, but the
+     derivation requires either:
+       (a) A specific STAM Lagrangian (with non-canonical kinetic term
+           or non-minimal coupling to gravity), OR
+       (b) A particular cosmological ansatz for A(z) along the photon
+           path that we have not yet identified.
+
+  7. Strong hint: the formula reduces to two clean numbers,
+        a = 1/A_local  and  q = 1/2,
+     with q being a UNIVERSAL constant (independent of A). The 1/2 is
+     suggestive of a kinetic term: a canonical scalar's kinetic term has
+     coefficient 1/2. This may be the route to derivation.
+""")
+print(f"Saved: {outdir.resolve()}/SU_derivation.png")
+print("=" * 72)
