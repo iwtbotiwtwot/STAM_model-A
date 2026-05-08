@@ -1,6 +1,6 @@
 # Model-A
 
-**Model-A** is the current variable-accumulation version of the broader **Spacetime Accumulation Model (STAM)** research program. It explores whether gravity, time delay, black-hole horizons, thermodynamic behavior, cosmological distance effects, and quantum-style resolution can be described using one central idea: a dimensionless spacetime accumulation field called **A**.
+**Model-A** is the current variable-accumulation version of the broader **Spacetime Accumulation Model (STAM)** research program. It explores whether gravity, clock behavior, propagation delay, black-hole horizons, thermodynamic behavior, cosmological distance effects, and quantum-style resolution can be described using one central idea: a dimensionless spacetime accumulation field called **A**.
 
 Author: **Sean Brady**
 Status: **Proposed theoretical framework / active research program**
@@ -35,24 +35,135 @@ The purpose of Model-A is not to claim the framework is finished. The purpose is
 
 ---
 
-## What Model-A reproduces cleanly
+## Weak-field foundation
 
-Several results follow directly from the definition of A or from the gravity bridge:
+The cleanest and most defensible part of Model-A is the weak-field formulation. Several results follow directly from the definition of A or from the gravity bridge:
 
 ```text
 g = (c^2 / 2) grad(A)
 ```
 
-Using this relationship, Model-A recovers:
+For the spherical weak-field form:
 
-* **Newtonian gravity** in the weak-field spherical case.
-* **The Schwarzschild horizon threshold**, where `A = 1` corresponds to `r = Rs`.
-* **Escape-speed behavior**, where `A = v_escape^2 / c^2`.
-* **GPS-like weak-field clock corrections**, including the standard gravitational gain and orbital kinematic loss.
-* **Shapiro-style propagation delay**, using path accumulation `int A ds`.
-* **Mass-estimator consistency**, where acceleration, orbital velocity, lensing, redshift, Shapiro delay, and horizon radius all recover the same source mass in synthetic checks.
+```text
+A(r) = 2GM / (c^2 r)
+```
 
-These results are treated as the stable local/weak-field foundation of Model-A.
+the gradient gives:
+
+```text
+g = -GM / r^2
+```
+
+So the inverse-square acceleration law is recovered exactly in this setting. The factor `c^2/2` is not fitted; it is the reciprocal of the dimensional factor already built into the definition of A.
+
+Model-A also identifies the standard horizon threshold algebraically:
+
+```text
+A = Rs / r
+```
+
+so when:
+
+```text
+r = Rs
+```
+
+then:
+
+```text
+A = 1
+```
+
+The same threshold appears from the escape-speed relation:
+
+```text
+A = v_escape^2 / c^2
+```
+
+This means `A = 1` corresponds to escape speed reaching the speed of light in the spherical weak-field algebra.
+
+---
+
+## GPS-style clock result
+
+Model-A writes the weak-field clock-rate relation as:
+
+```text
+dtau/dt ≈ 1 - A/2
+```
+
+For an Earth-surface clock compared with a circular-orbit satellite clock, the total rate shift can be written compactly as:
+
+```text
+Delta_rate_total = A_surface/2 - 3A_orbit/4
+```
+
+This separates naturally into:
+
+```text
+Gravitational contribution:  (A_surface - A_orbit) / 2
+Kinematic contribution:      -A_orbit / 4
+```
+
+A representative GPS-like application gives:
+
+```text
+Gravitational gain:   +45.787467 microseconds/day
+Kinematic loss:        -7.213600 microseconds/day
+Net satellite gain:   +38.573867 microseconds/day
+Factory offset:        -4.464568 x 10^-10
+```
+
+The importance of this result is not that Model-A invents new GPS physics. The importance is that both the gravitational and kinematic weak-field clock terms are rewritten in one consistent A-based notation.
+
+---
+
+## Shapiro-style propagation delay
+
+For signal propagation, Model-A uses the weak-field delay expression:
+
+```text
+Delta_t = (1/c) int A(r) ds
+```
+
+Substituting the spherical weak-field form gives:
+
+```text
+Delta_t = (2GM / c^3) int ds/r
+```
+
+For a straight path with impact parameter `b`, this becomes the expected inverse-hyperbolic/logarithmic Shapiro-delay structure:
+
+```text
+Delta_t = (2GM / c^3) [asinh(x2/b) - asinh(x1/b)]
+```
+
+A representative solar-grazing Earth-Mars path gives:
+
+```text
+One-way delay:  123.6076 microseconds
+Two-way delay:  247.2151 microseconds
+```
+
+This is one of the most important weak-field findings: the same A field that produces local acceleration through `grad(A)` also produces propagation delay when integrated along a path.
+
+---
+
+## Mass-estimator consistency
+
+Model-A also organizes several weak-field mass estimators into one A-based structure. The same source mass can be recovered from horizon radius, acceleration, orbital velocity, Shapiro delay, gravitational shift, and lensing-scale expressions:
+
+```text
+Horizon radius:       M = c^2 r_h / (2G)
+Acceleration:         M = g r^2 / G
+Orbital velocity:     M = v^2 r / G
+Shapiro coefficient:  M = K c^3 / (2G)
+Gravitational shift:  M ≈ z_grav c^2 r / G
+Lensing deflection:   M ≈ alpha c^2 b / (4G)
+```
+
+Synthetic checks recover the input mass to floating-point precision when the expressions are evaluated consistently. This is not yet a real observational mass-closure test, but it does show internal weak-field consistency across multiple observables.
 
 ---
 
@@ -71,9 +182,9 @@ This preserves the main weak-field tests while creating a different near-horizon
 A notable structural pattern is that the three major Schwarzschild radii fall at simple fractions of A:
 
 ```text
-ISCO:          A = 1/3
-Photon sphere: A = 2/3
-Horizon:       A = 1
+ISCO:           A = 1/3
+Photon sphere:  A = 2/3
+Horizon:        A = 1
 ```
 
 Because Model-A preserves `g_tt`, it also preserves the predicted accretion-disk inner edge and black-hole shadow size. That means EHT shadow size is not expected to separate Model-A from GR. More promising tests are near-horizon timing, ringdown frequencies, and other strong-field measurements.
@@ -182,18 +293,27 @@ This is an exploratory interpretation intended to connect Model-A’s accumulati
 The strongest parts of Model-A are:
 
 1. **Weak-field recovery**
-   Newtonian gravity, clock correction, Shapiro delay, and mass-estimator consistency all follow cleanly from A-language.
+   Newtonian gravity follows directly from the A-gradient relation in the spherical weak-field case.
 
-2. **The A = 1 threshold**
+2. **GPS-style clock consistency**
+   The standard gravitational gain, orbital kinematic loss, and net satellite clock offset are reproduced in compact A-language.
+
+3. **Shapiro-style delay consistency**
+   The path integral of A reproduces the expected logarithmic weak-field delay structure and gives realistic solar-system delay values.
+
+4. **The A = 1 threshold**
    The same horizon condition appears through both `A = Rs/r` and the escape-speed relation.
 
-3. **The thirds-of-A strong-field structure**
+5. **Mass-estimator closure**
+   Multiple weak-field observables recover the same source mass in synthetic checks.
+
+6. **The thirds-of-A strong-field structure**
    ISCO, photon sphere, and horizon fall at `1/3`, `2/3`, and `1`.
 
-4. **Black-hole thermodynamics**
+7. **Black-hole thermodynamics**
    Hawking temperature, entropy, first law, Smarr relation, and evaporation behavior are reproduced from the A-boundary framework.
 
-5. **Clear falsification targets**
+8. **Clear falsification targets**
    Model-A is not positioned as unfalsifiable. It points toward specific tests involving near-horizon timing, ringdown behavior, second-order weak-field corrections, structure-dependent cosmological path integration, and mass-closure comparisons.
 
 ---
@@ -216,7 +336,7 @@ The most important unfinished work for Model-A includes:
 
 Model-A is best described as a structured theoretical research program within the broader STAM project. It has a compact organizing variable, several exact or near-exact recoveries of known results, a concrete strong-field commitment, and a list of open problems that can be tested.
 
-The framework is not presented as complete. Its value is that it creates a unified language for asking whether gravity, propagation delay, horizons, thermodynamics, cosmological distance effects, and physical resolution may be different projections of the same accumulation structure.
+The framework is not presented as complete. Its value is that it creates a unified language for asking whether gravity, clock behavior, propagation delay, horizons, thermodynamics, cosmological distance effects, and physical resolution may be different projections of the same accumulation structure.
 
 ---
 
