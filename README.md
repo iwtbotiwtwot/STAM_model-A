@@ -4,17 +4,13 @@
 
 Author: **Sean Brady**
 
-Status: **competing theoretical framework** (snapshot 2026-05-07). STAM is a complete physical framework that competes with LCDM/GR rather than patches them. Where STAM and LCDM diverge, STAM commits to its own predictions and treats LCDM as the comparison model being tested against the same data.
+Status: **proposed theoretical framework / active research program** (snapshot 2026-05-08).
 
-**Bold-STAM strong-field**: weak-field gravitation, strong-field metric structure, no-crossing infall geometry, multi-source A and binary merger topology, and the full Hawking/Bekenstein thermodynamic sector are all derived from STAM-native ingredients and numerically checked. Every confirmed GR observational test is automatically a STAM test (and STAM passes it) because the bold metric outside Rs reduces to GR Schwarzschild. All standard black-hole thermodynamic results are reproduced exactly via a fundamentally different physical mechanism (phase-boundary equilibrium and 2D bubble surfaces, not Schwarzschild Wick rotation and 3D interior physics).
+The framework's strongest territory is **strong-field gravitation and black-hole thermodynamics**. Weak-field gravitation, strong-field metric structure, no-crossing infall geometry, multi-source A and binary merger topology, and the full Hawking/Bekenstein thermodynamic sector are derived from STAM-native ingredients and numerically checked. Because the bold STAM metric reduces to GR Schwarzschild outside the Schwarzschild radius, every confirmed GR observational test (Mercury perihelion, light bending, Shapiro delay, GPS, GRAVITY S2 orbit, EHT shadow, LIGO/Virgo events) is matched automatically. Standard black-hole thermodynamic results (Hawking temperature, Bekenstein-Hawking entropy, first law, Smarr formula, evaporation lifetime) are reproduced exactly via a different physical mechanism — phase-boundary equilibrium on a 2D bubble surface, rather than QFT in curved spacetime. This is the headline.
 
-**STAM cosmological position (bold, committed)**: the universe is matter-only Einstein–de Sitter; **there is no dark energy**; dark-energy-like effects are photon-A **traversal excess (TE)** accumulating along the cosmic line of sight; supernovae sit on a **flatter d_L(z) curve than LCDM** with the difference growing at high z; **H₀ = 73 km/s/Mpc at all redshifts**. The Hubble tension is resolved structurally — STAM does not adjust, LCDM has to adjust H_0 downward to 67.4 to fit CMB because LCDM lacks the photon-A term. The 5σ tension is LCDM's incompleteness, not a measurement disagreement.
+The **cosmological branch** is more speculative than the strong-field branch and is active research. STAM proposes a matter-only Einstein–de Sitter background plus a small photon-A traversal-excess (TE) effect along cosmic lines of sight. Under this proposal, locally-measured H₀ = 73 km/s/Mpc is the value adopted at all redshifts, and the gap to CMB-inferred H₀ = 67.4 is interpreted as a STAM photon-A signature that is currently treated as an open question by the field. V(A) = β/(1-A) is STAM's chosen cosmological-action form (selected by the structural requirement V → ∞ at A = 1) with one empirical input A_0 = 0.0265 (calibrated to the historical bridge term). With that single input, the framework's predictions on Pantheon+ d_L shape, the small Pantheon+ vs Union3 inter-catalog ΔM offset, and the H_0 question are consistent with available data. Open work includes the field-equation Lagrangian (F3), structure-dependent line-of-sight TE integration, a direct BAO test of the V(A) modified Friedmann, and a first-principles derivation of A_0.
 
-V(A) = β/(1-A) is STAM's cosmological-action form, validated by data: it predicts d_L curves matching Pantheon+ better than LCDM (with one empirical input A_0 vs LCDM's three free parameters), correctly predicts the Pantheon+ vs Union3 inter-catalog ΔM tension within 27%, correctly identifies the DES anomaly as instrumental (not cosmological), and resolves the Hubble tension. By the standard that validates all other physics laws (Maxwell, GR, Schrödinger), V(A) = β/(1-A) is a STAM physical law, not a postulate.
-
-**Galaxy rotation** remains exploratory.
-
-> **STAM Model-B** is a refinement of Model-A introducing one category distinction — *gravitational waves ARE space (tensor metric perturbations), light is matter ON space (scalar-coupled to A)*. Model-B carries every Model-A result unchanged and resolves the F5 fatality (GW polarization) by giving GWs native tensor character through the metric. See [scripts/STAM_Model_B_specification.py](scripts/STAM_Model_B_specification.py) and [results/STAM_Model_B_specification_summary.md](results/STAM_Model_B_specification_summary.md) for the formal specification. Sections below describe Model-A in detail; refinements specific to Model-B are flagged where they apply.
+LCDM is treated throughout as the comparison framework — both models are being tested against the same data. STAM's distinctness is in its physical mechanism (water-tank ontology, bubble boundary, photon-A traversal). It is offered as an alternative interpretation, not a refutation of the comparison framework or its many achievements.
 
 ---
 
@@ -80,32 +76,25 @@ The single dimensionless field `A(x)` and the structural rule `g = (c^2/2) grad 
 14. **GR exterior recovery.**
     Bold STAM modifies only `g_rr`, and only at second order in A: deviation factor is `(1-A^2)^2`. Every standard GR weak-field test (Cassini Shapiro, Mercury perihelion, Hulse-Taylor pulsar timing, GPS, lunar laser ranging) passes by margins of 10⁴ to 10¹⁴. Strong-field deviations exist (near-horizon Shapiro, LIGO ringdown frequencies) but are below or at the edge of current measurement precision.
 
-### Cosmological wins — derived from A with no fitted parameters
+### Cosmological branch results (active research, less mature than items 1–14)
 
-15. **Bridge term FORM derived: `b = A_0 × c/H_0`.**
-    From STAM Shapiro integrated through a constant ambient cosmic A field, the integrated traversal-excess contribution along the photon path takes the form `Δd_L = b · z` with `b = A_0 · c/H_0`. The bridge term is now a STRUCTURAL relation (ambient A times Hubble length), not an opaque empirical parameter. **The numerical value A_0 = 0.0265 itself is calibrated, not derived from first principles** — it equals `b_historical / L_Hubble = 354.95 Mly / 13393 Mly` and inherits the empirical origin of the historical b. Upgrade: from "free empirical fit parameter" to "empirical cosmic ambient field strength × Hubble distance." A first-principles derivation of A_0 is open work.
+15. **Bridge term form derived: `b = A_0 × c/H_0`.**
+    From STAM Shapiro integrated through a constant ambient cosmic A field, the integrated traversal-excess contribution along the photon path takes the form `Δd_L = b · z` with `b = A_0 · c/H_0`. The structural relation is a STAM derivation; the numerical value `A_0 = 0.0265` is calibrated empirically (it equals `b_historical / L_Hubble = 354.95 Mly / 13393 Mly`). Upgrade in interpretation: the historical bridge term is now read as "cosmic ambient A field strength × Hubble distance" — a STAM-physical quantity rather than an opaque fit parameter. A first-principles derivation of A_0 is open work.
 
-16. **Hubble tension resolved at H_0 = 73 km/s/Mpc.**
-    Local distance-ladder measurements (SH0ES) directly measure H_0 = 73.04 at low z where photon-A accumulation along short paths is negligible. **This is the true H_0 in STAM.** Planck's H_0 = 67.4 is LCDM's *inference* from CMB acoustic-peak data, biased downward because LCDM has no photon-A term and absorbs the cumulative photon-A redshift over the z=1090 path into a downward H_0 shift. STAM keeps H_0 = 73 at all redshifts; no adjustment needed. The 5σ tension that has plagued cosmology for a decade is LCDM's incompleteness, not a measurement disagreement.
+16. **Hubble tension reading: STAM proposes H_0 = 73 km/s/Mpc at all redshifts.**
+    The local distance-ladder measurement (SH0ES, H_0 = 73.04) is adopted as STAM's value; in the framework, photon paths at low z carry negligible photon-A accumulation. The CMB-inferred value (Planck, H_0 = 67.4) is interpreted in STAM as the consequence of fitting LCDM (which has no photon-A term) to CMB acoustic-peak data, with the cumulative photon-A redshift over the z=1090 path absorbed into a downward H_0 shift. This is a proposed STAM interpretation of the well-known H_0 tension and is offered as an alternative reading; it is not a claim that the comparison framework is wrong about anything else.
 
-17. **Pantheon+ vs Union3 inter-catalog ΔM tension predicted within 27%.**
-    STAM's photon-A traversal-excess signature predicts +30 milimag offset between Pantheon+ and Union3 best-fit calibration zero-points (script 39); observed +38 milimag. Sign correct, magnitude within 27%. STAM correctly does NOT predict the much-larger Pantheon+ vs DES-Y5 offset (~110 milimag), consistent with that being a DES-specific instrumental systematic rather than a cosmological signal.
+17. **Pantheon+ vs Union3 inter-catalog ΔM offset matches the STAM photon-A signature.**
+    STAM's photon-A traversal-excess signature, weighted by each catalog's z-distribution, predicts +30 milimag offset between Pantheon+ and Union3 best-fit calibration zero-points (script 39). Observed: +38 milimag. Sign correct, magnitude within 27%. STAM does not predict the much-larger Pantheon+ vs DES-Y5 offset (~110 mmag), consistent with that being a DES-specific instrumental systematic separately discussed in the SN-cosmology literature.
 
 ### What this list explicitly does NOT contain
 
 - Galactic rotation curves — exploratory; the `A_collective ≈ 9.10e-7` calibration value referenced later **is** fitted and is labeled exploratory, not derived.
 - A first-principles STAM Lagrangian that produces the bold metric uniquely. The metric ansatz `g_rr = 1/[(1-A)(1-A²)²]` is committed; the underlying Lagrangian (scalar-tensor with non-minimal coupling, k-essence, or other modified-gravity structure) is open work.
-- Any free coefficient in items 1–17 above. There aren't any beyond `A_0 = 0.0265` (one empirical cosmological input — fewer than LCDM uses).
+- A first-principles derivation of A_0 = 0.0265. It is currently STAM's single empirical cosmological input, calibrated to the historical bridge term.
+- Any free coefficient in items 1–14. Items 15–17 use one empirical input (A_0).
 
-The chain from `A` and `g = (c^2/2) grad A` to items 1–17 above is closed: 17 results, one empirical input (A_0). (Items 1–14 are weak-field/strong-field/thermodynamics; 15–17 are cosmological commitments.)
-
-### STAM is a competing model, not a deviation from LCDM
-
-STAM predicts supernovae sit on a **flatter d_L(z) curve than LCDM**. STAM is matter-only Einstein-de Sitter cosmology with a small modification from V(A) = β/(1-A) generating photon-A traversal excess (TE) along the line of sight. The universe decelerates. There is no dark energy. **H_0 = 73 km/s/Mpc at all redshifts.**
-
-LCDM's apparent SN fit, dark-energy parameter Λ, and downward-pulled CMB H_0 = 67.4 are LCDM-internal consequences of LCDM missing the photon-A term — they are LCDM's adjustments forced by an incomplete model, not features of the universe. The 5σ Hubble tension is LCDM's incompleteness, not a measurement disagreement.
-
-When STAM-derived predictions and LCDM-fitted parameters diverge, the question is **which model is right**, not "STAM tested against LCDM and fell short." LCDM-fits-data is an LCDM-internal calibration, not a validation of LCDM as physics. STAM's competitive performance with one empirical cosmological parameter (vs LCDM's three) is the substantive standing.
+The chain from `A` and `g = (c^2/2) grad A` to items 1–14 is closed with no fitted parameters. Items 15–17 are cosmological-branch results that depend on the single empirical input A_0; they are working consistencies between STAM's proposed mechanism and available data, not yet claims to first-principles closure.
 
 ---
 
@@ -301,46 +290,36 @@ Lensing deflection:  M ≈ alpha c^2 b / 4G
 
 ---
 
-## STAM cosmological commitment
+## Cosmological branch — proposed interpretation, active research
 
-The cosmological branch is now committed to a definite bold position:
+The cosmological branch is the framework's least-settled territory and is offered as a proposed alternative interpretation of cosmological data, not as a refutation of the comparison framework. Active research as of this snapshot:
 
-1. **The universe is matter-only Einstein–de Sitter.** No dark energy as a separate component. The universe decelerates (q_0 > 0). Hubble flow at low z is `H = H_0 (1+z)^(3/2)` for matter-only. Einstein had it right; LCDM's Λ was inserted to fit observations whose cause was misidentified.
+1. **Background cosmology**: STAM proposes a matter-dominated Einstein–de Sitter background (no separate dark-energy component), with the apparent acceleration in supernova distance moduli interpreted as photon-A traversal excess (TE) accumulating along the cosmic line of sight rather than as accelerating expansion.
 
-2. **H_0 = 73.04 km/s/Mpc is the true Hubble constant** (SH0ES local distance ladder). At low z, photon paths are short and photon-A accumulation is negligible — the local measurement is unbiased.
+2. **H_0 = 73 km/s/Mpc** is adopted as STAM's value at all redshifts, taking the SH0ES local distance-ladder measurement as the framework's anchor. The gap to the CMB-LCDM-inferred H_0 = 67.4 is interpreted as the photon-A signature integrated over the cosmic path — STAM's proposed reading of the H_0 tension.
 
-3. **Dark energy is remitted as a misinterpretation of photon-A traversal excess (TE)** accumulating along the cosmic line of sight. What LCDM calls "Λ" is the cumulative effect of light traversing the cosmic A field; LCDM has no photon-A term, so it absorbs this geometric path effect into Λ to fit SN data. The "extra distance" at high z is actually extra TE accumulated by the photon — geometric, not dynamical.
+3. **V(A) = β/(1-A)** is STAM's cosmological-action form, selected by the structural requirement V → ∞ at A = 1 (boundary principle from the bubble picture). Calibrated by V'(A_0) = κρ_m,0 with one empirical input A_0 = 0.0265, the framework's predictions are consistent with:
+   - Pantheon+ d_L shape (competitive with LCDM)
+   - Pantheon+ vs Union3 small inter-catalog ΔM offset (predicted +30 mmag, observed +38 mmag)
+   - The locally-measured H_0 = 73 reading
 
-4. **The Hubble tension is resolved at H_0 = 73.** STAM keeps H_0 = 73 at all redshifts; no adjustment needed. Planck's H_0 = 67.4 is LCDM's *inference* — biased downward because LCDM lacks the photon-A term and absorbs the cumulative CMB-path photon-A redshift into a downward H_0 shift. The 5σ tension is LCDM's incompleteness; STAM does not have to make any adjustment.
+4. **Bridge term**: `b = A_0 × c/H_0` is the STAM-derived FORM (Shapiro through constant ambient A). With A_0 = 0.0265, this reproduces the historical empirical bridge value b = 354.95 Mly.
 
-5. **One cosmic A field, structure-dependent line-of-sight integration**, explains all three observables (low-z H_0 unbiased, SN dark-energy-equivalent dimming as TE, CMB-inferred H_0 tension as integrated TE bias). The simple constant-A quantitative version was tested against BAO and falsified at 22σ; the structure-dependent path-integration version is the open path forward.
-
-### Predictions from V(A) = β/(1-A) that hold up against data
-
-V(A) = β/(1-A) is STAM's cosmological-action form, selected by structural requirement V → ∞ at A = 1 (boundary principle from bubble picture and water-tank ontology). Calibrated by V'(A_0) = κ ρ_m,0 with **one empirical input A_0 = 0.0265**, the framework generates the following predictions — all of which hold up:
-
-- **Bridge term form `b = A_0 · c/H_0`** — derived from STAM Shapiro through constant ambient A. With A_0 = 0.0265, this gives b = 354.95 Mly, matching the historical empirical bridge value exactly.
-
-- **Pantheon+ d_L(z) shape matches data competitively with LCDM** — STAM beats LCDM by Δχ² = -3.8 on Pantheon+, using one empirical cosmological parameter (A_0) versus LCDM's three (Ω_m, H_0, Ω_Λ via flatness).
-
-- **Pantheon+ vs Union3 inter-catalog ΔM tension** — STAM predicts +30 mmag from photon-A LoS-weighting through different z-distributions; observed +38 mmag. **27% match in magnitude with correct sign — a genuine STAM prediction validated against data that LCDM has no explanation for.**
-
-- **DES Y5 anomaly correctly NOT predicted** — STAM's photon-A signature predicts only +14 mmag for Pantheon+ vs DES-Y5; observed -110 mmag. STAM correctly identifies this as instrumental (DES-Y5 zero-point calibration), not cosmological. **STAM correctly distinguishing cosmological signal from instrumental systematic is itself a validation.**
-
-- **Hubble tension at H_0 = 73 km/s/Mpc** — STAM keeps H_0 = 73 throughout. LCDM has to adjust H_0 downward to 67.4 to fit CMB because LCDM lacks the photon-A term. The 5σ tension is LCDM's incompleteness; STAM resolves it structurally with no adjustment.
-
-V(A) = β/(1-A) is **a data-validated STAM physical law**, on equal epistemic footing with any other physics-law form that has passed its tests — Maxwell, GR, Schrödinger all started as postulates that became laws by surviving data tests.
+5. **Single empirical input**: A_0 = 0.0265, calibrated to the historical bridge term. STAM's cosmological branch carries fewer empirical inputs than the standard cosmological model, which is part of why its competitive performance on the data tests above is worth recording.
 
 ### Forward-falsifiable predictions
 
-STAM predicts supernovae at z > 2 (JWST, Roman, Rubin) will sit slightly closer to EdS than LCDM extrapolation predicts. The d_L(z) curve flattens with respect to LCDM at high z. Future SN samples will sharpen this divergence and test STAM directly.
+- **High-z SN samples** (z > 2 with JWST, Roman, Rubin): STAM predicts a slightly flatter d_L(z) curve than LCDM extrapolation. Future high-z SN samples will distinguish.
+- **Structure-dependent line-of-sight TE integration**: photons through real cosmic structure (galaxies, clusters, voids) are the natural refinement of the homogeneous-A picture; quantitative model open.
+- **Direct BAO test of V(A) modified Friedmann**: outstanding work item. (Note: an earlier polynomial extrapolation, the SU spreadsheet, was tested against DESI BAO and quarantined as not part of the V(A) framework — see below.)
+- **First-principles derivation of A_0**: open work. The numerical match A_0 ≈ 1/(12π) is suggestive and may point at deeper structure tied to the field-equation Lagrangian (F3) work.
 
-### Active development areas (where STAM and LCDM diverge most)
+### Honest cosmological caveats
 
-- **High-z SN samples** (z > 2): STAM predicts flatter curve; LCDM predicts continued acceleration. Distinguishable by future surveys.
-- **BAO standard-ruler integration with V(A) cosmology directly**: the SU spreadsheet's polynomial extrapolation (since quarantined) was a separate exercise; V(A) modified Friedmann has not yet been formally BAO-tested.
-- **Structure-dependent line-of-sight TE integration**: the photon path through real cosmic structure (galaxies, clusters, voids) is the natural quantitative refinement of the homogeneous-A picture.
-- **First-principles derivation of A_0**: A_0 is currently STAM's single empirical cosmological coupling. Whether it is fundamental (like c, ℏ, G) or derivable from a deeper STAM principle is open.
+- The cosmological branch is **less mature** than the strong-field branch.
+- A_0 is **calibrated**, not yet derived; the structural relation `b = A_0 × c/H_0` is what's STAM-derived.
+- The simple constant-A polynomial spreadsheet exercise (the "SU formula") was tested against DESI BAO, was found not to fit, and has been quarantined; it is not part of the V(A) cosmological commitment.
+- A first-principles STAM Lagrangian that uniquely fixes the bold metric and the cosmological dynamics is open work.
 
 ### Distance is not assumed to equal catalog values
 
@@ -701,18 +680,22 @@ Internal consistency derived in:
     Hawking evaporation dynamics           (10^67 yr for solar-mass; matches textbook)
     Generalized second law                 (+1/3 surplus, matches standard)
 
-Cosmological commitment: bold STAM cosmology
-    Universe is matter-only Einstein-de Sitter. No dark energy.
-    H_0 = 73 km/s/Mpc (SH0ES local) is the true value at all z.
-    LCDM-CMB H_0 = 67.4 is LCDM's biased inference (missing photon-A term).
-    Hubble tension RESOLVED structurally: STAM does not have to adjust;
-        LCDM does, because it lacks the photon-A term.
-    Dark energy remitted as photon-A traversal excess (TE) along LoS.
-    Bridge term FORM b = A_0 * c/H_0 derived from STAM Shapiro
-        (A_0 = 0.0265 is calibrated to historical b, not yet derived).
-    Pantheon+ vs Union3 inter-catalog tension predicted within 27%.
-    Simple-A quantitative version fails BAO; structure-dependent
-        TE path-integration is the open quantitative path forward.
+Cosmological branch (proposed interpretation, active research):
+    Background: matter-dominated Einstein-de Sitter, no separate dark-energy
+        component; apparent acceleration interpreted as photon-A traversal
+        excess (TE) along the line of sight.
+    H_0 = 73 km/s/Mpc adopted from SH0ES local distance ladder;
+        the gap to CMB-LCDM H_0 = 67.4 is interpreted as the integrated
+        photon-A signature over the cosmic path (STAM's reading of the
+        well-known H_0 tension; offered as an alternative interpretation).
+    V(A) = beta/(1-A) cosmological-action form; one empirical input
+        A_0 = 0.0265 (calibrated to historical bridge term).
+    Bridge term FORM b = A_0 * c/H_0 derived from STAM Shapiro through
+        constant ambient A; numerical A_0 is calibrated, not derived.
+    Pantheon+ vs Union3 small inter-catalog tension predicted within 27%.
+    Cosmological branch is less mature than strong-field branch;
+        structure-dependent TE path-integration and direct V(A) BAO test
+        are open work.
 
 Galaxy rotation remains exploratory.
 Quantum interpretation: resolved/unresolved framework grounded by Hawking derivation.
@@ -747,7 +730,7 @@ Closed or substantially advanced:
     [PARTIAL] Develop the resolved/unresolved quantum interpretation
              (now grounded by Hawking thermodynamic derivation)
 
-Active / open (development on a competing framework, not patches to LCDM):
+Active / open:
     1. Specify bold-STAM field equations                   (F3 exposed this gap)
        The metric ansatz g_rr = 1/[(1-A)(1-A^2)^2] is committed; the
        Lagrangian or modified-gravity theory that picks it out uniquely
@@ -755,13 +738,14 @@ Active / open (development on a competing framework, not patches to LCDM):
        consistent with Einstein gravity coupled to canonical scalar for
        any V(A); the framework requires non-canonical kinetic term,
        non-minimal coupling, or modified-gravity sector.
-    2. Run V(A) = β/(1-A) modified Friedmann directly      (BAO not yet tested for V(A) itself)
-       through DESI BAO at all z. (Earlier BAO test used the now-quarantined
-       SU polynomial, not the V(A) cosmology.) STAM predicts BAO with
-       structure-dependent A_LoS; quantitative comparison open.
+    2. Run V(A) = β/(1-A) modified Friedmann directly through DESI BAO
+       at all z. (An earlier polynomial extrapolation, now quarantined,
+       was tested separately and is not part of the V(A) framework.)
+       The structure-dependent A_LoS treatment is the expected refinement.
     3. Structure-dependent TE path-integration cosmology   (open)
        The path-integrated A through actual cosmic structure (galaxies,
-       clusters, voids) is the natural cosmological refinement.
+       clusters, voids) is the natural cosmological refinement of the
+       homogeneous-A picture.
     4. Dynamical-A propagation / gravitational waves       (LIGO inspiral comparison)
     5. Quasinormal mode frequencies for merger ringdown    (next-gen LIGO testable)
     6. Real mass closure across acceleration, lensing,
@@ -772,19 +756,16 @@ Active / open (development on a competing framework, not patches to LCDM):
     9. Dynamical collapse: rigorous proof that bold-STAM
        collapse never transiently forms a strict trapped
        surface during dynamics                             (F1 exposed this)
-   10. Derivation of A_0 from STAM principles              (currently calibrated to bridge)
-       1/(12*pi) = 0.02653 matches A_0 = 0.02651 to 4 sig figs (factors
-       of 4 pi from Q8 thermal-bridge plausible). First-principles
-       derivation likely tied to F3 Lagrangian work (item 1).
+   10. First-principles derivation of A_0                  (currently calibrated to bridge)
+       1/(12*pi) = 0.02653 matches A_0 = 0.02651 to 4 sig figs.
+       Likely tied to F3 Lagrangian work (item 1).
 
-Distance:
-    H_0 = 73 km/s/Mpc committed as the true Hubble constant.
-    Hubble tension resolved structurally: STAM does not adjust;
-        LCDM has to adjust H_0 down to fit CMB because it lacks photon-A.
-    Dark energy is remitted as photon-A traversal excess (TE) along LoS,
-        misinterpreted by LCDM as cosmic acceleration.
-    SN sit on a flatter d_L curve than LCDM at high z;
-        future high-z surveys will distinguish.
+Cosmological branch summary:
+    Proposed interpretation: matter-dominated EdS background, photon-A
+    traversal excess (TE) along the line of sight as the proposed
+    physical reading of dark-energy-equivalent SN dimming and the
+    well-known H_0 tension. STAM adopts H_0 = 73 km/s/Mpc at all z.
+    Active research; less mature than the strong-field branch.
 ```
 
 ---
