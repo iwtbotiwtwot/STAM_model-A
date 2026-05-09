@@ -198,17 +198,7 @@ For spinning bubbles, T(theta) is non-uniform along the bubble: equator at T_Sch
 
 The cosmological structure is now closed with one structural commitment and one calibrated parameter:
 
-**Structural commitment:**
 
-```text
-A_0 = 1 / (12 pi)
-    = 1 / (4 pi  x  3)
-    = 1 / [ (thermal prefactor)  x  (spatial dimensionality) ]
-```
-
-A_0 is the cosmic vacuum minimum of the V(A) potential. It is not a calibrated parameter; it follows from the structural decomposition (4 pi from Q8/Q10 thermodynamics, 3 from spatial dimensions). The numerical match to the historical bridge term is 0.04%.
-
-**V(A) potential (asymmetric two-pole, V_3):**
 
 ```text
 V(A) = alpha / A  +  beta / (1 - A)
