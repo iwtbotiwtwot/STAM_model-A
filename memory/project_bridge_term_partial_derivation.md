@@ -8,7 +8,7 @@ type: project
 
 The historical bridge term `b ≈ 354.95 Mly` has the right *form* to be a STAM-native consequence. Specifically:
 
-For light traversing distance d through a region with constant ambient A field A_0, STAM Shapiro/path-slowing gives:
+For light traversing distance d through a region with constant ambient A field A_0, the SU/photon-A path-stretching gives:
 ```text
 extra apparent distance = A_0 × d
 ```
@@ -17,6 +17,10 @@ For source at Hubble distance d = L z:
 extra distance = A_0 × L × z
 ```
 This is z-linear with coefficient `b = A_0 × L`. The historical bridge has exactly this form.
+
+**Clean separation: traversal-only, no clock-rate piece.** The derivation above uses only the photon path-stretching effect from `g_rr` (light geodesic in the modified metric gives `dt/dr = (1/c)(1+A)` to first order in A; the excess `(1/c) × A` integrated along the path gives the formula). The clock-rate effect from `g_tt` (`dτ/dt = √(1−A)`) is a *separate* effect that applies when comparing clock readings at different A values. For a homogeneous cosmic ambient A_0, source and receiver sit at the same A_0 and the clock-rate effect cancels identically by symmetry. So the bridge term derived here is the traversal piece only — there is no implicit clock contribution and no double-counting risk in the framework's current usage.
+
+**Terminology note.** When the formula `Δt = (1/c) ∫ A ds` appears in the framework, treat it as the SU/photon-A path-stretching contribution. Numerical equivalence to the standard GR Shapiro formula in localized-mass tests (script 07) is by construction (A defined as 2GM/c²r), and the GR formula's commonly-cited "geometric + clock" decomposition is not a real partition of the measured round-trip travel time — that measured quantity is purely path-stretching against a single observer clock. Keep "Shapiro" for explicit GR-comparison contexts; prefer "SU traversal" or "path-stretching" when describing the Model-A piece.
 
 Inverting:
 ```text

@@ -60,7 +60,17 @@ Purpose:
   Test path accumulation:
     Δt=(1/c)∫A ds
   and preserve the local-c distinction:
-    apparent delay comes from extra traversal load, not local light slowing.
+    apparent delay comes from extra traversal load (SU/photon-A
+    path-stretching from g_rr), not local light slowing.
+
+Clean separation: the formula above computes the path-stretching piece
+only. The clock-rate effect from g_tt (dτ/dt = √(1-A)) is a SEPARATE
+effect that applies when comparing clock readings at different A values.
+For a localized-mass round-trip Shapiro test (single observer clock at
+both ends), the clock-rate effect cancels between start and end of the
+round trip, so the measured Δt is purely path-stretching. Numerical
+equivalence to standard GR Shapiro is by construction (A defined as
+2GM/c²r) — no double-counting.
 """
 
 def shapiro_asinh_delay(mass_kg: float, impact_m: float, r1_m: float, r2_m: float) -> float:

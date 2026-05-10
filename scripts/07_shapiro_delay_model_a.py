@@ -11,6 +11,17 @@ For a straight path with impact parameter b_imp near a spherical mass:
     Delta t = (2GM/c^3) [asinh(x2/b_imp) - asinh(x1/b_imp)]
 
 This reproduces the first-order weak-field logarithmic Shapiro structure.
+
+Interpretation in Model-A: the formula computes the SU/photon-A
+path-stretching (g_rr piece) along the light geodesic. The clock-rate
+effect from g_tt (dtau/dt = sqrt(1-A)) is a separate effect and does NOT
+appear in this calculation. The standard GR "Shapiro delay" measured as
+round-trip travel time observed by one Earth clock is also pure
+path-stretching (the Earth clock's rate cancels between start and end of
+the round trip), so the numerical equivalence here is real, not a
+double-count. Model-A's "Shapiro" interpretation of the same number is
+the SU traversal load through the A field; A was defined as 2GM/c^2r so
+that integral A ds matches the standard GR Shapiro coefficient.
 """
 
 from __future__ import annotations

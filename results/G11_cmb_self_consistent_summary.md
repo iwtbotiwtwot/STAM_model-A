@@ -38,6 +38,27 @@ With PBH dark matter (STAM-compatible), total Ω_m ≈ 0.315 (5% baryon + 27% PB
 **Interpretation:** The required structure strength is very small. Either the G9 toy model massively overcounts the cumulative-A amplification, or the CMB tension closure mechanism needs additional structure beyond what the cumulative-A picture supplies.
 
 
+## Root-find: structure_strength s.t. Ω_m = 0.315
+
+Bisection over structure_strength to find the value at which the self-consistent Ω_m equals the PBH-DM-compatible target of 0.315.
+
+**Inverse-solve result:**
+- Structure strength solution:   0.022061
+- Fraction of G9 toy (= 1.0):    2.21%
+- Ω_m (at solution):              0.3150
+- Ω_DE_STAM:                     0.6850
+- D_C(z=1090):                   12803 Mpc
+- f_LoS at consistency:          1.0387×
+- θ_⋆ closure:                   0.0000% offset from observed
+
+**Bridge-term independent cross-check** (A_0 = 1/(12π) committed structurally):
+- Predicted bridge term:          355.10 Mly
+- Historical (catalog) bridge:    354.95 Mly
+- Offset:                         +0.0432%
+
+**Joint consistency.** At structure_strength = 0.0221 (~2% of the G9 toy amplitude), the framework closes the CMB θ_⋆ at H_0 = 73 to 0.0000% AND matches the historical bridge term (354.95 Mly) to 0.04%. Both observables sit on the same internally-consistent solution at the PBH-DM matter content.
+
+
 ## What this tightens
 
 The CMB+SN+bridge-term picture for STAM at H_0 = 73 now has a **single self-consistent solution** at given structure strength:

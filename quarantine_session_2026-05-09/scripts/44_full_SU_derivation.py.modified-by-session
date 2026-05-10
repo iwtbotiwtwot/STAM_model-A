@@ -1,0 +1,256 @@
+"""
+Script 44 - Full derivation of Sean's SU formula
+
+QUARANTINED (post-G7/G8): the closed-form cosmology this script derives
+(H(z) = H_0(1+z)^(2-A)) was tested by script 45 against DESI BAO and
+rejected at 22 sigma. It is NOT a STAM cosmological prediction. See:
+  memory/project_SU_cosmological_formula.md
+The current Model-A cosmology is V_3 modified Friedmann (G7/G8/G8a-c).
+This script is preserved as historical record; do not use its closed
+form or the implied w_eff = (1-2A)/3 in current STAM analyses.
+
+Result:
+  Sean's truncated polynomial SU(z) = (c/H_0) * z * (1 + A * z / 2)
+  is the small-z Taylor expansion of the EXACT closed-form
+
+      d_L(z) = (c / H_0) * (1+z)/(1-A) * [1 - (1+z)^(-(1-A))]
+
+  which corresponds to a Hubble parameter
+
+      H(z) = H_0 * (1+z)^(2-A)
+
+  which corresponds to an effective barotropic fluid with equation of state
+
+      w_eff = (1 - 2A) / 3
+
+Verification path:
+  1. Take H(z) = H_0 (1+z)^(2-A_local) with A_local = 3/10.
+  2. Integrate to get d_L(z) closed form.
+  3. Taylor expand to z^2 -- recover Sean's coefficients exactly.
+  4. Compute residuals against Pantheon+ -- compare to Sean's truncated form
+     (the closed form should match data BETTER at higher z).
+  5. State the open derivation: deriving w_eff = (1 - 2A)/3 from a STAM
+     Lagrangian.
+"""
+
+from __future__ import annotations
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from pathlib import Path
+
+C_KMS = 299792.458
+H0 = 73.05
+A_LOCAL = 3.0/10.0
+D_H_Mpc = C_KMS / H0
+
+# ==================================================================
+# Sean's truncated polynomial (z^2 expansion)
+# ==================================================================
+def SU_Sean(z):
+    return D_H_Mpc * z * (1.0 + A_LOCAL * z / 2.0)
+
+# ==================================================================
+# The closed form: d_L(z) = (c/H_0)*(1+z)/(1-A) * [1 - (1+z)^-(1-A)]
+# from H(z) = H_0 (1+z)^(2-A)
+# ==================================================================
+def SU_full(z, A):
+    one_minus_A = 1.0 - A
+    return D_H_Mpc * (1.0 + z) / one_minus_A * (1.0 - (1.0 + z)**(-one_minus_A))
+
+# ==================================================================
+# Verify Taylor expansion matches Sean
+# Expand (1+z)^(-(1-A)) = 1 - (1-A)z + (1-A)(2-A)z^2/2 - ...
+# 1 - (1+z)^(-(1-A)) = (1-A)z - (1-A)(2-A)z^2/2 + ...
+# divide by (1-A): z - (2-A)z^2/2 + (3-A)(2-A)z^3/6 - ...
+# multiply by (1+z): z + z^2 - (2-A)z^2/2 + ... = z + (1 - (2-A)/2)z^2 + ...
+#                  = z + ((2 - (2-A))/2)z^2 + ... = z + (A/2)z^2 + ...
+# So d_L(z) = (c/H_0) * [z + A*z^2/2 + (cubic) + ...]
+# Confirmed. Sean's formula is the exact z + A*z^2/2 truncation.
+# ==================================================================
+
+print("=" * 72)
+print("Closed-form derivation of Sean's SU formula")
+print("=" * 72)
+print(f"H_0     = {H0} km/s/Mpc")
+print(f"A_local = {A_LOCAL} = 3/10")
+print()
+print(f"H(z) = H_0 * (1+z)^(2 - A_local) = H_0 * (1+z)^({2-A_LOCAL:.2f})")
+print(f"d_L(z) = (c/H_0) * (1+z)/(1-A_local) * [1 - (1+z)^(-(1-A_local))]")
+print(f"       = (c/H_0) * (1+z)/{1-A_LOCAL:.2f} * [1 - (1+z)^({-(1-A_LOCAL):.2f})]")
+print()
+
+# Verify match between Sean's truncated polynomial and the closed form
+z = np.linspace(0.001, 2.5, 600)
+SU_Sean_vals = SU_Sean(z)
+SU_full_vals = SU_full(z, A_LOCAL)
+print(f"Match between Sean's truncated polynomial and closed form:")
+print(f"  At z = 0.30:  Sean = {SU_Sean(0.30):.2f},  closed-form = {SU_full(0.30, A_LOCAL):.2f}, diff = {SU_full(0.30, A_LOCAL) - SU_Sean(0.30):+.4f} Mpc")
+print(f"  At z = 1.00:  Sean = {SU_Sean(1.00):.2f},  closed-form = {SU_full(1.00, A_LOCAL):.2f}, diff = {SU_full(1.00, A_LOCAL) - SU_Sean(1.00):+.4f} Mpc")
+print(f"  At z = 2.00:  Sean = {SU_Sean(2.00):.2f},  closed-form = {SU_full(2.00, A_LOCAL):.2f}, diff = {SU_full(2.00, A_LOCAL) - SU_Sean(2.00):+.4f} Mpc")
+print()
+print("(The closed form predicts SLIGHTLY shorter d_L than Sean's truncated polynomial at high z,")
+print(" because Sean's polynomial drops the z^3 and higher terms.)")
+
+# ==================================================================
+# Implied effective barotropic fluid
+# H(z) = H_0 (1+z)^p with p = 2 - A_local
+# Implies rho_eff ~ a^(-2p) = a^(-(4-2A))
+# Standard barotropic: rho ~ a^(-3(1+w))
+# So 3(1+w) = 4 - 2A, w = (1 - 2A)/3
+# ==================================================================
+print("=" * 72)
+print("Implied effective fluid")
+print("=" * 72)
+w_eff = (1.0 - 2*A_LOCAL) / 3.0
+print(f"  H(z) = H_0 * (1+z)^(2 - A_local)")
+print(f"       Hubble exponent p = 2 - A = {2 - A_LOCAL:.2f}")
+print(f"  Implied effective fluid:")
+print(f"     rho_eff ~ a^(-2p) = a^({-(4 - 2*A_LOCAL):.2f})")
+print(f"     Equation of state w_eff = (1 - 2A)/3 = {w_eff:.4f}")
+print(f"  For A_local = 3/10:  w_eff = (1 - 6/10)/3 = 4/30 = 2/15 ~ 0.133")
+print()
+print(f"The 'thirds' spectrum of equations of state:")
+print(f"   A = 0:    w = 1/3      (pure radiation)")
+print(f"   A = 1/3:  w = 1/9      (between matter and radiation)")
+print(f"   A = 3/10: w = 2/15     (Sean's calibrated cosmic ambient)")
+print(f"   A = 1/2:  w = 0        (pure matter / dust)")
+print(f"   A = 2/3:  w = -1/9     (negative pressure)")
+print(f"   A = 1:    w = -1/3     (curvature / cosmic strings)")
+print()
+
+# ==================================================================
+# Compare to LCDM and to Pantheon
+# ==================================================================
+def d_L_LCDM(z, H0_used):
+    z_grid = np.linspace(0.0, z.max()*1.05, 8000)
+    a = 1.0/(1.0+z_grid)
+    Om = 0.315; Or = 9.2e-5; OL = 1 - Om - Or
+    h2 = Om*a**-3 + Or*a**-4 + OL
+    inv_h = 1.0/np.sqrt(h2)
+    DC_grid = (C_KMS/H0_used) * np.concatenate([[0.0],
+              np.cumsum(0.5*(inv_h[1:]+inv_h[:-1])*np.diff(z_grid))])
+    return (1.0+z) * np.interp(z, z_grid, DC_grid)
+
+def d_L_EdS(z, H0_used):
+    return (2*C_KMS/H0_used) * (1+z) * (1 - 1/np.sqrt(1+z))
+
+# load Pantheon
+DATA = Path('data')
+pantheon = pd.read_csv(DATA/'pantheon.csv')
+mask = (pantheon['IS_CALIBRATOR']==0) & (pantheon['zCMB']>0.01)
+zP = pantheon[mask]['zCMB'].values
+muP = pantheon[mask]['MU_SH0ES'].values
+muPe = pantheon[mask]['MU_SH0ES_ERR_DIAG'].values
+
+# Predict mu for each model, fit DeltaM
+def predict_mu(z_obs, dL_func):
+    return 5.0*np.log10(dL_func(z_obs)) + 25.0
+
+def fit_DeltaM(mu_obs, mu_err, mu_model):
+    w = 1.0/mu_err**2
+    DeltaM = np.sum(w*(mu_obs - mu_model)) / np.sum(w)
+    resid = mu_obs - (mu_model + DeltaM)
+    chi2 = np.sum(w * resid**2)
+    rmse = np.sqrt(np.mean(resid**2))
+    return DeltaM, resid, chi2, rmse
+
+mu_full = predict_mu(zP, lambda z: SU_full(z, A_LOCAL))
+mu_sean = predict_mu(zP, SU_Sean)
+mu_lcdm = predict_mu(zP, lambda z: d_L_LCDM(z, H0))
+mu_eds  = predict_mu(zP, lambda z: d_L_EdS(z, H0))
+
+dM_full,  res_full,  chi2_full,  rmse_full  = fit_DeltaM(muP, muPe, mu_full)
+dM_sean,  res_sean,  chi2_sean,  rmse_sean  = fit_DeltaM(muP, muPe, mu_sean)
+dM_lcdm,  res_lcdm,  chi2_lcdm,  rmse_lcdm  = fit_DeltaM(muP, muPe, mu_lcdm)
+dM_eds,   res_eds,   chi2_eds,   rmse_eds   = fit_DeltaM(muP, muPe, mu_eds)
+
+print("=" * 72)
+print("Pantheon+ fit comparison (H_0 = 73.05 fixed):")
+print("=" * 72)
+print(f"  Model                              RMSE      DeltaM    chi^2/dof")
+print(f"  Sean's truncated polynomial      {rmse_sean:.4f}   {dM_sean:+.4f}   {chi2_sean/(len(zP)-1):.4f}")
+print(f"  Closed-form (1+z)^(2-A)          {rmse_full:.4f}   {dM_full:+.4f}   {chi2_full/(len(zP)-1):.4f}")
+print(f"  EdS (matter-only flat)           {rmse_eds:.4f}   {dM_eds:+.4f}   {chi2_eds/(len(zP)-1):.4f}")
+print(f"  LCDM (Omega_m=0.315)             {rmse_lcdm:.4f}   {dM_lcdm:+.4f}   {chi2_lcdm/(len(zP)-1):.4f}")
+print()
+print(f"  Improvement closed-form vs truncated: delta(chi^2) = {chi2_full - chi2_sean:+.2f}")
+
+# ==================================================================
+# Plot
+# ==================================================================
+fig, axes = plt.subplots(2, 2, figsize=(13, 10))
+
+# (a) the d_L curves
+ax = axes[0,0]
+ax.plot(z, SU_Sean_vals, lw=2, ls='--', color='C0',
+        label="Sean's polynomial: (c/H)z(1 + 3z/20)")
+ax.plot(z, SU_full_vals, lw=2.5, color='C1',
+        label=f"Closed form: H = H0(1+z)^(2-A), A={A_LOCAL}")
+ax.plot(z, d_L_EdS(z, H0), lw=1.5, ls=':', color='C2', label='EdS (matter-only)')
+ax.plot(z, d_L_LCDM(z, H0), lw=1.5, ls='-.', color='k', label='LCDM (Om=0.315)')
+ax.set_xlabel('z'); ax.set_ylabel('d_L (Mpc)')
+ax.set_title("Sean's polynomial = Taylor expansion of closed-form")
+ax.legend(fontsize=9); ax.grid(alpha=0.3)
+
+# (b) ratio
+ax = axes[0,1]
+ax.plot(z, SU_full_vals / SU_Sean_vals, lw=2.5, color='C3')
+ax.axhline(1.0, color='gray', alpha=0.5)
+ax.set_xlabel('z'); ax.set_ylabel('ratio')
+ax.set_title('Closed-form / Sean polynomial (deviation from truncation)')
+ax.grid(alpha=0.3)
+
+# (c) effective EoS w(A)
+ax = axes[1,0]
+A_range = np.linspace(0, 1, 200)
+w_range = (1 - 2*A_range) / 3
+ax.plot(A_range, w_range, lw=2.5, color='C4')
+ax.axhline(0, ls=':', color='k', alpha=0.5, label='matter (w=0)')
+ax.axhline(1/3, ls=':', color='C2', alpha=0.5, label='radiation (w=1/3)')
+ax.axhline(-1, ls=':', color='C3', alpha=0.5, label='dark energy (w=-1)')
+ax.scatter([A_LOCAL], [w_eff], s=120, color='red', zorder=5,
+           label=f'A_local = 3/10, w = 2/15')
+ax.set_xlabel('cosmic ambient A'); ax.set_ylabel('w_eff')
+ax.set_title('Effective EoS implied by H(z) = H0(1+z)^(2-A)')
+ax.legend(fontsize=9); ax.grid(alpha=0.3)
+
+# (d) Pantheon residuals binned
+ax = axes[1,1]
+zbins = np.geomspace(0.011, 2.3, 22)
+zc = 0.5*(zbins[1:]+zbins[:-1])
+def bin_resid(z, r, w, edges):
+    means, sems = [], []
+    for i in range(len(edges)-1):
+        m = (z >= edges[i]) & (z < edges[i+1])
+        if m.sum() > 2:
+            wi = w[m]; ri = r[m]
+            mu = np.sum(wi*ri)/np.sum(wi)
+            sem = 1/np.sqrt(np.sum(wi))
+            means.append(mu); sems.append(sem)
+        else:
+            means.append(np.nan); sems.append(np.nan)
+    return np.array(means), np.array(sems)
+w_p = 1.0/muPe**2
+m_full, s_full = bin_resid(zP, res_full, w_p, zbins)
+m_sean, s_sean = bin_resid(zP, res_sean, w_p, zbins)
+m_lcdm, s_lcdm = bin_resid(zP, res_lcdm, w_p, zbins)
+ax.errorbar(zc, m_full, yerr=s_full, fmt='o-', color='C1', label=f'closed-form (RMSE={rmse_full:.3f})')
+ax.errorbar(zc, m_sean, yerr=s_sean, fmt='s--', color='C0', label=f"Sean's poly (RMSE={rmse_sean:.3f})")
+ax.errorbar(zc, m_lcdm, yerr=s_lcdm, fmt='x:', color='k', label=f'LCDM (RMSE={rmse_lcdm:.3f})')
+ax.axhline(0, color='gray', alpha=0.5)
+ax.set_xlabel('z'); ax.set_ylabel('binned residual (mag)')
+ax.set_title('Pantheon+ residuals (DeltaM marginalized)')
+ax.set_xscale('log'); ax.legend(fontsize=9); ax.grid(alpha=0.3)
+
+plt.suptitle(
+    f"STAM cosmological d_L from H(z) = H0(1+z)^(2-A) at A = 3/10, H0 = 73.05",
+    fontsize=12)
+plt.tight_layout(rect=[0, 0, 1, 0.96])
+
+outdir = Path('reports/script_44')
+outdir.mkdir(parents=True, exist_ok=True)
+plt.savefig(outdir/'full_SU_derivation.png', dpi=130, bbox_inches='tight')
+
+print(f"\nSaved: {outdir.resolve()}")
+print("=" * 72)

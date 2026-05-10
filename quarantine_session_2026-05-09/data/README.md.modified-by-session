@@ -1,0 +1,53 @@
+# data/
+
+Place input datasets here.
+
+## Files currently in this directory
+
+| File | Description |
+|---|---|
+| `pantheon.csv` | Pantheon+ SN catalog (1701 SNe, 47 columns including μ_SH0ES, errors, SALT2 covariances). Row order matches the cov file. |
+| `Pantheon+SH0ES_STAT+SYS.cov` | **Authoritative Pantheon+ stat+sys covariance** from [github.com/PantheonPlusSH0ES/DataRelease](https://github.com/PantheonPlusSH0ES/DataRelease). 1701×1701 matrix, format: header line N=1701 then N² floats one per line in row-major order. Row order matches `pantheon.csv` exactly. Use this for Mahalanobis χ² (apples-to-apples with the Union3 inverse covariance). |
+| `des.csv` | DES-Y5 SN catalog. |
+| `union3_bins.csv` | Union3 binned distances, 3 cols (bin, z, mb-as-μ). **Lacks per-bin errors** — superseded by the FITS file below for proper χ² use. |
+| `union3_with_errors.csv` | Union3 22 bins with z, μ, and per-bin σ extracted from the diagonal of the proper covariance. Inspectable CSV companion to the FITS. |
+| `mu_mat_union3_cosmo2_mu.fits` | **Authoritative Union3 data** from [github.com/rubind/union3_release](https://github.com/rubind/union3_release). 23×23 matrix: row 0 = z, col 0 = μ, inner 22×22 = inverse covariance C⁻¹. Use this for Mahalanobis χ² with full bin-to-bin correlations. |
+
+For Union3 χ² tests, prefer Mahalanobis form using the FITS inverse-covariance.
+Diagonal-only DIAG approximations from `union3_bins.csv` (with assumed flat σ)
+significantly inflate χ² because (a) the actual per-bin σ are ~0.09–0.34 mag
+(not 0.05) and (b) the bins have large off-diagonal covariance.
+
+## Layout note
+
+Recommended layout:
+
+```text
+data/
+├── pantheon/
+├── union3/
+├── des/
+├── bao/
+└── clocks/
+```
+
+Do not commit large or license-restricted datasets unless their license allows it. If datasets are not committed, add exact download instructions and checksums.
+
+For supernova template scripts, expected columns are one of:
+
+```text
+z, D_obs
+```
+
+or:
+
+```text
+z, mu
+```
+
+where `mu` is distance modulus. If `mu` is used, scripts convert to luminosity distance in Mpc and then to Mly using:
+
+```text
+D_Mpc = 10 ** ((mu - 25)/5)
+D_Mly = D_Mpc * 3.261563776
+```

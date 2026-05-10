@@ -2,7 +2,9 @@
 """
 33_bridge_term_b_from_ambient_A.py
 
-Bridge term b derived from STAM Shapiro through a constant ambient A field.
+Bridge term b derived from SU/photon-A path-stretching through a constant
+ambient A field. (Traversal piece only — clock effect cancels by symmetry
+in homogeneous A_0; see the "Clean separation" note below.)
 Author: Sean Brady / STAM Model-B continuation 2026-05-07
 
 Purpose:
@@ -11,12 +13,33 @@ Purpose:
 
 Insight:
     For light traversing distance d through a region with a constant ambient
-    A field A_0, the STAM Shapiro/path-slowing produces:
+    A field A_0, the SU/photon-A path-stretching produces:
         extra apparent distance = A_0 × d
     For a source at Hubble distance d = L z (where L = c/H_0 is the Hubble
     length used in STAM):
         extra apparent distance from constant A_0 = A_0 × L × z
     This is z-linear with coefficient `b = A_0 × L`.
+
+Clean separation: traversal-only, no clock-rate piece.
+    The derivation uses only the photon path-stretching effect from g_rr —
+    the light geodesic in the Model-A metric gives dt/dr = (1/c)(1+A) to
+    first order in A, so the excess (1/c) × A integrated along the path is
+    the formula. The clock-rate effect from g_tt (dtau/dt = sqrt(1-A)) is a
+    SEPARATE effect that applies when comparing clock readings at different
+    A values. For homogeneous cosmic ambient A_0, source and receiver sit
+    at the same A_0 and the clock-rate effect cancels identically by
+    symmetry. So there is no implicit clock contribution here and no
+    double-counting risk.
+
+Terminology:
+    When this script and its memory companion say "STAM Shapiro," it means
+    the SU/photon-A traversal contribution specifically. Numerical
+    equivalence to the standard GR Shapiro formula for localized-mass tests
+    (script 07) is by construction — A was defined as 2GM/c^2r so that
+    integral A ds matches the GR result for the round-trip travel time.
+    The GR formula's commonly-cited "geometric + clock" decomposition is
+    not a real partition of the measured round-trip time — that measured
+    quantity is purely path-stretching against a single observer clock.
 
     Setting b = 354.95 Mly (the historical fit value) and L = 13387 Mly:
         A_0 = b / L = 0.02651
@@ -348,7 +371,7 @@ def write_markdown(summary_df: pd.DataFrame, distance_df: pd.DataFrame, plot_pat
         "consequence of STAM physics. Specifically:\n"
         "\n"
         "For light traversing distance d through a region with constant ambient A field A_0, "
-        "STAM Shapiro/path-slowing gives:\n"
+        "the SU/photon-A path-stretching gives:\n"
         "```text\n"
         "extra travel time = (d/c) × A_0\n"
         "extra apparent distance = c × extra time = A_0 × d\n"
@@ -367,6 +390,19 @@ def write_markdown(summary_df: pd.DataFrame, distance_df: pd.DataFrame, plot_pat
         "\n"
         "**The functional form of b is derived from STAM physics. The specific value of A_0 is "
         "empirical (from catalog fitting) and not yet derived from first principles.**\n"
+        "\n"
+        "**Clean separation: traversal-only, no clock-rate piece.** The derivation uses only "
+        "the photon path-stretching effect from `g_rr` — the light geodesic in the Model-A "
+        "metric gives `dt/dr = (1/c)(1+A)` to first order in A, so the excess `(1/c) × A` "
+        "integrated along the path is the formula above. The clock-rate effect from `g_tt` "
+        "(`dτ/dt = √(1−A)`) is a *separate* effect that applies when comparing clock readings "
+        "at different A values. For homogeneous cosmic ambient `A_0`, source and receiver sit "
+        "at the same `A_0` and the clock-rate effect cancels identically by symmetry. So the "
+        "bridge term derived here is the traversal piece only — no implicit clock contribution, "
+        "no double-counting. Numerical equivalence to the standard GR Shapiro formula in "
+        "localized-mass tests (script 07) is by construction (A defined as 2GM/c²r); the GR "
+        "formula's commonly-cited 'geometric + clock' decomposition is not a real partition of "
+        "the measured round-trip time.\n"
     )
     md.append("## Quantitative summary\n")
     md.append(summary_df.to_markdown(index=False, floatfmt=".6g"))

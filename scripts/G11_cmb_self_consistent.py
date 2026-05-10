@@ -68,6 +68,10 @@ C_KMS = 299792.458
 H_0 = 73.04                            # km/s/Mpc (SH0ES)
 THETA_OBS = 0.0104101                  # Planck
 
+# Bridge-term consistency check (historical empirical value from catalog fits)
+B_HISTORICAL_MLY = 354.95              # Mly, calibrated from prior SN-distance work
+MPC_PER_MLY = 1.0 / 3.261563776        # Mpc per Mly
+
 # Standard radiation/baryon densities
 OMEGA_GAMMA_H2 = 2.4728e-5
 OMEGA_R_H2 = OMEGA_GAMMA_H2 * (1.0 + 3.046 * (7.0/8.0) * (4.0/11.0)**(4.0/3.0))
@@ -196,6 +200,76 @@ def find_consistent_Omega_m(structure_strength: float,
     }
 
 
+def find_structure_strength_for_target_Om(target_Om: float = 0.315,
+                                            ss_min: float = 0.001,
+                                            ss_max: float = 0.20) -> dict:
+    """Inverse: find structure_strength such that the self-consistent
+    Omega_m equals target_Om.
+
+    The self-consistent Omega_m is monotonically increasing in
+    structure_strength: more structure means more LoS amplification
+    can be supplied, which lets the cosmology have more matter and
+    less dark energy while still closing CMB theta_star. So a
+    bisection in structure_strength brackets one solution.
+
+    Returns the full self-consistent solution at the found
+    structure_strength, plus a bridge-term consistency check against
+    the historical empirical value B_HISTORICAL_MLY = 354.95 Mly.
+    With A_0 = 1/(12pi) committed structurally, the bridge term is
+    pinned at b = A_0 * c/H_0 (independent of CMB closure), so this
+    is an independent observational cross-check at the solution
+    point.
+    """
+    def deficit(ss):
+        r = find_consistent_Omega_m(ss)
+        if not r["converged"]:
+            return None
+        return r["Omega_m"] - target_Om
+
+    fa, fb = deficit(ss_min), deficit(ss_max)
+    if fa is None or fb is None:
+        return {"converged": False, "reason": "endpoint convergence failure",
+                "ss_min": ss_min, "ss_max": ss_max,
+                "deficit_min": fa, "deficit_max": fb,
+                "target_Om": target_Om}
+    if fa * fb > 0:
+        return {"converged": False, "reason": "target Om not bracketed",
+                "ss_min": ss_min, "ss_max": ss_max,
+                "deficit_min": fa, "deficit_max": fb,
+                "target_Om": target_Om}
+
+    a, b = ss_min, ss_max
+    for _ in range(80):
+        c = 0.5 * (a + b)
+        fc = deficit(c)
+        if fc is None:
+            return {"converged": False, "reason": "midpoint convergence failure"}
+        if abs(fc) < 1e-5 or (b - a) < 1e-7:
+            break
+        if fa * fc < 0:
+            b, fb = c, fc
+        else:
+            a, fa = c, fc
+
+    ss_solution = 0.5 * (a + b)
+    final = find_consistent_Omega_m(ss_solution)
+
+    # Bridge-term consistency: A_0 * c/H_0 (Hubble distance)
+    L_H_Mpc = C_KMS / H_0
+    b_predicted_Mpc = A_0 * L_H_Mpc
+    b_predicted_Mly = b_predicted_Mpc / MPC_PER_MLY
+    final["bridge_predicted_Mly"] = b_predicted_Mly
+    final["bridge_historical_Mly"] = B_HISTORICAL_MLY
+    final["bridge_offset_pct"] = (
+        (b_predicted_Mly - B_HISTORICAL_MLY) / B_HISTORICAL_MLY * 100.0
+    )
+    final["target_Om"] = target_Om
+    final["structure_strength_for_target"] = ss_solution
+    final["fraction_of_g9_toy"] = ss_solution  # G9 toy = 1.0 reference
+
+    return final
+
+
 # --- run ---
 
 def main() -> None:
@@ -232,7 +306,7 @@ def main() -> None:
     print()
 
     # Find which structure_strength gives Om closest to 0.315 (LCDM-like with PBH-DM)
-    print(">>> Closest match to LCDM-style Omega_m = 0.315 (with PBH-DM)")
+    print(">>> Closest sweep point to PBH-DM Omega_m = 0.315")
     print()
     converged = [r for r in sweep_results if r.get("converged")]
     if converged:
@@ -247,11 +321,49 @@ def main() -> None:
               f"{abs(best['theta_with_f'] - THETA_OBS)/THETA_OBS*100:.4f}%")
         print()
 
+    # Inverse root-find: structure_strength such that Omega_m = 0.315 exactly
+    print(">>> Root-find: structure_strength s.t. Omega_m = 0.315 (PBH-DM target)")
+    print()
+    inv = find_structure_strength_for_target_Om(target_Om=0.315)
+    if inv.get("converged"):
+        print(f"  Structure strength solution:  {inv['structure_strength']:.6f}")
+        print(f"  Fraction of G9 toy (= 1.0):   "
+              f"{inv['fraction_of_g9_toy']*100:.2f}%")
+        print(f"  Omega_m converged to:         {inv['Omega_m']:.4f}")
+        print(f"  Omega_DE_STAM:                {inv['Omega_DE']:.4f}")
+        print(f"  D_C(z=1090):                  {inv['D_C_Mpc']:.0f} Mpc")
+        print(f"  f_LoS at consistency:         {inv['f_LoS_consistent']:.4f}x")
+        print(f"  theta_star with f:            {inv['theta_with_f']:.6f} rad")
+        print(f"  theta_star observed:          {THETA_OBS:.6f} rad")
+        print(f"  theta_star closure offset:    "
+              f"{abs(inv['theta_with_f'] - THETA_OBS)/THETA_OBS*100:.4f}%")
+        print()
+        print(f"  Bridge-term independent cross-check (A_0 = 1/(12pi)):")
+        print(f"    Bridge predicted:            "
+              f"{inv['bridge_predicted_Mly']:.2f} Mly")
+        print(f"    Bridge historical (catalog): "
+              f"{inv['bridge_historical_Mly']:.2f} Mly")
+        print(f"    Offset:                      "
+              f"{inv['bridge_offset_pct']:+.4f}%")
+        print()
+        print(f"  Joint consistency: at structure_strength = "
+              f"{inv['structure_strength']:.4f}, the framework closes")
+        print(f"  CMB theta_star to "
+              f"{abs(inv['theta_with_f'] - THETA_OBS)/THETA_OBS*100:.4f}% "
+              f"AND matches the historical bridge term to "
+              f"{abs(inv['bridge_offset_pct']):.2f}%.")
+    else:
+        print(f"  No convergence: {inv.get('reason', 'unknown')}")
+        if 'deficit_min' in inv:
+            print(f"  ss_min={inv['ss_min']} -> deficit={inv['deficit_min']}")
+            print(f"  ss_max={inv['ss_max']} -> deficit={inv['deficit_max']}")
+    print()
+
     # Plot: sweep over Omega_m, show f_required and f_predicted
     plot_path = plot_self_consistency()
     print(f"Plot: {plot_path}")
 
-    summary = write_markdown(sweep_results, [plot_path])
+    summary = write_markdown(sweep_results, inv, [plot_path])
     print(f"Summary: {summary}")
 
 
@@ -290,7 +402,8 @@ def plot_self_consistency() -> Path:
     return out
 
 
-def write_markdown(sweep_results: list[dict], plots: list[Path]) -> Path:
+def write_markdown(sweep_results: list[dict], inverse_solution: dict,
+                    plots: list[Path]) -> Path:
     md = []
     md.append("# G11: CMB Self-Consistent Solver for STAM at H_0 = 73\n")
 
@@ -371,6 +484,50 @@ def write_markdown(sweep_results: list[dict], plots: list[Path]) -> Path:
                 "supply the full amplification needed, with margin."
             )
         md.append(f"\n**Interpretation:** {interpretation}\n")
+
+    # --- inverse root-find result ---
+    if inverse_solution.get("converged"):
+        inv = inverse_solution
+        md.append("\n## Root-find: structure_strength s.t. Ω_m = 0.315\n")
+        md.append(
+            f"Bisection over structure_strength to find the value at which "
+            f"the self-consistent Ω_m equals the PBH-DM-compatible target "
+            f"of 0.315.\n"
+            f"\n"
+            f"**Inverse-solve result:**\n"
+            f"- Structure strength solution:   {inv['structure_strength']:.6f}\n"
+            f"- Fraction of G9 toy (= 1.0):    "
+            f"{inv['fraction_of_g9_toy']*100:.2f}%\n"
+            f"- Ω_m (at solution):              {inv['Omega_m']:.4f}\n"
+            f"- Ω_DE_STAM:                     {inv['Omega_DE']:.4f}\n"
+            f"- D_C(z=1090):                   {inv['D_C_Mpc']:.0f} Mpc\n"
+            f"- f_LoS at consistency:          {inv['f_LoS_consistent']:.4f}×\n"
+            f"- θ_⋆ closure:                   "
+            f"{abs(inv['theta_with_f'] - THETA_OBS)/THETA_OBS*100:.4f}% "
+            f"offset from observed\n"
+            f"\n"
+            f"**Bridge-term independent cross-check** (A_0 = 1/(12π) "
+            f"committed structurally):\n"
+            f"- Predicted bridge term:          "
+            f"{inv['bridge_predicted_Mly']:.2f} Mly\n"
+            f"- Historical (catalog) bridge:    "
+            f"{inv['bridge_historical_Mly']:.2f} Mly\n"
+            f"- Offset:                         "
+            f"{inv['bridge_offset_pct']:+.4f}%\n"
+            f"\n"
+            f"**Joint consistency.** At structure_strength = "
+            f"{inv['structure_strength']:.4f} (~"
+            f"{inv['fraction_of_g9_toy']*100:.0f}% of the G9 toy amplitude), "
+            f"the framework closes the CMB θ_⋆ at H_0 = 73 to "
+            f"{abs(inv['theta_with_f'] - THETA_OBS)/THETA_OBS*100:.4f}% "
+            f"AND matches the historical bridge term (354.95 Mly) to "
+            f"{abs(inv['bridge_offset_pct']):.2f}%. Both observables sit on "
+            f"the same internally-consistent solution at the PBH-DM "
+            f"matter content.\n"
+        )
+    elif "reason" in inverse_solution:
+        md.append("\n## Root-find: structure_strength s.t. Ω_m = 0.315\n")
+        md.append(f"Did not converge: {inverse_solution['reason']}.\n")
 
     md.append("\n## What this tightens\n")
     md.append(

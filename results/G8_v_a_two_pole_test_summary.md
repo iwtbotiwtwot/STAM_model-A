@@ -54,8 +54,8 @@ The A_0 cosmic-baseline LoS closes part of the H_0 tension. Specifically:
 - **V₃ (asymmetric two-pole): viable.** Two parameters (alpha, beta) with alpha/beta fixed by A_0 = 1/(12pi) commitment; beta calibrated to Omega_DE. Same number of free parameters as V₁ but A_0 is now derived.
 
 **CMB H_0 = 73 tension:**
-- Pure-LCDM-at-H_0=73 gives theta_star off by ~3.85%
-- A_0 = 1/(12pi) photon-A LoS closes ~25% of this gap
+- Pure-LCDM-at-H_0=73 gives theta_star off by +3.87%
+- A_0 = 1/(12pi) photon-A LoS closes ~69% of this gap (offset drops to +1.19%)
 - Full closure needs A_LoS ≈ 0.0387 (1.5× A_0)
 - The factor-of-1.5 amplification is plausibly explained by structured cosmic-web LoS averaging (photons preferentially traverse filaments/clusters where A > A_0_void)
 

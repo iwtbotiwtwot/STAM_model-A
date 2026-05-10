@@ -1,0 +1,75 @@
+---
+name: SU spreadsheet result — QUARANTINED, do not use
+description: A polynomial best-fit to Pantheon at fixed local H_0 produced clean fractions (a=10/3, q=1/2, anchor z=0.30). Subsequent BAO testing falsified the implied cosmology at 22 sigma; the Hubble-tension cross-check showed the implied A would over-predict the tension by 92x. The clean fractions are mathematical artifacts of the polynomial truncation, NOT a STAM theorem. Anchor z = 0.30 was a polynomial structural parameter, NOT a cosmic A field strength. This memory exists ONLY to flag the spreadsheet as deprecated. Do not use it in any STAM analysis, before or after its appearance in conversation.
+type: project
+---
+
+**STATUS: QUARANTINED — DO NOT USE**
+
+This entry is a deprecation marker, not a working result. The SU polynomial formula introduced in Sean's spreadsheet image (2026-05-07) was tested and falsified.
+
+**What the spreadsheet contained:**
+
+A polynomial best-fit to Pantheon+ at fixed H_0 = 73.05 km/s/Mpc:
+
+    SU(z) = K * (a*z + q*z^2)
+    K = 1231.35,   a = 10/3,   q = 1/2,   anchor z = 0.30,   RMSE = 0.199 mag
+
+**Why it was quarantined:**
+
+1. **BAO test (script 45) falsified the implied cosmology at 22 sigma.**
+   The implied H(z) = H_0 (1+z)^(2-A) at A = 0.30 fits DESI DR1 BAO data 14x worse than LCDM (chi^2/dof = 22.2 vs 1.6), with a 7 sigma residual at z = 2.33. The cosmology decelerates too aggressively to match the BAO standard ruler.
+
+2. **Hubble tension test (script 47) showed A = 0.30 over-predicts the tension by 92x.**
+   If A_local = 0.30 were the actual cosmic photon-A coupling, the predicted H_0 tension would be 715%, not the observed 7.8%. The required cosmic A is ~0.011-0.03, not 0.30.
+
+3. **Anchor z = 0.30 was a co-emergent property of the K-minimum solution, NOT cosmic A.**
+   In the spreadsheet, the only free fit parameter was K. Sean tuned K to minimize Pantheon RMSE. At the K-minimum, *by coincidence*, two clean fractions co-emerged: the linear coefficient came out to 10/3 and the crossing/anchor redshift came out to 0.30. Both were derived properties of the K-minimum solution. Sean recognized the clean co-emergence as suggestive of structure and then fixed those values in subsequent work. Earlier interpretations equating "0.30" with any cosmic-A-field value were imposed readings — at the time the spreadsheet was produced, the Model-A accumulation field did not yet exist as a concept, and the spreadsheet made no claim about one.
+
+4. **The clean fractions (10/3, 1/2, 7/10) are mathematical artifacts** of the polynomial truncation, not STAM-physics-derived constants.
+
+**RULES OF USE:**
+
+- This formula is NOT to be used in STAM analyses.
+- Tests have determined this formula is invalid both before and after its appearance in chat.
+- The result is INDEPENDENT of any other STAM cosmological work — earlier or later.
+- The clean fractions are quarantined as historical curiosities, not framework commitments.
+- The `H(z) = H_0 (1+z)^(2-A)` cosmology implied by the formula is FALSIFIED and is not a STAM cosmological prediction.
+
+**Empirical observation suspected as more than coincidence (2026-05-09 update):**
+
+**Historical sequence and naming clarification:** at the time Sean produced the spreadsheet, the **Model-A capital-A accumulation field had not yet been formulated**. The historical chain:
+
+1. The only free fit parameter was K.
+2. Sean tuned K to minimize Pantheon RMSE.
+3. At the K-minimum, **by coincidence**, two clean fractions co-emerged:
+   - Linear coefficient = 10/3
+   - Crossing / anchor redshift = 0.30
+4. Sean recognized the clean co-emergence as suggestive of structure and **then** fixed those values in subsequent spreadsheet work.
+
+So `a = 10/3` and `z = 0.30` were not independent inputs — they were emergent properties of the K-minimum solution. Their clean co-emergence is what made Sean treat the result as meaningful. Treating the spreadsheet's `a = 10/3` as if it were "A_local" in the current Model-A sense is a retroactive imposition of later language onto a historical empirical fit; the spreadsheet itself made no claim about an accumulation field. The lowercase `a` was a polynomial coefficient. Model-A's capital-A accumulation field came later, and the same z ≈ 0.30 region now corresponds (under V_3) to the matter-to-A-field transition redshift via different machinery.
+
+The polynomial machinery is invalid, but the empirical anchor at z = 0.30 the spreadsheet kept landing on appears to capture a real cosmic feature: the matter-to-A-field transition. Three independent ways now point at this region:
+
+1. SU spreadsheet polynomial-fit anchor (pre-Model-A): z = 0.30
+2. LCDM-style density crossover Ω_m·(1+z)³ = Ω_DE: z = 0.295
+3. Model-A V_3 modified-Friedmann w_eff(z) peak (tracking ansatz, G8a): z ≈ 0.32–0.35
+
+Sean's quote (origin moment): "When I dialed in Pantheon to the lowest number, by pure luck it created SU(z) = K·(a·z + q·z²) with K = 1/(H/3.33333). At this point K = 1231.350177, the curve and threshold intersect was exactly z = 0.30. That's when I 'saw' something and started to take it further."
+
+The polynomial was the wrong toolbox; the redshift it kept latching onto was the right place. The polynomial is what motivated the framework's pursuit. The framework that resulted (Model-A, with the capital-A field) now describes the same transition through dynamical-A field machinery rather than polynomial fitting. So: SU formula stays quarantined as physics, but its anchor observation is preserved as the empirical signal that motivated the framework's dynamical-A path. Not coincidence, not a STAM-physics derivation either — a real cosmic feature glimpsed through a brittle tool.
+
+**For the actual STAM cosmological commitment, see:**
+[STAM cosmological commitment](project_cosmological_commitment.md) — pre-formula bold position: matter-only EdS, dark energy remitted as photon-A traversal misinterpretation, Hubble tension resolved at H_0 = 73 with structure-dependent path-integration. This is the position of record.
+
+**For the actual STAM-derived cosmic A:**
+- Bridge term: A_0 = 0.0265 (cosmic mean, derived from b = A_0 * c/H_0)
+- Hubble tension: A_LoS ~ 0.011 (CMB-path effective coupling)
+Both small, both consistent in order of magnitude. Neither is 0.30.
+
+**How to apply:**
+
+If the spreadsheet, the SU formula, or "A_local = 3/10" comes up in any context:
+- State that the spreadsheet was a phenomenological polynomial fit that has been falsified by BAO and is no longer used.
+- Direct attention to the cosmological commitment file for the actual STAM cosmology.
+- Do not repeat the clean-fraction "discovery" framing — it is a quarantined result.

@@ -2,6 +2,17 @@
 
 Place input datasets here.
 
+## Files currently in this directory
+
+| File | Description |
+|---|---|
+| `pantheon.csv` | Pantheon+ SN catalog (1701 SNe). Row order matches the cov file below. |
+| `Pantheon+SH0ES_STAT+SYS.cov` | Authoritative Pantheon+ stat+sys covariance from [github.com/PantheonPlusSH0ES/DataRelease](https://github.com/PantheonPlusSH0ES/DataRelease). 1701×1701 matrix, format: header line `N=1701` then N² floats one per line in row-major order. Row order matches `pantheon.csv` exactly. Use for Mahalanobis χ². |
+| `des.csv` | DES-Y5 SN catalog. |
+| `union3_bins.csv` | Union3 binned distances, 3 cols (bin, z, mb-as-μ). Lacks per-bin errors — superseded by the FITS file below for proper χ² use. |
+| `union3_with_errors.csv` | Union3 22 bins with z, μ, and per-bin σ extracted from the diagonal of the proper covariance. Inspectable CSV companion to the FITS. |
+| `mu_mat_union3_cosmo2_mu.fits` | Authoritative Union3 data from [github.com/rubind/union3_release](https://github.com/rubind/union3_release). 23×23 matrix: row 0 = z, col 0 = μ, inner 22×22 = inverse covariance C⁻¹. Use for Mahalanobis χ² with full bin-to-bin correlations. |
+
 Recommended layout:
 
 ```text

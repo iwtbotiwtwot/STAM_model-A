@@ -39,9 +39,10 @@ Honest expected outcome:
     energy V(A_0) becomes a derived consequence (modulo overall scale beta).
 
     The CMB theta_star at H_0=73 with photon-A LoS correction (1+A_0 factor)
-    will likely close ~25% of the tension but not all. If we include
-    structure-amplification (A_LoS larger than A_0 along structured
-    paths), more of the gap could close.
+    closes ~69% of the tension (offset drops from +3.87% to +1.19%). Full
+    closure needs A_LoS ~1.46x A_0, plausibly supplied by structure-
+    amplification (A_LoS larger than A_0 along structured paths through
+    filaments and clusters).
 """
 
 from __future__ import annotations
@@ -395,8 +396,12 @@ def main() -> None:
     print("match Omega_DE. STRUCTURALLY VIABLE. Both poles present, A_0 is")
     print("the natural minimum.")
     print()
+    offset_no = abs(cmb_no_LoS['frac_offset_apparent'])
+    offset_with = abs(cmb_with_A0['frac_offset_apparent'])
+    closure_pct = (1.0 - offset_with / offset_no) * 100.0 if offset_no > 0 else 0.0
     print(f"CMB tension at H_0=73 with V3 + A_0 = 1/(12pi) photon-A LoS:")
-    print(f"  Pure A_0 LoS: closes only ~25% of the gap")
+    print(f"  Pure A_0 LoS: closes ~{closure_pct:.0f}% of the gap "
+          f"({offset_no*100:+.2f}% -> {cmb_with_A0['frac_offset_apparent']*100:+.2f}%)")
     print(f"  Full closure needs LoS ~{A_LoS_required:.4f} ({A_LoS_required/A_0_TARGET:.1f}x A_0)")
     print(f"  Structure-dependent A_LoS (filaments/clusters) is the open path.")
 
@@ -560,8 +565,12 @@ def write_markdown(v1, v2, v3, bridge, cmb_no_LoS, cmb_with_A0,
         "Same number of free parameters as V₁ but A_0 is now derived.\n"
         "\n"
         "**CMB H_0 = 73 tension:**\n"
-        "- Pure-LCDM-at-H_0=73 gives theta_star off by ~3.85%\n"
-        "- A_0 = 1/(12pi) photon-A LoS closes ~25% of this gap\n"
+        f"- Pure-LCDM-at-H_0=73 gives theta_star off by "
+        f"{abs(cmb_no_LoS['frac_offset_apparent'])*100:+.2f}%\n"
+        f"- A_0 = 1/(12pi) photon-A LoS closes ~"
+        f"{(1.0 - abs(cmb_with_A0['frac_offset_apparent'])/abs(cmb_no_LoS['frac_offset_apparent']))*100:.0f}% "
+        f"of this gap (offset drops to "
+        f"{cmb_with_A0['frac_offset_apparent']*100:+.2f}%)\n"
         f"- Full closure needs A_LoS ≈ {A_LoS_required:.4f} "
         f"({A_LoS_required/A_0_TARGET:.1f}× A_0)\n"
         f"- The factor-of-{A_LoS_required/A_0_TARGET:.1f} amplification is plausibly explained by structured "

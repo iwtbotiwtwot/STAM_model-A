@@ -4,7 +4,7 @@
 
 The historical bridge term `b ≈ 354.95 Mly` has the right FORM to be a derived consequence of STAM physics. Specifically:
 
-For light traversing distance d through a region with constant ambient A field A_0, STAM Shapiro/path-slowing gives:
+For light traversing distance d through a region with constant ambient A field A_0, the SU/photon-A path-stretching gives:
 ```text
 extra travel time = (d/c) × A_0
 extra apparent distance = c × extra time = A_0 × d
@@ -21,6 +21,8 @@ A_0 = b / L = 354.95 / 13387 = 0.026514
 ```
 
 **The functional form of b is derived from STAM physics. The specific value of A_0 is empirical (from catalog fitting) and not yet derived from first principles.**
+
+**Clean separation: traversal-only, no clock-rate piece.** The derivation uses only the photon path-stretching effect from `g_rr` — the light geodesic in the Model-A metric gives `dt/dr = (1/c)(1+A)` to first order in A, so the excess `(1/c) × A` integrated along the path is the formula above. The clock-rate effect from `g_tt` (`dτ/dt = √(1−A)`) is a *separate* effect that applies when comparing clock readings at different A values. For homogeneous cosmic ambient `A_0`, source and receiver sit at the same `A_0` and the clock-rate effect cancels identically by symmetry. So the bridge term derived here is the traversal piece only — no implicit clock contribution, no double-counting. Numerical equivalence to the standard GR Shapiro formula in localized-mass tests (script 07) is by construction (A defined as 2GM/c²r); the GR formula's commonly-cited 'geometric + clock' decomposition is not a real partition of the measured round-trip time.
 
 ## Quantitative summary
 

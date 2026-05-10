@@ -1,0 +1,16 @@
+quantity,value,units,source
+A_0,0.0265258238,dimensionless,G7 commitment 1/(12 pi)
+alpha/beta,7.4248706478e-04,dimensionless,V_3 structural minimum at A_0
+beta_tilde,0.6472553683,dimensionless,calibrated: h^2(today) = 1 closure
+alpha_tilde,4.8057873861e-04,dimensionless,derived: alpha_tilde = beta_tilde * (alpha/beta)
+Omega_m,0.315,dimensionless,input
+Omega_r,9.2e-05,dimensionless,input
+A_eq(today),0.0355243283,dimensionless,tracking equilibrium today
+omega(today),-0.0412979396,dimensionless,tracking velocity today
+Omega_DE_pot(today),0.684624,dimensionless,V_3(A_eq) at a=1
+Omega_DE_kin(today),0.000284,dimensionless,omega^2/6 at a=1
+Omega_DE_total(today),0.684908,dimensionless,pot + kin at a=1
+h^2(today),1.000000,dimensionless,closure: should be 1.000000
+w_eff(z=0),-0.990895,dimensionless,effective EoS
+w_eff(z=1),-0.684442,dimensionless,effective EoS
+w_eff(z=3),-0.543775,dimensionless,effective EoS
