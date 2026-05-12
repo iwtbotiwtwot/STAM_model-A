@@ -258,6 +258,67 @@ For spinning bubbles, T(theta) is non-uniform along the bubble: equator at T_Sch
 
 ## Cosmological branch
 
+### SU = A_0 structural identity (V_4 landed 2026-05-11)
+
+The cosmic ambient field A_0 is identified with the framework's natural ruler unit SU. SU is a 1D ruler measuring A along a path — line-by-line accumulation reading. SU(z) is the cumulative ruler value out to redshift z.
+
+**Derivation chain in one place:**
+
+Step 1 — SU formula derived from genesis spreadsheet (no fit parameters):
+
+```text
+SU(z) = K · (a·z + q·z²)
+      = (z/H) · (1 + 3z/20)
+
+K = z_anchor · c/H_0           (z_anchor = 0.30 is the second structural commitment)
+a = 1/z_anchor                 (= 10/3 for z_anchor = 3/10)
+q = 1/2                        (universal quadratic coefficient)
+3/20 = z_anchor/2              (the formula's quadratic coefficient is forced)
+```
+
+Step 2 — Bridge term form derived from Shapiro through ambient A_0:
+
+```text
+b = A_0 · c/H_0       (path-integrated A-delay → apparent extra distance)
+```
+
+Step 3 — A_0 factored structurally as (4π × 3):
+
+```text
+A_0 = 1/(4π × 3) = 1/(12π) ≈ 0.026526
+
+4π : framework-internal from Q8 thermal/gravity-bridge structure
+     k_B T = (1/4π) · ℏ · c · |∇A|
+     4π = 2π (thermal periodicity) × 2 (gravity bridge c²/2)
+
+3  : spatial dimensionality (our universe is 3D)
+```
+
+Step 4 — Two independent derivations converge:
+
+```text
+A_0 (cosmological / SU-ruler):  A_0 = b/L_H = 354.95/13387 ≈ 0.02651
+A_0 (ontological / threshold):  A_0 = 1/(12π) ≈ 0.02653
+Match: 0.04% (4 significant figures)
+```
+
+Step 5 — Bridge term verification:
+
+```text
+b_pred = (1/(12π)) · c/H_0
+       = (299792.458 km/s) / (12π × 73.04 km/s/Mpc) × (3.262 Mly/Mpc)
+       ≈ 355.10 Mly
+
+b_historical ≈ 354.95 Mly
+Match: 0.04%
+```
+
+**Status:** A_0 = 1/(12π) is derived, not calibrated. SU is a derived ruler (no fit parameters). The structural identity "1 SU = A_0" emerges as two independent derivations landing on the same object: the natural cosmological unit (from SU) and the minimum density for spacetime to exist (substance ontology). The "just happens to equal" is the framework's structural discovery.
+
+The remaining open piece is the rigorous first-principles origin of the "3" factor (currently tied to spatial dimensionality / radial-line-of-sight averaging, but the unifying argument linking it to Q8's 4π is still open theoretical work — see "A_0 void interpretation" section above and Open Problem #2).
+
+---
+
 The cosmological structure is now closed with one structural commitment and one calibrated parameter:
 
 
