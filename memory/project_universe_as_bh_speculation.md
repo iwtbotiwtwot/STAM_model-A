@@ -49,3 +49,11 @@ The vision parallels several existing speculative readings already in memory:
 - "Dark energy as outer-hologram accumulation" — earlier articulation of same idea (May 9 speculative).
 
 The 2026-05-11 version is the cleanest articulation: dark energy as accretion-from-outside onto a cosmic horizon, stretching the boundary without adding mass to the interior observable.
+
+## Update 2026-05-11 evening — relation to projector/blockchain picture
+
+In the evening Q&A session, the universe-as-BH picture moved closer to coextensive with the 2026-05-10 evening "twisting blockchain projects the universe" hypothesis. Under Sean's corrected inner-face dynamics ("inner face is dynamic-but-bounded, not frozen"), the natural reading is: WE are the dynamic interior hologram on the inner face of a cosmic A=1 boundary; the blockchain/ledger is what the interior IS; physical interactions write to the ledger and change the hologram in real time.
+
+Under that synthesis, projector hypothesis (ontology of interior) and universe-as-BH (geometry of container + boundary mechanism) become two views of one structure.
+
+**Sean's explicit stance 2026-05-11 evening: "I don't want to bake in BH universe."** Both pictures remain at parking-lot. The closer-coextensive read is captured here for continuity but is NOT promoted to commitment. Future sessions: continue to treat both as speculative; do not lead with either when introducing the framework; the current cosmological commitment remains the matter-only EdS + photon-A-traversal-misinterpretation reading.

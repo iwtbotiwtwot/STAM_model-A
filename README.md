@@ -4,7 +4,7 @@
 
 Author: **Sean Brady**
 Status: **Proposed theoretical framework / active research program**
-Snapshot: **May 9, 2026**
+Snapshot: **May 11, 2026 (evening — updated to reflect water-tank substance-ontology refinement, two-layer cosmological reading, and k(A) family ambiguity findings)**
 
 ---
 
@@ -129,16 +129,33 @@ The current strong-field metric is:
 
 ```text
 g_tt = -(1 - A) c^2                      (matches GR's form)
-g_rr = 1 / [ (1 - A) (1 - A^2)^2 ]       (Model-A modification)
+g_rr = 1 / [ (1 - A) (1 - A^2)^2 ]       (Model-A modification, n=2 commitment)
 ```
 
-The (1 - A^2)^2 factor is forced by three Model-A principles working together:
+**Three structural principles narrow k(A) to a 1-parameter family** (refined 2026-05-11):
 
 1. **Weak-field GR recovery at first order in A** (so all GPS / Shapiro / lensing tests pass).
 2. **A = 1 as the universe's edge** (so SU / proper-time integrals diverge there).
 3. **Thirds-of-A preservation** (ISCO at A = 1/3, photon sphere at A = 2/3, horizon at A = 1; depends on g_tt only).
 
-The deviation factor (1 - A^2)^2 is within ~1% of unity for A < 0.05 (everywhere we currently measure). All weak-field GR tests pass automatically. The framework departs from GR at second order in A and at the boundary itself.
+These three principles narrow k(A) to the family `k_n(A) = (1-A)(1-A^2)^n` for n ≥ 1, but do NOT uniquely fix n. The earlier claim that "three principles force k(A)" was overstated — they admit a family. Model-A commits to **n=2** specifically based on:
+
+- G17's g_rr second-order coefficient ratio Model-A:GR = 3 (the "third integer 3" in the framework's recurring theme; equals n+1)
+- G18's (2×2)=4 area-per-entry ledger decomposition matching Bekenstein-Hawking entropy (matches when there are two pair factors)
+- The pair-squared form (1-A²)² as the framework's structural primitive
+
+But n=1 (with k = (1-A)(1-A²)) is also viable: it gives NEC crossover at exactly A = 1/2, logarithmic horizon divergence (the original "logarithmic" wording), and QNM ratio closer to LIGO precision. Several G33/G34 framework signatures depend on this choice:
+
+| signature | n=1 | n=2 (committed) |
+|---|---|---|
+| QNM eikonal τ/τ_GR | 3/√5 ≈ 1.342 | 9/5 = 1.800 |
+| F3 NEC crossover | 1/2 exactly | ≈0.44 |
+| Proper-time divergence | logarithmic | (1-A)^(-1/2) |
+| g_rr 2nd-order ratio | 2 | 3 |
+
+The 1-parameter ambiguity is real and is currently the framework's central open metric question (sharpening of the Lagrangian-for-A gap). A fixing point will come from either an exact LIGO QNM observation of a spinless ringdown, or a non-circular structural derivation that picks out a specific n.
+
+The deviation factor (1 - A^2)^n is within ~1% of unity for A < 0.05 (everywhere we currently measure) regardless of n. All weak-field GR tests pass automatically. The framework departs from GR at second order in A and at the boundary itself; the size of the second-order departure (coefficient n+1 in g_rr) is what n parameterizes.
 
 ---
 
@@ -154,7 +171,7 @@ A > 1  -> not part of the manifold
 
 Matter that fell toward the black hole never crossed A = 1; it accumulated holographically on the bubble surface (outward-collapse picture). There is no interior; there is no singularity. Information lives on the 2D boundary surface.
 
-For an infalling traveler, proper time to reach A = 1 is logarithmically infinite. The observer and traveler agree: there is no finite-time crossing event.
+**A = 1 is never reached in any finite time** (refined 2026-05-11). The horizon is the asymptotic limit of an unresolved Zeno-paradox-like halving series: in GR Schwarzschild, the halving series converges and infallers cross in finite proper time; in STAM, the series does NOT converge (each halving takes constant time for n=1, or growing time for n=2). The 2D "hologram surface" is then a mathematical limit set; bulk content asymptotically piles up just-below A=1 from each side, never landing on it. "Information lives on the boundary" is shorthand for "information lives in the bulk asymptotically near the boundary." The observer and traveler agree: there is no finite-time crossing event; the structure of A=1 itself is unreachable.
 
 **Spinning black holes**: the bubble warps to an oblate shape, with equatorial radius preserved at 2M and polar radius shrinking to the Kerr horizon location. Matter on the bubble carries the angular momentum (the bubble is the screen, the matter is the rotating hologram). No Penrose extraction (since the rotational energy is in the matter, not in empty rotating geometry).
 
@@ -231,16 +248,23 @@ b = A_0  x  c / H_0
 
 Matches historical Pantheon/Union3 fit value (354.95 Mly) to 0.04%.
 
-**Cosmological story:**
+**Cosmological story (two-layer reading, refined 2026-05-11):**
 
-- Universe is matter-dominated at H_0 = 73 throughout cosmic history.
-- The CMB-inferred value H_0 = 67.4 (Planck) is biased downward by an unaccounted-for photon-A line-of-sight effect.
-- That LoS effect is the cumulative-A signature: photons traversing cosmic distances pick up extra apparent path through the structured cosmic web (galaxies, filaments, clusters).
-- Self-consistent closure of CMB theta_star at H_0 = 73 requires LoS amplification factor ~1.5x A_0, plausibly supplied by realistic cosmic structure.
+The framework's cosmological structure is now cleanly separable into two layers:
+
+- **Layer 1 — Cosmic expansion:** V_3 modified Friedmann with A pinned at the minimum A_0 gives **LCDM-equivalent expansion at H_0 = 73 by construction**. The calibration β_tilde = Ω_DE_target × (1-A_0)² ensures V_3(A_0) acts as a cosmological constant of magnitude Ω_DE_target. The framework's intrinsic expansion is LCDM-shape; the older "matter-dominated EdS at H_0=73" framing is retired (G29). Cosmic chronometers probe Layer 1 only.
+
+- **Layer 2 — Distance bias:** Photon-A traversal through cosmic A_0 in voids adds path-integral bias to *observed* luminosity distance. The bridge term `b = A_0 · c/H_0 ≈ 355 Mly` lives in this layer (the G7 derivation stands; its mechanism is photon-path, not modified Friedmann). SN distance modulus and CMB θ⋆ probe both Layer 1 and Layer 2.
+
+Under this reading, the Hubble tension reads cleanly: SH0ES (local distance ladder at low z) gives true H_0 = 73; Planck H_0 = 67.4 is what LCDM-fits-to-SN extract when they don't account for the Layer 2 photon-A bias. Both numbers are real measurements; they probe different combinations of the two layers.
+
+**Chronometer pressure on H_0 = 73 (flagged 2026-05-11).** Cosmic chronometers — the most model-independent H(z) probe — prefer H_0 ≈ 68 freely *even given STAM's V_3 shape* (since V_3 ≡ LCDM-shape at the expansion level). At fixed H_0 = 73, V_3 gives χ²/N = 0.76 against chronometers (statistically acceptable, not preferred). The framework's H_0 = 73 commitment rides primarily on SH0ES; chronometers, BAO, and Planck all want lower. This is a known soft spot, not a falsification — but worth recognizing as a one-probe-vs-three-probes situation.
+
+The previous "closed-form intrinsic H(z) = H_0(1+z)²/(1+z+0.5z²)" expression that appeared in earlier handoff/working notes has been **retired** — it was derived by inverting an empirical no-b distance ansatz corresponding to coasting cosmology (q_0 = 0), which STAM does not commit to. The framework's actual intrinsic H(z) is V_3-derived and LCDM-shape at H_0 = 73.
 
 **Galactic dark matter:**
 
-Model-A is naturally compatible with primordial-black-hole dark matter (PBH-DM). Each PBH is a small bubble with the same A = 1 boundary structure as stellar and super-massive BHs. Cumulative A from baryons + PBH-DM halo (NFW-like distribution) reproduces observed galactic rotation curves trivially.
+Model-A is naturally compatible with primordial-black-hole dark matter (PBH-DM). Each PBH is a small bubble with the same A = 1 boundary structure as stellar and super-massive BHs. Cumulative A from baryons alone gives a factor-of-1.5-to-3 deficit in implied rotation velocity (G10). Adding the cosmic A_0 baseline explicitly (G31) shifts rotation curves by only ~1.35% — does NOT bridge the deficit by itself. With PBH-DM halo + cumulative A, the framework closes (G13). The framework's galactic-DM mechanism is PBH-DM; A_0 baseline plays no significant role at galactic scales.
 
 ---
 
@@ -271,9 +295,12 @@ The same A field plays both classical (magnitude) and quantum (resolution-status
 Model-A makes specific predictions in regimes LCDM does not address, each with concrete observational targets:
 
 ```text
-G1: Ringdown damping factor tau / tau_GR = 1.80
-    at same dominant frequency as GR.
-    Testable now with LIGO/Virgo/KAGRA ringdown data.
+G1: Ringdown damping factor tau / tau_GR = (9/5)^(n/2) at same dominant
+    frequency as GR. For Model-A's committed n=2: tau/tau_GR = 1.80.
+    For alternative n=1: tau/tau_GR ≈ 1.342. Testable now with
+    LIGO/Virgo/KAGRA ringdown data (eikonal approximation; LIGO BHs
+    are spinning Kerr-like, so spinless Model-A analog is the missing
+    piece for direct comparison).
 
 F6: Gravitational decoherence ~0.5 s for 1 micron silica
     nanoparticle in superposition. Cavity-optomechanics frontier;
@@ -301,7 +328,7 @@ PBH-DM: requires inflationary fluctuation amplitude sigma ~ 0.05
 
 4. **Black-hole thermodynamics from one rule.** `k_B T = hbar c |grad A| / (4 pi)` reproduces Hawking T (Schwarzschild + Kerr + de Sitter), Bekenstein-Hawking entropy, the first law, the Smarr relation, evaporation lifetime, and the generalized second law.
 
-5. **Strong-field metric is Model-A-derived.** The (1 - A^2)^2 modification of g_rr is forced by three Model-A principles (weak-field recovery + boundary at A = 1 + thirds-of-A preservation), not borrowed from elsewhere.
+5. **Strong-field metric is Model-A-narrowed.** Three Model-A principles (weak-field recovery + boundary at A = 1 + thirds-of-A preservation) narrow k(A) to the 1-parameter family `k_n = (1-A)(1-A^2)^n` for n ≥ 1. Model-A's specific commitment to n=2 (giving the (1-A^2)^2 modification) is structurally motivated but admits a viable alternative at n=1; see "Strong-field position" section. The framework's strong-field metric is shaped by its own commitments rather than borrowed from elsewhere, but the n choice is currently a 1-parameter ambiguity.
 
 6. **Spinning bubble framework.** Static bubble + rotating holographic matter gives non-uniform Hawking T (T_pole = T_Kerr exactly via identity), super-radiance enhancement, no Penrose extraction.
 
@@ -319,7 +346,7 @@ PBH-DM: requires inflationary fluctuation amplitude sigma ~ 0.05
 
 ## Major open problems
 
-1. **Lagrangian for A.** Specifying the action `S[A, g_uv]` that produces both the Poisson-like source equation and the strong-field metric construction. Currently the metric is committed by ansatz.
+1. **Lagrangian for A; or non-Lagrangian principle that picks out k_n specifically.** Specifying the action `S[A, g_uv]` (or alternative structural principle) that produces both the Poisson-like source equation and a unique strong-field metric. G25-G27 attempted standard scalar-tensor formulations and found ghost regions plus Rs-dependent V; G33 inverted to A-as-fundamental and found the k(A) family is 1-parameter ambiguous (k_n for n ≥ 1 satisfying all stated principles). The Lagrangian gap is now the sharper question: what principle picks n out of {1, 2, 3, ...}?
 
 2. **Structural origin of the "3" factor in 1/(12 pi).** The 4 pi is independently derived (thermal prefactor); the 3 from spatial dimensionality currently rests on dimensional argument. Closing it would make A_0 fully derived.
 
@@ -379,4 +406,4 @@ When the framework changes direction (as it did multiple times in development �
 
 ## Acknowledgments
 
-Development assisted by extensive conversation with Claude (Anthropic), particularly during the May 2026 push that produced the A_0 = 1/(12 pi) structural commitment, V_3 potential selection, CMB self-consistent closure, and PBH-DM compatibility analysis (G7-G14 script series).
+Development assisted by extensive conversation with Claude (Anthropic), particularly during the May 2026 push that produced the A_0 = 1/(12 pi) structural commitment, V_3 potential selection, CMB self-consistent closure, and PBH-DM compatibility analysis (G7-G14 script series), and the May 11 (evening) refinement session that produced the substance-ontology articulation (water-tank conceptual exercise), the two-layer cosmological reading (G28+G29: V_3 expansion ≡ LCDM at H_0=73 by construction, photon-A traversal as separate distance bias), the G21 redux confirming GR-exact strong-field landmarks under corrected composition, the G31 confirmation that A_0 baseline does not bridge galactic DM, and the G33/G34 swing surfacing the 1-parameter ambiguity in k(A).

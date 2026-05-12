@@ -1,23 +1,44 @@
 ---
-name: STAM cosmological commitment (pre-formula position)
-description: Sean's Model-A cosmology, committed 2026-05-07 BEFORE the SU formula was tested and broke the simple-A version. Universe is matter-only Einstein-de Sitter. Dark energy is remitted as a misinterpretation of photon-A traversal in the SN distance modulus. H_0 tension resolved at H_0 = 73 (local distance ladder is correct; Planck H_0 = 67.4 is biased by LCDM not having a photon-A term). Single cosmic photon-A field (with line-of-sight structure dependence) explains both effects with one mechanism.
+name: STAM cosmological commitment — two-layer reading (V_3 expansion + photon-A distance bias)
+description: Sean's Model-A cosmology, originally committed 2026-05-07 and substantively refined 2026-05-11 evening after G28 + G29. Two-layer structure: (Layer 1) V_3 modified Friedmann gives LCDM-equivalent cosmic expansion at H_0=73 by construction; (Layer 2) photon-A traversal through cosmic A_0 in voids adds path-integral bias to observed luminosity distance. Chronometers probe Layer 1 only; SN/CMB distance moduli probe Layer 1 + Layer 2. Bridge term lives in Layer 2.
 type: project
 ---
 
-**Sean Brady's Model-A cosmological commitment (2026-05-07):**
+**Sean Brady's Model-A cosmological commitment.**
 
-Going back to the moment BEFORE the SU polynomial formula was tested and partially broken by BAO data, this is the conceptual STAM cosmological position that should be preserved as the framework's commitment going forward.
+Originally committed 2026-05-07 as "matter-only EdS + photon-A traversal misinterpretation." Refined 2026-05-11 evening after G28 + G29 clarified the underlying structure. The refined position is structurally cleaner; the photon-A core remains, but the "matter-only EdS" framing is retired and replaced with a two-layer reading.
 
-**The position, in clean form:**
+## The two-layer position (post-G29 refinement)
 
-1. **Cosmology is Einstein matter-only** (de Sitter, EdS).
-   No dark energy as a separate component. The universe decelerates (q_0 > 0). Hubble flow at low z is `H = H_0 * (1+z)^(3/2)` for matter-only. Einstein had it right; LCDM's Lambda was inserted to fit observations whose cause was actually misidentified.
+**Layer 1 — Cosmic expansion: V_3 modified Friedmann ≡ LCDM-equivalent at H_0=73 by construction.**
 
-2. **Local Hubble constant H_0 = 73.04 km/s/Mpc** (SH0ES, distance ladder).
-   This is the TRUE H_0. At low z, photon paths are short and photon-A accumulation is negligible. Local distance-ladder measurements give the unbiased value.
+V_3(A) = α/A + β/(1−A) has its minimum at A=A_0, with calibration β_tilde = Ω_DE_target · (1-A_0)². Under this calibration V_3(A_0)/ρ_crit = Ω_DE_target ≈ 0.685 — so V_3(A_0) acts as a cosmological constant of magnitude Ω_DE. When A sits at A_0 (the natural attractor), the modified Friedmann reduces to standard LCDM at H_0=73.
 
-3. **Dark energy is remitted as photon-A traversal misinterpretation.**
-   What LCDM calls "dark energy / Lambda" is actually the cumulative effect of light traversing the cosmic A field. Photons accumulate extra path length / time-of-flight through the ambient A medium. LCDM has no photon-A term, so it absorbs this effect into Lambda to fit SN data. The "extra distance" at high z that LCDM attributes to accelerating expansion is actually extra traversal excess (TE) accumulated by the photon along its line of sight — geometric, not dynamical.
+The "matter-only Einstein-de Sitter" framing from the original commitment is retired. EdS predicts H(z) = H_0(1+z)^(3/2), which fails chronometers at χ²/N ≈ 16 (G28). The correct framing is: V_3 modified Friedmann gives LCDM-equivalent expansion with V_3(A_0) supplying the effective Λ. q_0 ≈ -0.53 (acceleration, same as LCDM), not q_0 > 0.
+
+**Layer 2 — Distance bias: photon-A traversal adds path integral on observed luminosity distance.**
+
+Light propagating through cosmic A_0 (which is non-zero in voids by virtue of the manifold's existence — A_0 = 1/(12π)) accumulates extra path length proportional to A_0 · path. Integrated to Hubble distance, this gives bridge term b = A_0 · c/H_0 ≈ 355 Mly (G7 derivation stands).
+
+This is NOT a modification of expansion. It's a photon-path effect on the observed luminosity distance. LCDM-fits to SN distance modulus inherit this bias as apparent dark energy / lower-than-true H_0.
+
+**What this means for the H_0 tension:**
+
+- True H_0 = 73 (under the framework's commitment).
+- Cosmic chronometers measure H(z) ≈ V_3 expansion ≈ LCDM-shape at H_0_data ≈ 68 (mild tension; see project_h0_chronometer_pressure.md).
+- LCDM fit to SN data gives H_0 ≈ 67.4 (Planck) because the fit absorbs photon-A bias as low H_0.
+- SH0ES distance ladder at low z escapes photon-A bias (short paths) and reads true H_0 = 73.
+
+## Original position (preserved for historical context)
+
+The 2026-05-07 commitment was:
+
+1. Cosmology is Einstein matter-only (EdS). [SUPERSEDED by Layer 1 above.]
+2. Local Hubble constant H_0 = 73.04 km/s/Mpc (SH0ES, distance ladder). [STILL HELD, with mild chronometer tension flagged.]
+3. Dark energy is remitted as photon-A traversal misinterpretation. [STILL HELD; this is Layer 2.]
+4. Hubble tension at z=1090 (CMB) is resolved at H_0 = 73. [STILL HELD via Layer 2 mechanism.]
+
+The 2026-05-11 refinement preserves items 2-4 and clarifies item 1: the universe's expansion isn't matter-only-EdS; it's V_3 modified Friedmann, which is LCDM-equivalent because V_3(A_0) acts as cosmological constant. The photon-A story (items 3-4) is unchanged — it's still the mechanism that biases distance measurements.
 
 4. **Hubble tension at z=1090 (CMB) is resolved at H_0 = 73.**
    The 5.68 km/s/Mpc difference between SH0ES (73) and Planck (67.4) is the STAM photon-A signature integrated over the maximum cosmic path. CMB photons traverse the most cumulative A; LCDM applied to those measurements gives a biased H_0. STAM's framework predicts this tension; it's not a measurement disagreement, it's the photon-A signature.
@@ -51,19 +72,22 @@ This cosmological position is a direct extension of Sean's foundational 2023 wat
 - The simple constant-A model (H = H_0 (1+z)^(2-A)) was tested via the SU formula and FAILED BAO at 22 sigma, indicating the simple version is wrong but the structure-dependent version may yet work
 - A first-principles STAM Lagrangian that produces the right cosmological dynamics has not been written
 
-**Honest annotation:**
+**Honest annotation (refined 2026-05-11 evening):**
 
-The conceptual position is cleanly motivated by STAM physics (water tank, photon-A, bold metric). The simple-integrated quantitative version (single constant cosmic A) does not survive BAO. A more careful path-dependent model that respects cosmic structure may yet quantitatively close all three observations. Until that model is written, the cosmological STAM claim is:
+The conceptual position is cleanly motivated by STAM physics (water tank, photon-A, V_3 metric). The two-layer separation (V_3 expansion + photon-A distance bias) is internally consistent and matches chronometer data at χ²/N = 0.76 (G29 Scenario 1 at H_0=73). The simple SU formula H = H_0(1+z)^(2-A) and the closed-form H(z) = H_0(1+z)²/(1+z+0.5z²) are both retired — neither comes from V_3 dynamics (see project_closed_form_hz_retired.md). A structure-dependent A_LoS model for distance modulus remains open work.
 
-  > "Conceptually consistent: matter-only universe + photon-A traversal explains Hubble tension at H_0 = 73 and remits dark energy as misinterpreted photon-A path effect. Quantitatively, the simple version fails BAO; the structure-dependent version is the open path forward."
+Current cosmological STAM claim:
+
+  > "V_3 modified Friedmann gives LCDM-equivalent cosmic expansion at H_0 = 73 (V_3(A_0) acts as cosmological constant by construction). Photon-A traversal through cosmic A_0 in voids adds path-integral bias to observed luminosity distance. The combination predicts the Hubble tension between SH0ES and Planck as a photon-A signature. The bridge term b = A_0·c/H_0 ≈ 355 Mly is the integrated photon-A bias at Hubble distance — it lives in Layer 2 (distance), not Layer 1 (expansion)."
 
 **How to apply:**
 
-When discussing STAM cosmology with anyone:
-- LEAD with the conceptual position: matter-only universe, dark energy remitted, H_0 = 73 resolves tension.
-- Frame as "this is the STAM cosmological story; the precise mathematical form of the photon-A coupling along structured paths is open work."
-- DON'T claim the simple SU formula H = H_0 (1+z)^(2-A) is the cosmology — it isn't.
-- DON'T cite single A values as universal — A is path-dependent, with bridge value (volume-mean) ~0.0265 and SN-effective value (LoS) ~0.30.
-- DO cite the H_0 tension as the CURRENTLY OBSERVABLE STAM cosmological signature — small cosmic A naturally biases CMB-LCDM H_0 inference.
-- DO cite the bridge term as STAM-derived rather than free-fit.
-- Position the cosmological program as: "STAM has a cosmological commitment; quantitative closure is open work."
+When discussing STAM cosmology:
+- LEAD with the two-layer position: V_3-LCDM-equivalent expansion + photon-A distance bias.
+- Frame as: "STAM's expansion is LCDM-shape at H_0=73; what looks like dark energy in SN data is the photon-A bias on distance modulus, not a different expansion."
+- DON'T claim "matter-only EdS" — that framing is retired; expansion is V_3-LCDM-equivalent with V_3(A_0) acting as Λ.
+- DON'T cite the closed-form H(z) = H_0(1+z)²/(1+z+0.5z²) as STAM-derived — it isn't; see project_closed_form_hz_retired.md.
+- DON'T treat the bridge term as a modified-expansion signature — it's a photon-path effect.
+- DO cite chronometer agreement (χ²/N = 0.76 at H_0=73) as currently-best STAM expansion-test.
+- DO acknowledge the mild chronometer tension: chronometers prefer H_0 ≈ 68 freely; STAM holds 73 on SH0ES grounds. See project_h0_chronometer_pressure.md.
+- DO cite the bridge term as STAM-derived (G7) but emphasize its photon-path origin.

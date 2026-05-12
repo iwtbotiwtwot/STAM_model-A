@@ -12,17 +12,25 @@ A pebble floats in a straight line through the uniform region. It encounters the
 
 That's gravity, in STAM terms.
 
-**What this picture commits the framework to:**
+**What was visual aid (NOT load-bearing physics) — clarified 2026-05-11 evening:**
 
-1. **Matter sources A by displacing space.** When matter manifests, it pushes surrounding space-stuff outward, concentrating it. The concentration *is* the A field. More matter → more displacement → higher A locally.
+- "Manifests inside-out" — this was the visual choice for picturing displacement. The framework does NOT claim matter literally appears from inside-out in any physical process. It's just art-direction for the displacement image.
+- The tank wall — visual aid only. The wall illustrates that "accumulation" happens (A rises locally) because the substance can't redistribute infinitely. STAM doesn't commit to a physical wall on cosmic substance.
+- Water flow — there is no flow in STAM. The substance doesn't move; A varies and changes in place. Visual aid only.
 
-2. **A is the dimensionless density of space.** It runs from 0 (uniform background, vacuum) to 1 (maximum density, the threshold beyond which space cannot be further compressed). Beyond A=1 doesn't exist as a region of the manifold — it's where matter has displaced ALL local space.
+**What this picture commits the framework to (load-bearing) — refined 2026-05-11 evening, see project_spacetime_substance_ontology.md:**
 
-3. **Gravity is trajectory deflection in varying A.** A free-floating pebble follows a "straight line" through uniform-A space. When A varies (near matter), the pebble's path bends toward higher A. This is geodesic motion in the A-determined metric — gravity emerges as a *geometric consequence* of A's spatial variation, not as a separate force.
+1. **Spacetime is substance.** Water-in-the-tank is the metaphor; STAM commits to spacetime being literal substance with local density A. This is a real ontological position distinct from GR's geometric spacetime. Load-bearing.
 
-4. **Capture happens when the pebble reaches A=1.** If a pebble gets close enough to a strong A source, its trajectory spirals inward. It joins the asymptotic pile-up at the A=1 boundary surface (the bubble). It cannot fall "into" the rock because there is no inside to the matter at A=1 — the rock has displaced all the local space, and the pebble joins the boundary surface.
+2. **A is the dimensionless density of the substance.** Three distinct states: A=0 (no manifold, genuine non-existence), A_0 ≈ 0.0265 (void baseline, the minimum density spacetime has by virtue of existing), A=1 (saturation, beyond which traversal takes forever). The phrase "A runs from 0 to 1" was loose — within the manifold, A ranges from A_0 to 1; A=0 is the state outside the manifold.
 
-5. **Black holes are bubbles by construction.** When a region's matter density gets high enough, A reaches 1 on a closed surface. Inside that surface is no manifold, just like inside the rock in the water tank — the matter has consumed all the local space-stuff, leaving a 2D boundary surface where everything accumulates.
+3. **Matter and energy ELEVATE A; matter ≠ A.** Matter is a separate ingredient that triggers local accumulation of substance. Two-ingredient ontology (substance + matter/energy). The water-tank "rock" represents matter; the water it concentrates around itself is A.
+
+4. **Gravity is trajectory deflection in varying A.** A free-floating pebble follows a "straight line" through uniform-A substance. When A varies (near matter), the pebble's path bends toward higher A. This is geodesic motion in the A-determined metric — gravity emerges as a *geometric consequence* of A's spatial variation through real substance, not as a separate force and not as abstract curvature.
+
+5. **Capture happens when the pebble approaches A=1.** The pebble's traversal slows infinitely as A→1; it asymptotically piles up on the outer face of the A=1 boundary, never crossing. This is the "falls forever" result, geometrically necessary.
+
+6. **Black holes form when local matter reaches the Ant-Man limit.** When matter is packed so densely that no substance fits between its components, A=1 is created at that point. The A=1 condition propagates outward to form the horizon; the original matter is pushed to the inner-face 2D hologram. See project_spacetime_substance_ontology.md for the full sequence.
 
 **Why this is the foundational principle:**
 
