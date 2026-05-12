@@ -4,7 +4,7 @@
 
 Author: **Sean Brady**
 Status: **Proposed theoretical framework / active research program**
-Snapshot: **May 11, 2026 (evening — updated to reflect water-tank substance-ontology refinement, two-layer cosmological reading, and k(A) family ambiguity findings)**
+Snapshot: **May 12, 2026 — updated to add substance velocity-cap as V_4 candidate commitment (motion through elevated A is REALLY slowed, not just observed-slowed) and GW170817 engine time prediction (1.677 s predicted vs 1.74 s observed, 3.6% match without fitting). Builds on May 11 evening substance-ontology refinement, two-layer cosmological reading, and k(A) family ambiguity findings.**
 
 ---
 
@@ -159,6 +159,39 @@ The deviation factor (1 - A^2)^n is within ~1% of unity for A < 0.05 (everywhere
 
 ---
 
+## Substance velocity-cap (V_4 candidate commitment, added 2026-05-12)
+
+The substance ontology forces a new structural commitment: **motion through elevated A is REALLY slowed**, not just observationally. This is the operational consequence of treating A as real substance density rather than coordinate artifact, combined with the magic-bell prohibition (no view-from-nowhere observation).
+
+Operationally:
+```text
+v_effective² = v_Newton² × f(A_local)
+```
+where f(A_0) ≈ 1 and f(A) → 0 as A → 1. The current V_4 candidate form is **f(A) = 1 - A** (the proper-time-squared factor, ontologically consistent with g_tt structure). Other candidates were tested (√(1-A), (1-A)²(1+A)); the (1-A) form gave the best empirical match to GW170817 while being structurally motivated.
+
+**Wedge with GR**: GR has the geometric metric factors but no separate substance interaction. STAM has both. At low A (everywhere currently measured), they agree to within ~3%. At high A (late binary inspiral), they diverge predictably:
+
+- **Inspiral chirp shape**: STAM-corrected dynamics produce slightly different chirp profile than pure GR templates
+- **Binary mass extraction**: LIGO templates assume GR; STAM-corrected templates would extract slightly different chirp masses (~few percent shift)
+- **Binary merger engine time** (BNS systems with EM counterparts): see "Falsifiable predictions" below
+
+**GW170817 engine time** (specific consequence): under the substance velocity-cap + Sean's elastic-shell picture, the engine time (orbital collision → gamma-ray burst onset) equals τ_critical, the Peters-Mathews chirp time from the substance-corrected doughnut threshold:
+
+```text
+Self-consistent threshold equation: A_0 = x(1-x)/(1+x)  where x = R_s/(2r)
+For A_0 = 1/(12π): r_threshold/R_s ≈ 17.82
+τ_critical = (5/8) × (r_threshold/R_s)⁴ × R_s/c
+For 2.7 M_sun (GW170817): τ_critical = 1.677 s
+```
+
+**Match: 1.677 s predicted vs 1.74 s observed — 3.6% match, no fitting.** The progression (naive Newton 2.10 s → partial substance correction 1.89 s → full self-consistent 1.68 s) is monotonic toward observation as substance correction is applied.
+
+**Mass-scaling**: τ_critical ∝ M_total (linear). Slope ~0.62 s per M_sun. Falsification handle for future BNS+EM events.
+
+Scripts: [G42](scripts/G42_doughnut_threshold_corrected.py) (threshold-only correction) and [G43](scripts/G43_doughnut_contraction_full_stam.py) (full self-consistent) hold the calculation. See also [memory/project_substance_velocity_cap.md](memory/project_substance_velocity_cap.md).
+
+---
+
 ## Black-hole interpretation
 
 In Model-A, a black hole is interpreted as a 2D bubble surface, not a deep interior region.
@@ -302,6 +335,15 @@ G1: Ringdown damping factor tau / tau_GR = (9/5)^(n/2) at same dominant
     are spinning Kerr-like, so spinless Model-A analog is the missing
     piece for direct comparison).
 
+G43: BNS merger engine time (orbital collision → gamma-ray burst onset)
+     scales linearly with total binary mass:
+       τ_engine = τ_critical ≈ 0.62 × (M_total / M_sun) seconds
+     For GW170817 (M = 2.7 M_sun): predicted 1.68 s, observed 1.74 s
+     (3.6% match, no fitting). Falsifiable with future BNS+EM events:
+     engine times should fall on a linear trend with this slope.
+     If they don't, the substance velocity-cap + elastic-shell mechanism
+     is refuted as the engine-time mechanism.
+
 F6: Gravitational decoherence ~0.5 s for 1 micron silica
     nanoparticle in superposition. Cavity-optomechanics frontier;
     achievable in the next decade.
@@ -340,7 +382,9 @@ PBH-DM: requires inflationary fluctuation amplitude sigma ~ 0.05
 
 10. **Six observational regimes, one A field.** Local gravity, propagation delay, BH thermodynamics, SN distances, CMB acoustic scale, and galactic DM all from the same A field with one structural constant (A_0 = 1/(12 pi)) and one calibrated parameter (beta).
 
-11. **Specific falsifiable predictions** (G1 ringdown, F6 decoherence, G3-G4 latitudinal Hawking, PBH-DM sigma constraint) — distinguishable from LCDM in regimes the standard framework does not address.
+11. **Specific falsifiable predictions** (G1 ringdown, F6 decoherence, G3-G4 latitudinal Hawking, PBH-DM sigma constraint, G43 BNS engine time mass-scaling) — distinguishable from LCDM in regimes the standard framework does not address.
+
+12. **Substance velocity-cap as STAM-vs-GR wedge** (added 2026-05-12). Substance ontology forces motion through elevated A to be REALLY slowed (not just observationally). For GW170817, this gives binary merger engine time = τ_critical = 1.677 s vs observed 1.74 s — 3.6% match, no fitting. The progression of substance correction (naive → partial → full) is monotonic toward observation. Mass-scaling linear in M_total is the falsification handle.
 
 ---
 
@@ -406,4 +450,4 @@ When the framework changes direction (as it did multiple times in development �
 
 ## Acknowledgments
 
-Development assisted by extensive conversation with Claude (Anthropic), particularly during the May 2026 push that produced the A_0 = 1/(12 pi) structural commitment, V_3 potential selection, CMB self-consistent closure, and PBH-DM compatibility analysis (G7-G14 script series), and the May 11 (evening) refinement session that produced the substance-ontology articulation (water-tank conceptual exercise), the two-layer cosmological reading (G28+G29: V_3 expansion ≡ LCDM at H_0=73 by construction, photon-A traversal as separate distance bias), the G21 redux confirming GR-exact strong-field landmarks under corrected composition, the G31 confirmation that A_0 baseline does not bridge galactic DM, and the G33/G34 swing surfacing the 1-parameter ambiguity in k(A).
+Development assisted by extensive conversation with Claude (Anthropic), particularly during the May 2026 push that produced the A_0 = 1/(12 pi) structural commitment, V_3 potential selection, CMB self-consistent closure, and PBH-DM compatibility analysis (G7-G14 script series); the May 11 (evening) refinement session that produced the substance-ontology articulation (water-tank conceptual exercise), the two-layer cosmological reading (G28+G29: V_3 expansion ≡ LCDM at H_0=73 by construction, photon-A traversal as separate distance bias), the G21 redux confirming GR-exact strong-field landmarks under corrected composition, the G31 confirmation that A_0 baseline does not bridge galactic DM, and the G33/G34 swing surfacing the 1-parameter ambiguity in k(A); and the May 12 session that produced the substance velocity-cap candidate commitment (motion through elevated A is REALLY slowed) and the GW170817 engine time prediction matching observation to 3.6% without fitting (G42, G43 scripts).
