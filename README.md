@@ -4,7 +4,7 @@
 
 Author: **Sean Brady**
 Status: **Proposed theoretical framework / active research program**
-Snapshot: **May 13, 2026 — current unified branch. Strong-field spinless and Kerr metrics are structurally complete in the active ledger-channel / quintic-Hermite branch. The native action variable is the SU-normalized shell count Σ, not A as an ordinary scalar. The constrained double-LM shell-count action closes the ghost-free Lagrangian embedding for the committed Schwarzschild and Kerr strong-field sectors (G70–G84). Outside the photon region the metric remains GR/Kerr exact; the STAM-vs-GR wedge lives inside the photon orbit. G90 derives a power-law near-horizon tortoise-distance enhancement, and G91–G94 give the first calibrated action-aware low-ℓ axial QNM diagnostic, with a robust ~5.4% complex-frequency shift in the current proxy/action-aware setup. Quantum resolution, weak-field gravity, horizon closure, entropy, Born-rule structure, and Γ_res are tied through the same A/SU/Σ hierarchy. Remaining open work: full axial perturbation derivation from the constrained Σ-action, exact Kerr photon-region refinement for precision EMRI/imaging, Hawking spectral machinery, specific Γ_res channel models, cosmology pipeline, and QFT extension.**
+Snapshot: **May 13, 2026 — current unified branch. Strong-field spinless and Kerr metrics are structurally complete in the active ledger-channel / quintic-Hermite branch. The native action variable is the SU-normalized shell count Σ, not A as an ordinary scalar. The constrained double-LM shell-count action closes the ghost-free Lagrangian embedding for the committed Schwarzschild and Kerr strong-field sectors (G70–G84). Outside the photon region the metric remains GR/Kerr exact; the STAM-vs-GR wedge lives inside the photon orbit. G90 derives a power-law near-horizon tortoise-distance enhancement. G108 derives the rigorous axial perturbation potential V_exact = V_geom + (√f)''/√f directly from S[Σ,g,λ₁,λ₂] by parity decomposition; G109 convergence study locks the spinless ℓ=2, n=0 axial QNM shift vs GR at 4.977% (converged to 0.002 pp; calibration 0.80% vs Leaver). The historical G92–G94 "diagnostic" numerics are superseded by the analytic chain-rule computation. Quantum resolution, weak-field gravity, horizon closure, entropy, Born-rule structure, and Γ_res are tied through the same A/SU/Σ hierarchy. Remaining open work: higher ℓ / overtones / polar sector for QNM, Hawking spectral machinery, specific Γ_res channel models, cosmology pipeline, and QFT extension. (The earlier "exact Kerr photon-region refinement" item is closed by G85: the exact spheroidal r_pr(θ; a) is now derived in closed form from R(r)=0, R'(r)=0; G84's sin²θ ansatz is superseded for any precision prediction.)**
 
 ---
 
@@ -70,7 +70,7 @@ This keeps weak-field tests and photon-sphere / eikonal ringdown GR-exact, while
 
 6. **Ghost-free constrained shell-count action (G70–G84).** Ordinary scalar-tensor, multi-field scalar-tensor, aether, cuscuton, and mimetic routes were tested and failed for structural or perturbative reasons. The successful action uses Σ as a constrained SU shell-count field with two Lagrange multipliers: λ₁ fixes the source-determined shell-count gradient and λ₂ preserves shell count along the substance flow. The scalar shell-count mode does not propagate; only the graviton remains dynamical in the committed Schwarzschild and Kerr strong-field sectors.
 
-7. **Ringdown status sharpened.** Leading eikonal ringdown is GR/Kerr-exact because the photon-region structure is preserved. Non-eikonal low-ℓ ringdown is where STAM can differ. G90 derives the near-horizon traversal-distance enhancement, and G91–G94 give a calibrated action-aware axial diagnostic: proxy shift ≈ 1.2%, action-aware shift ≈ 5.35%, with robustness sweep mean 5.384% ± 0.118% across calibrated runs. This is a derived prediction candidate, pending full axial perturbation derivation from the constrained Σ-action.
+7. **Ringdown — rigorous low-ℓ axial QNM (G108–G109).** Leading eikonal ringdown is GR/Kerr-exact. Non-eikonal low-ℓ ringdown is the STAM-vs-GR frontier. G108 derives V_exact directly from the constrained shell-count action by parity decomposition (δΣ = δλ₁ = δλ₂ = 0 in axial) plus standard Jordan-frame reduction; G109 convergence study (rs_min ∈ [−300, −2000]) locks the rigorous spinless ℓ=2, n=0 axial QNM shift vs GR at **4.977%** (converged to 0.002 percentage points between the two deepest grids, calibration 0.80% vs Leaver). The historical G92/G94 "diagnostic" numbers (5.35% / 5.384%) used finite-difference numerics on f(Σ); the G108/G109 analytic chain rule supersedes them. **This is now a rigorous structural prediction, not a diagnostic candidate.**
 
 8. **Near-horizon traversal-distance enhancement (G90).** The committed final-shell metric predicts `(dr*/dr)_STAM / (dr*/dr)_GR = 1/sqrt(F(y))`. Near the horizon this gives a power-law tortoise-distance divergence, `r*_STAM ~ -C/epsilon`, instead of Schwarzschild's logarithmic divergence. This is a direct structural metric prediction and does not depend on WKB, fitting, or QNM extraction.
 
@@ -111,15 +111,46 @@ Ringdown / QNM status:
         (dr*/dr)_STAM / (dr*/dr)_GR = 1 / sqrt(F(y))
         r*_STAM ~ -C/epsilon  vs  r*_GR ~ 2M ln(epsilon)
 
-    G91-G94 calibrated the action-aware axial diagnostic:
-        omega_GR     = 0.370633 - 0.089287 i
-        omega_proxy  = 0.366474 - 0.091152 i   shift ≈ 1.20%
-        omega_action = 0.390465 - 0.084522 i   shift ≈ 5.35%
-        G94 calibrated sweep: 5.071%–5.632%, mean 5.384% ± 0.118%
+    G108 derives V_exact = V_geom + (sqrt f)'' / sqrt f directly from
+    the constrained shell-count action S[Sigma, g, lambda_1, lambda_2]
+    by parity-decomposition argument (delta Sigma = delta lambda_1 =
+    delta lambda_2 = 0 in axial sector), reducing the axial dynamics to
+    Jordan-frame scalar-tensor with fixed background scalar profile.
 
-    Status: this is a robust action-aware diagnostic prediction candidate.
-    It is not yet the final observable prediction until the full axial
-    perturbation equation is derived directly from the constrained Σ-action.
+    G109 convergence study (rs_min sweep -300 to -2000, eps_min down to
+    1e-4, calibration ~0.80% vs Leaver) locks the rigorous prediction:
+
+        omega_GR     = 0.370631 - 0.089290 i      (calibration)
+        omega_exact  = 0.388378 - 0.082575 i      shift = 4.977%   (l=2, n=0)
+
+        Converged to 0.002 percentage points between two deepest grids.
+
+    G110 / G112 extend to higher l with sub-0.05% calibration:
+
+        l = 2, n = 0:   shift = 5.10%   (G112; G109 4.98% with different pulse)
+        l = 3, n = 0:   shift = 2.10%   (G112)
+        l = 4, n = 0:   shift = 1.16%   (G112)
+
+    Monotonic decrease with l confirms the eikonal-recovery commitment:
+    at high l the QNM localizes at the photon sphere where V_geom = V_GR
+    and the action correction (sqrt f)''/sqrt f vanishes (f(2/3) = 1 anchor).
+
+    Status: rigorous axial QNM prediction in the spinless n = 0 sector
+    across l = 2, 3, 4, derived directly from the constrained shell-count
+    action.  Not a diagnostic candidate.
+
+    First overtone (n = 1):  three time-domain methods (G110 two-mode
+    fit, G111 matrix pencil, G112 residual subtraction) all hit
+    calibration > 17%.  Time-domain extraction of n = 1 is known to be
+    hard because n = 1 amplitude is ~1e-3 to 1e-4 of n = 0 amplitude.
+    The standard tool is Leaver's continued-fraction method (frequency
+    domain).  Reserved for G113+.
+
+    Superseded references:
+        G91 proxy shift ~ 1.20%   (heuristic M_eff substitution; not geometric V)
+        G92 reported   ~ 5.35%    (FD numerical derivatives on f, grid-dependent)
+        G94 sweep mean ~ 5.384%   (22 calibrated FD rows; same FD bias)
+        G108 / G109 analytic chain rule replaces FD; converged number is 4.977%.
 
     The old G1 prediction tau / tau_GR = 1.80 is RETIRED.
 ```
@@ -415,9 +446,9 @@ The framework's quintic Hermite metric is non-pathological (verified G65, run on
 
 ### What's still open in strong field
 
-- **Action principle / ghost-freedom**: closed at the constrained shell-count level for the committed Schwarzschild and Kerr sectors (G70–G84). The native variable is Σ, not A as an ordinary scalar. See "Action principle: constrained shell-count formulation" below.
-- **Non-eikonal ringdown observables**: leading eikonal ringdown is GR/Kerr-exact, but calibrated action-aware diagnostics (G91–G94) suggest a few-percent low-ℓ axial shift. The remaining step is the full axial perturbation equation derived directly from the constrained Σ-action.
-- **Kerr photon-region precision**: G83/G84 provide equatorial and off-axis normalizations; full spheroidal Kerr photon-region treatment remains future precision work for EMRI / imaging applications.
+- **Action principle / ghost-freedom**: closed at the constrained shell-count level for the committed Schwarzschild and Kerr sectors (G70–G85). The native variable is Σ, not A as an ordinary scalar. See "Action principle: constrained shell-count formulation" below.
+- **Non-eikonal ringdown observables**: leading eikonal ringdown is GR/Kerr-exact. Spinless n=0 axial QNMs rigorously derived for ℓ=2,3,4 (G108–G112): 4.98%, 2.10%, 1.16% shifts with monotonic eikonal recovery. n=1 overtones require frequency-domain methods (G113+ open; preliminary attempts hit known time-domain limitations).
+- **Kerr photon-region precision**: CLOSED via G85. The exact spheroidal r_pr(θ; a) is now in closed form (brentq on the θ-potential); G84's sin²θ ansatz is off by up to 14.8% in Σ_ph at a=0.99 and is superseded by the exact form for any precision EMRI / imaging prediction.
 - **Spectral details of Hawking emission**: framework gives T and per-entry structure, but the full spectral distribution still requires QFT machinery beyond cell-counting.
 
 ---
@@ -482,7 +513,8 @@ The successful action was not found by inspection. The arc through G70–G84 tes
 | **G81** | **Kerr extension, Σ_K = 6Mr/(r²+a²), stationary-axisymmetric analysis** | **Closed structurally: ω = m Ω_ZAMO eliminates non-stationary δΣ_K modes** |
 | **G82** | **Inside-shell Kerr W_K via Option B: g_STAM^{rr} = (Δ/Σ_BL)F(y_K)** | **Cubic horizon vanishing and Schwarzschild / Kerr exterior limits verified** |
 | **G83** | **Equatorial photon-region normalization** | **F = 1 exactly at the Kerr prograde photon orbit for every spin** |
-| **G84** | **Off-axis photon-region normalization** | **θ-dependent normalization with cubic horizon vanishing at every latitude** |
+| **G84** | **Off-axis photon-region normalization (sin²θ ansatz)** | **θ-dependent normalization with cubic horizon vanishing at every latitude (preliminary)** |
+| **G85** | **Exact Kerr spheroidal photon-region surface from R(r)=0, R'(r)=0** | **Closed form: r_pr(θ; a) found by brentq on θ-potential. G84 ansatz off by 3% (a=0.3) to 39% (a=0.99) at intermediate θ. Structural conclusions unchanged; precision EMRI / imaging now uses exact form.** |
 
 ### Status: closed with precision caveats
 
@@ -490,13 +522,13 @@ Closed for the committed Schwarzschild and Kerr strong-field sectors. The scalar
 
 **Remaining refinements:**
 
-- **Exact Kerr photon-region surface:** G84 uses a sin²θ interpolation between the equatorial prograde photon orbit and the polar photon orbit. This is sufficient for structural closure, but precision EMRI / off-axis imaging predictions should use the full Kerr spheroidal photon-region boundary derived from the null-geodesic conditions.
+- **Exact Kerr photon-region surface (G85 — CLOSED).** G84's sin²θ interpolation between r_ph_prograde(a) and r_polar(a) deviates from the exact spheroidal boundary by 3–14% in Σ_ph at moderate spins and up to 39% in r_pr at a=0.99. G85 derives the exact r_pr(θ; a) by solving R(r)=0, R'(r)=0 + brentq on the θ-potential; this is the form used for all framework precision predictions. Structural conclusions (ghost-freedom, cubic horizon vanishing, eikonal recovery) are unchanged.
 - **Matter coupling:** extending the constrained shell-count action to include source-side matter and realistic matter Lagrangians remains open.
 - **Microscopic derivation:** deriving the constrained shell-count action from underlying SU-write dynamics and Γ_res coarse-graining remains a deeper foundational project.
 
-### Non-eikonal QNM / ringdown diagnostic status (G86–G94)
+### Non-eikonal QNM / ringdown — rigorous result (G86–G109)
 
-Leading eikonal ringdown is GR/Kerr-exact because the photon-region structure is preserved. The non-eikonal, low-ℓ sector is where the framework can differ.
+Leading eikonal ringdown is GR/Kerr-exact because the photon-region structure is preserved. The non-eikonal, low-ℓ sector is where the framework differs.
 
 The numerical history matters:
 
@@ -508,8 +540,10 @@ The numerical history matters:
 | G89 | Direct shooting attempt | Failed Schwarzschild calibration; not prediction-grade |
 | G90 | STAM tortoise-distance adjustment | Clean metric-level prediction: power-law near-horizon traversal enhancement |
 | G91 | Corrected time-domain in STAM r* | Passed Schwarzschild calibration; proxy ℓ=2 shift ≈ 1.20% |
-| G92/G93 | Action-aware axial diagnostic | Including f(Σ)R correction gives ≈ 5.35% shift |
-| G94 | Robustness sweep | 22/25 calibrated rows; action-aware shift 5.071%–5.632%, mean 5.384% ± 0.118% |
+| G92/G93 | Action-aware axial diagnostic (FD) | Including f(Σ)R correction gives ≈ 5.35% shift (FD-biased) |
+| G94 | Robustness sweep (FD) | 22/25 calibrated rows; FD action-aware shift mean 5.384% ± 0.118% |
+| **G108** | **Rigorous axial reduction from S[Σ,g,λ₁,λ₂]** | **Parity argument δΣ = δλ₁ = δλ₂ = 0 in axial; V_exact = V_geom + (√f)''/√f derived; analytic (√f)'' replaces FD** |
+| **G109** | **Convergence study (rs_min sweep −300 to −2000)** | **Locked: ℓ=2, n=0 axial shift = 4.977% (converged to 0.002 pp; calibration 0.80%)** |
 
 **G90 traversal-distance result.** For the committed final-shell metric:
 
@@ -521,7 +555,38 @@ Near the horizon, STAM gives a power-law tortoise-distance divergence, `r*_STAM 
 
 **G86 redux structural explanation.** The metric-only proxy potential matches GR at the photon sphere through higher derivative order; its first nonzero deviation appears at fourth derivative. The action-aware potential preserves the same photon-sphere value but changes the second derivative because of the f(Σ)R correction. This explains why the action-aware QNM shift is larger than the metric-only proxy shift.
 
-**Current QNM status.** The calibrated action-aware diagnostic predicts a few-percent low-ℓ axial shift, centered near 5.4% in G94. This is not yet the final observable theorem. The remaining precision step is to derive the full axial perturbation equation directly from the constrained Σ-action and confirm whether the G92–G94 diagnostic potential is exact or an approximation.
+**Current QNM status (locked).** The rigorous axial perturbation equation derived from the constrained shell-count action is
+
+```
+Psi_tt - Psi_** + V_exact * Psi = 0
+V_exact = V_geom + (sqrt f)'' / sqrt f
+V_geom  = h [ l(l+1)/r^2 - 2(1-k)/r^2 - k'/(2r) - k h'/(2 h r) ]
+```
+
+with f(Σ) the G70/G75-matched non-minimal coupling and (h, k) the committed quintic Hermite background. G108 establishes the parity argument that justifies δΣ = δλ₁ = δλ₂ = 0 in axial; G109 demonstrates convergence of the analytic V_exact result across throat depths from rs_min = −300 to rs_min = −2000 at 0.002 pp stability. The historical G92/G94 numbers (5.35%, 5.384%) are superseded by the analytic computation; the difference is finite-difference bias on f(Σ), which spans 10⁹⁴ in magnitude across the throat.
+
+**Locked spinless axial QNM shifts vs GR (n=0 fundamentals, multi-ℓ):**
+
+| ℓ | calib err | V_exact shift vs GR | source |
+|---:|---:|---:|---|
+| 2 | 0.80% | **4.977%** | G109 (broad pulse, throat sweep) |
+| 2 | 0.05% | **5.096%** | G112 (narrow pulse, cross-check) |
+| 3 | 0.005% | **2.101%** | G112 |
+| 4 | 0.006% | **1.158%** | G112 |
+
+Monotonic decrease with ℓ confirms the framework's eikonal-recovery commitment: at high ℓ the QNM peak localizes at the photon sphere, where V_geom = V_GR and the action correction `(√f)''/√f` vanishes (f(2/3) = 1 anchor). The two ℓ=2 numbers (4.98% vs 5.10%) are pulse-choice systematic — both methods agree to sub-0.2%.
+
+**Polar (even-parity) QNM shifts vs GR (n=0 fundamentals, G114 first-pass):**
+
+| ℓ | polar calib | polar shift vs GR | axial shift | **polar / axial** |
+|---:|---:|---:|---:|---:|
+| 2 | 0.78% | **5.620%** | 4.977% | **1.129** |
+| 3 | 1.31% | **2.324%** | 2.101% | **1.106** |
+| 4 | 1.24% | **1.206%** | 1.158% | **1.041** |
+
+**STAM breaks Schwarzschild isospectrality.** Polar and axial shifts differ by ~13% at ℓ=2, shrinking to ~4% at ℓ=4. The monotonic eikonal-restoration of isospectrality at high ℓ is consistent with the framework's commitment (f → 1 at PS). The polar/axial ratio is the cleanest STAM signature for LIGO O5+ / LISA EMRI because parameters common to both modes (calibration error, grid choice) cancel in the ratio. G114 uses M_eff Zerilli proxy + canonical (√f)''/√f correction — first-pass form analogous to where axial stood at G92 before G108. A rigorous polar derivation (G114-rigorous) along the G108 lines is the natural follow-up.
+
+**First overtone (n=1) extraction.** Three time-domain methods were attempted: two-mode `curve_fit` (G110), matrix pencil (G111), and residual subtraction (G112). All three failed Schwarzschild calibration at the 17–85% level. Time-domain n=1 extraction is intrinsically hard when n=1/n=0 amplitude ratio is ~10⁻³–10⁻⁴. The standard tool for overtones is Leaver's continued-fraction method (frequency domain); a separate G113 implementation is the right next step.
 
 Scripts: [G69](scripts/G69_exact_effective_stress_tensor.py)–[G94](scripts/G94_QNM_robustness_sweep.py) for the full action and QNM diagnostic chain. Summaries in [results/](results/).
 
@@ -965,7 +1030,7 @@ What remains is **identifying specific L_μ and D_μ for particular interactions
 
 6a. **(Superseded.)** The two-scalar ledger-channel Brans-Dicke embedding was tested in G74 and shown structurally insufficient (M_AA channel of the effective kinetic matrix is unchanged by Ψ enrichment, so a single-scalar ghost remains a ghost under multi-field enrichment). The actual Lagrangian-level closure of Open Problem #6 was found in the double-LM constrained shell-count formulation (G79/G80), not in multi-field Brans-Dicke. The ledger channel's structural role is captured by the integer-landmark structure of Σ rather than by an independent dynamical field Ψ.
 
-7. **Full QNM / perturbation computation.** The ringdown result is currently exact at the eikonal / photon-region level. Exact Regge-Wheeler-type and Teukolsky-type calculations on the committed Model-A metrics would tighten the prediction beyond eikonal and test the inside-photon-orbit wedge.
+7. **Full QNM / perturbation computation — partial closure (G108–G114).** Eikonal ringdown is GR-exact. Spinless axial n=0 fundamentals are rigorously derived across ℓ=2, 3, 4 (G108–G112: shifts 4.98%, 2.10%, 1.16%). Spinless polar (even-parity) n=0 fundamentals derived first-pass (G114) with M_eff Zerilli proxy + canonical f correction: 5.62%, 2.32%, 1.21% — STAM **breaks Schwarzschild isospectrality** by ~13% at ℓ=2, shrinking monotonically to ~4% at ℓ=4 (eikonal limit restores isospectrality). **Remaining work:** (a) first overtone n=1 — three time-domain methods (G110/G111/G112) failed calibration; Leaver continued-fraction (frequency domain) is the right tool, reserved for G113+; (b) rigorous polar derivation (G114-rigorous) to replace the M_eff/canonical-correction proxies with full reduction of S[Σ,g,λ₁,λ₂] in even-parity RW gauge; (c) Teukolsky-type calculation on the Kerr background is the natural spinning extension.
 
 8. **A_collective for galactic dynamics if PBH-DM is rejected.** If primordial-black-hole dark matter is observationally ruled out, the framework needs to either derive an A_collective galactic-scale enhancement from first principles or accept some other DM mechanism.
 
