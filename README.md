@@ -4,9 +4,142 @@
 
 Author: **Sean Brady**
 Status: **Proposed theoretical framework / active research program**
-Snapshot: **May 13, 2026 — strong-field arc structurally complete in spinless AND spinning cases, with the metric derived from the ledger-as-structural-channel write-density route. Spinless: k(A) = (1−A) outside the photon sphere (exact GR); k(A) = (1−A)·F(Σ) inside, F(Σ) = 1 − 5(Σ−2)⁴ + 4(Σ−2)⁵ (quintic Hermite, C³ at PS, C¹ at horizon). Σ = 3A is the natural shell coordinate (landmarks ISCO Σ=1, PS Σ=2, horizon Σ=3). Derivation: D + 1 = 4 spatial-side channels (3 spatial + 1 ledger as structural channel) + 2 horizon-pair channels (outer-face pair structure: write + reduction) → Beta(D + 1, 2) = Beta(4, 2) closure density p(y) = 20y³(1−y) → F = 1 − 5y⁴ + 4y⁵. SU shell-count + two-face joint compatibility forces D = 3 (framework-internal, not anthropic). Kerr: A(r, θ; M, a) = 2Mr/(r²+a²) places the bubble at r = r_+ (Kerr horizon, constant BL coord, oblate when embedded), hologram spins on stationary horizon, T uniform = T_Kerr, LIGO ringdown = exact GR-Kerr for all spin. Entropy α = 4 = (outer-face pair × gravity-bridge) structurally derived (G18 caveat closes). Pair structure derived from elevator argument (write IS reduction on outer face). Hawking T derived two independent ways. Stress-energy verified non-pathological at the stress-diagnostic level (conservation, bounded curvature, SEC satisfied; ghost-freedom requires a separate perturbative / action-level check, still open). Spinless ringdown = exact GR; Kerr ringdown = exact GR-Kerr; the STAM-vs-GR wedge lives inside the photon orbit and is observable only at sub-leading WKB precision. Quantum-unit commitment: each quantum physical interaction resolves exactly 1 SU = A_0 of substance — unifying the cosmological ruler reading of SU with the quantum write reading. Weak-field A(r) is the continuum / coarse-grained limit of many SU writes. Born rule derived structurally: `u_i = ||P_i ψ|| = |ψ_i|` is a projection-geometry theorem (four axioms: phase blindness, projector locality, unitary covariance, orthogonal refinement); `p_i = u_i²` is a STAM ledger-measure result from the principle that resolution-event phase volume scales as the square of unresolved support amplitude. The same pair structure (outer-face: write + reduction is one event with two coupled aspects) does three framework jobs — α_H = 2 in the strong-field metric, α = 4 in boundary entropy, |ψ|² squaring in the Born rule. Decoherence is the structural consequence of paired events resolving alternatives into distinct ledger channels before recombination, not a separate postulate. Bell / CHSH violation reproduced exactly at the Tsirelson bound (G67). First-principles QM action chain: substance velocity-cap → proper time dτ = dt√(1−A)√(1−v²/c²) → relativistic action S = −mc²·τ → non-relativistic L = KE − mΦ with Φ = c²A/2 → path integral in unresolved support → Born rule at resolution events. SU support `N_SU(x) = A(x)/A_0` and actual write rate `dN_write = Γ_res × dτ` are distinct quantities. Γ_res now has committed structural form: `Γ_res = Σ_μ ⟨L_μ† L_μ⟩ D_μ` (Lindblad-analog with L_μ as physical write channels and D_μ as channel distinguishability) bounded by `0 ≤ Γ_res ≤ (A/A_0)/τ_P` (interaction-gating from below; SU support capacity from above). Per-channel split via Born rule p_i = |ψ_i|² gives dN_i = Γ_res p_i dτ. Remaining work is identifying specific L_μ and D_μ for particular interactions — domain-of-application, not structural gap.**
+Snapshot: **May 13, 2026 — current unified branch. Strong-field spinless and Kerr metrics are structurally complete in the active ledger-channel / quintic-Hermite branch. Outside the photon sphere the metric is GR/Kerr exact; the STAM-vs-GR wedge lives inside the photon orbit. Quantum resolution, weak-field gravity, horizon closure, entropy, Born-rule structure, and Γ_res are tied through the same A/SU/Σ hierarchy. Remaining open work: covariant action for A, exact perturbative/QNM spectrum beyond eikonal, Hawking spectral machinery, specific Γ_res channel models, and QFT extension.**
 
 ---
+
+## Current unified branch
+
+Model-A's current unified branch is organized by one field, one unit, one shell coordinate, and one final-shell closure profile:
+
+```
+A = physical accumulation field
+1 SU = A_0 = 1/(12π)
+Σ(A) = A / (4π A_0) = 3A
+```
+
+The strong-field landmarks become integer shell counts:
+
+```
+Σ = 1  →  ISCO
+Σ = 2  →  photon sphere
+Σ = 3  →  horizon
+```
+
+The spinless strong-field radial factor:
+
+```
+k(A) = 1 − A                       for A ≤ 2/3
+```
+
+so the exterior through the photon sphere is **GR-exact** (weak-field tests pass automatically, eikonal ringdown matches Schwarzschild).
+
+Inside the photon sphere:
+
+```
+k(A) = (1 − A) · F(y)              with y = 3A − 2 = Σ − 2,  for 2/3 < A < 1
+```
+
+**Because the ledger is treated as a structural channel** (committed 2026-05-13), the spatial-side channel count is D + 1 = 4 (3 spatial + 1 ledger), and the final-shell closure density is **Beta(4, 2)**:
+
+```
+p(y) = 20 y³ (1 − y)
+F(y) = 1 − 5 y⁴ + 4 y⁵             — quintic Hermite (C³ at PS, C¹ at horizon)
+```
+
+Therefore the explicit metric is:
+
+```
+k(A) = (1 − A) · [1 − 5(3A − 2)⁴ + 4(3A − 2)⁵]    for 2/3 < A < 1
+```
+
+This keeps weak-field tests and photon-sphere / eikonal ringdown GR-exact, while placing the STAM-vs-GR wedge inside the photon sphere.
+---
+
+## Headline results — what is strongest so far
+
+1. **Weak-field recovery.** Newtonian gravity follows directly from `g = (c^2/2) grad A`. GPS, Shapiro, and lensing match GR weak-field predictions identically.
+
+2. **A_0 = 1/(12 pi) committed structurally.** Bridge term `b = A_0  x  c/H_0` matches historical Pantheon/Union3 fit to 0.04%. A_0 is no longer a calibrated parameter.
+
+3. **The thirds-of-A strong-field structure.** ISCO, photon sphere, and horizon fall at A = 1/3, 2/3, 1 — preserved exactly because g_tt is unchanged.
+
+4. **Black-hole thermodynamics from one rule.** `k_B T = hbar c |grad A| / (4 pi)` reproduces Hawking T (Schwarzschild + Kerr + de Sitter), Bekenstein-Hawking entropy, the first law, the Smarr relation, evaporation lifetime, and the generalized second law.
+
+5. **Strong-field metric structurally complete (spinless AND spinning, D=3).** Spinless: k(A) = (1−A) outside PS, k(A) = (1−A)·(1 − 5y⁴ + 4y⁵) inside with y = 3A − 2 (quintic Hermite, derived from the ledger-as-structural-channel write-density route Beta(D + 1, 2)). Kerr: A = 2Mr/(r² + a²), bubble at constant r = r_+ (Kerr horizon, oblate in flat-space embedding), hologram spins on stationary horizon. **D = 3 is framework-internal** (forced by SU shell-count + two-face joint compatibility, not anthropic). All metric structure derived from primitives (substance + presentism + ledger-channel + two-face + SU shell-count + elevator + natural measure) — no free parameters anywhere in the metric.
+
+6. **LIGO ringdown is exact GR for any spin.** Spinless: τ_STAM/τ_GR_Schw = 1 (G57, G66). Kerr: τ_STAM/τ_GR_Kerr = 1 for all spin (G62, G64). Both follow from k = (1−A) outside the photon orbit being exact GR there. The STAM-vs-GR wedge is pushed entirely inside the photon orbit (sub-leading observables only).
+
+7. **SN distance fits beat LCDM combined chi^2.** Model-A with V_3 modified Friedmann wins by 25-33 across Pantheon+/Union3/DES at the same number of free parameters. Predicts inter-catalog Pantheon+/Union3 tension within 27%.
+
+8. **CMB self-consistent closure at H_0 = 73.** Cumulative-A line-of-sight amplification structurally explains the H_0 tension. Internal solution exists for realistic cosmic-structure parameters.
+
+9. **PBH-DM compatibility for galactic dark matter.** Each PBH is a small bubble with the framework's existing thermodynamic/structural machinery. Galactic rotation curves close trivially with PBH-halo + cumulative A.
+
+10. **Six observational regimes, one A field.** Local gravity, propagation delay, BH thermodynamics, SN distances, CMB acoustic scale, and galactic DM all from the same A field with one structural constant (A_0 = 1/(12 pi)) and one calibrated parameter (beta).
+
+11. **Specific falsifiable predictions** — F6 decoherence, PBH-DM sigma constraint, G43 BNS engine time mass-scaling, primordial-mass remnants (BHs never fully evaporate), inside-PS LIGO O5+ overtones / LISA EMRIs as the STAM-vs-GR wedge. Distinguishable in regimes current LIGO doesn't precisely probe.
+
+12. **Substance velocity-cap as STAM-vs-GR wedge** (added 2026-05-12). Substance ontology forces motion through elevated A to be REALLY slowed. For GW170817: binary merger engine time = τ_critical = 1.677 s vs observed 1.74 s — 3.6% match, no fitting. Mass-scaling linear in M_total is the falsification handle.
+
+13. **Entropy derivation closed (2026-05-13).** α = 4 area-per-entry now derived structurally (G59) — both factors (α_H from two-face / pair structure, gravity-bridge from A's definition) do other framework work. Pair structure of Hawking emission derived from elevator argument (G60). Hawking T derived two independent ways (resolution rule + elevator self-consistency).
+
+14. **Stress-energy verified non-pathological (G65, 2026-05-13).** Conservation automatic (TOV residual at numerical noise), Kretschmann bounded (K_STAM < K_Schw near horizon — no hidden singularity), C² smooth at PS, SEC satisfied (no effective anti-gravity in the final-shell stress diagnostic — ghost-freedom is a separate perturbative / action-level check still pending). NEC_r and WEC violated in modified-gravity / dark-energy character — not pathological at the stress-energy level.
+
+15. **Quantum unit of resolution fixed (2026-05-13).** Each quantum physical interaction resolves exactly 1 SU = A_0. The cosmological and quantum readings of SU unify under this commitment. Hawking emission events each resolve 1 SU, tying the framework's natural unit to the per-event mass-energy bookkeeping via the elevator identity.
+
+16. **Born rule derived structurally (2026-05-13).** Two-step derivation: (a) projection-geometry theorem gives `u_i = ||P_i ψ|| = |ψ_i|` from four structural axioms (phase blindness, projector locality, unitary covariance, orthogonal refinement); (b) STAM ledger-measure step gives `p_i = u_i²` from paired write + reduction sampling of unresolved-A. Decoherence emerges as the structural consequence of paired events resolving alternatives into distinct ledger channels before recombination — not a separate postulate. The same pair structure does three framework jobs (metric closure α_H = 2, entropy α = 4, Born-rule squaring) — one primitive, three derivations.
+
+---
+
+## Falsifiable predictions
+
+Model-A makes specific predictions in regimes LCDM does not address, each with concrete observational targets:
+
+```text
+LIGO ringdown (spinless and Kerr):
+    Spinless eikonal:  tau_STAM / tau_GR_Schwarzschild = 1.000 (exact, G57, G66)
+    Kerr eikonal:      tau_STAM / tau_GR_Kerr = 1.000 (exact, all spin, G64)
+    Framework matches GR at the photon orbit; STAM-vs-GR wedge lives
+    INSIDE the photon orbit. Distinguishable only via:
+      - Higher overtones (n >= 1)
+      - Late-inspiral chirp shape
+      - LISA EMRI ringdowns
+      - Sub-leading WKB / full Regge-Wheeler
+    The old G1 prediction tau / tau_GR = 1.80 is RETIRED (used obsolete
+    k(A) = (1-A)(1-A^2)^2 form).
+
+G43: BNS merger engine time scales linearly with total binary mass:
+       tau_engine = tau_critical ≈ 0.62 × (M_total / M_sun) seconds
+     For GW170817 (M = 2.7 M_sun): predicted 1.68 s, observed 1.74 s
+     (3.6% match, no fitting). Falsifiable with future BNS+EM events.
+
+F6: Gravitational decoherence ~0.5 s for 1 micron silica nanoparticle
+    in superposition. Cavity-optomechanics frontier; achievable in the
+    next decade.
+
+PBH evaporation rate banding (G63 + G4): under formula β for Kerr,
+    spinning PBHs have uniform T = T_Kerr but EQUATORIALLY ENHANCED
+    emission RATE from super-radiance R(theta) = 1 + (v_matter/c)^2.
+    The earlier "T latitudinally banded" prediction (G3) is RETIRED
+    under the 2026-05-13 Kerr commitment; the rate enhancement is
+    the surviving distinguishing observable. Testable if PBH
+    evaporation is ever observed.
+
+PBH-DM: requires inflationary fluctuation amplitude sigma ~ 0.05
+    at the PBH-formation scale. Constrains specific inflation models
+    (USR, hilltop, single-field-with-bump).
+
+Primordial-mass remnants: Black holes never fully evaporate; final
+    state is the primordial inner-face mass. Testable in any future
+    PBH evaporation observation that should NOT reach zero mass.
+```
+
+---
+
+## Detailed framework
+
+The sections below preserve the technical derivations, numerical checks, and open-problem record behind the current branch.
 
 ## Core idea
 
@@ -155,53 +288,6 @@ k(Σ) = (1 - Σ/3)                          for Σ ≤ 2
 k(Σ) = (1 - Σ/3) · F(Σ)                   for 2 < Σ < 3
 F(Σ) = 1 - 5(Σ - 2)⁴ + 4(Σ - 2)⁵          (quintic Hermite)
 ```
-
-### Current unified branch
-
-Model-A's current unified branch is organized by one field, one unit, one shell coordinate, and one final-shell closure profile:
-
-```
-A = physical accumulation field
-1 SU = A_0 = 1/(12π)
-Σ(A) = A / (4π A_0) = 3A
-```
-
-The strong-field landmarks become integer shell counts:
-
-```
-Σ = 1  →  ISCO
-Σ = 2  →  photon sphere
-Σ = 3  →  horizon
-```
-
-The spinless strong-field radial factor:
-
-```
-k(A) = 1 − A                       for A ≤ 2/3
-```
-
-so the exterior through the photon sphere is **GR-exact** (weak-field tests pass automatically, eikonal ringdown matches Schwarzschild).
-
-Inside the photon sphere:
-
-```
-k(A) = (1 − A) · F(y)              with y = 3A − 2 = Σ − 2,  for 2/3 < A < 1
-```
-
-**Because the ledger is treated as a structural channel** (committed 2026-05-13), the spatial-side channel count is D + 1 = 4 (3 spatial + 1 ledger), and the final-shell closure density is **Beta(4, 2)**:
-
-```
-p(y) = 20 y³ (1 − y)
-F(y) = 1 − 5 y⁴ + 4 y⁵             — quintic Hermite (C³ at PS, C¹ at horizon)
-```
-
-Therefore the explicit metric is:
-
-```
-k(A) = (1 − A) · [1 − 5(3A − 2)⁴ + 4(3A − 2)⁵]    for 2/3 < A < 1
-```
-
-This keeps weak-field tests and photon-sphere / eikonal ringdown GR-exact, while placing the STAM-vs-GR wedge inside the photon sphere.
 
 ### Natural shell coordinate
 
@@ -361,19 +447,17 @@ The framework's BH life cycle: formation presses primordial mass to the inner fa
 The "horizon doesn't spin, hologram does" principle applies specifically to the outer face's holographic content. PBHs are "thin outer face" objects (formed primordially with little subsequent accretion), predicting evaporation signatures differing from stellar BHs both in standard ways (low spin) and in framework-specific ways (sparse outer-face content). Information that "fell" into the BH lives on the inner face permanently; information from accretion lives on the outer face and gets emitted as Hawking radiation. The information paradox dissolves with a definite mechanism rather than as a slogan.
 
 **Pair structure of Hawking emission derived from the elevator argument (G60, 2026-05-13).** Each emission event at A=1 is ONE event with two structural aspects, both on the outer face: an outward write (substance leaves) and a horizon reduction (outer face mass decreases). The "elevator gets lighter when someone steps off" — the act of leaving IS the act of reducing weight; they're inseparable. This derives the framework's pair structure of Hawking emission from no-interior + substance conservation + two-face refinement, replacing the earlier "stated structural consequence" framing.
-
-
 ## A_0 void interpretation
 
 The 4 pi is the prefactor that appears in the thermal-emission rule k_B T = hbar c |grad A| / (4 pi), independently derived in Q8/Q10 as 2 pi (thermal-state imaginary-time periodicity) x 2 (Model-A gravity bridge factor c^2/2). The 3 is the count of spatial dimensions over which A must be non-zero for a 3D manifold to exist.
 
 Together, A_0 is proposed as the structural floor of spacetime — the minimum "amplitude per solid-angle x dimensionality" at which a spatial manifold can structurally manifest. Below this value, space cannot exist; A = 0 is not vacuum but absence of manifold.
 
-The numerical match between 1/(12 pi) = 0.026526 and the empirical bridge term b/L = 354.95/13387 = 0.026514 is 0.04%. This is the framework's strongest evidence for treating A_0 as a derived structural constant rather than a calibrated parameter, though the first-principles derivation of the spatial-dimensionality factor of 3 remains open theoretical work.
+The numerical match between 1/(12 pi) = 0.026526 and the empirical bridge term b/L = 354.95/13387 = 0.026514 is 0.04%. This is the framework's strongest evidence for treating A_0 as a derived structural constant rather than a calibrated parameter. The May 13 SU shell-count + two-face compatibility argument now supplies a framework-internal origin for D = 3; the remaining deeper task is lifting that closure into the covariant A-action.
 
-**Quantum-scale reading (interpretation, not derivation).** Under Model-A's resolved/unresolved-A interpretation — where physical interaction is what resolves A, and the resolved record is the universe's running ledger of what has happened — A_0 reads as the minimum density of resolved-A required to maintain the manifold's structural existence. The (4 pi x 3) decomposition gives this density a concrete cell-form: roughly one structural unit of resolved-A per (4 pi solid angle x 3 spatial directions) per Planck cell. Below this density, the manifold has too few "writes" to sustain itself — which is what "A = 0 means no spacetime" maps to at the quantum-cell scale. The same vocabulary describes physical writes at every scale of the framework: horizon writes (Hawking radiation as outward A-resolution where inward is forbidden), local quantum writes (resolution events from any physical interaction), and cosmic-floor writes (the A_0 minimum that keeps the manifold on the books). This is interpretation aligning the framework's quantum vocabulary with the existing structural decomposition, not new derivation. A future first-principles calculation that produces 1/(4 pi x 3) from such a write-density premise — without referencing the bridge term or the value 0.0265 in its setup — would constitute the actual derivation. That work is open.
+**Quantum-scale reading (aligned with SU-write commitment).** Under Model-A's resolved/unresolved-A interpretation — where physical interaction is what resolves A, and the resolved record is the universe's running ledger of what has happened — A_0 reads as the minimum density of resolved-A required to maintain the manifold's structural existence. The (4 pi x 3) decomposition gives this density a concrete cell-form: roughly one structural unit of resolved-A per (4 pi solid angle x 3 spatial directions) per Planck cell. Below this density, the manifold has too few "writes" to sustain itself — which is what "A = 0 means no spacetime" maps to at the quantum-cell scale. The same vocabulary describes physical writes at every scale of the framework: horizon writes (Hawking radiation as outward A-resolution where inward is forbidden), local quantum writes (resolution events from any physical interaction), and cosmic-floor writes (the A_0 minimum that keeps the manifold on the books). This reading is now tied to the SU-write commitment and the ledger-channel strong-field derivation. The remaining deeper task is not the numerical value alone, but the covariant action or equivalent first-principles rule that produces A_0, SU shell-count, and the final-shell closure profile together.
 
-A_0 status (snapshot 2026-05-10): operational structural commitment. Observationally distinguished — only A_0 = 1/(12 pi) satisfies both the bridge-term match and the CMB physical-amplification constraint (script G15). Theoretically anchored on the (4 pi x 3) decomposition with two component-level groundings (thermal 4 pi from Q8/Q10; geometric 1/3 from radial-line-of-sight averaging through 3D volume; the unifying first-principles derivation that combines them is open). No currently-buildable independent derivation route lands on 0.0265 (script G16). Treated the way the historical bridge term b = 354.95 was treated before A_0 was proposed: a working number that the framework is built around, with the "why" partially answered and partially open. Updates will be made if the open derivation closes or new structural arguments emerge.
+A_0 status (updated 2026-05-13): structural commitment. Observationally distinguished — only A_0 = 1/(12 pi) satisfies both the bridge-term match and the CMB physical-amplification constraint (script G15). Theoretically anchored on the (4 pi x D) decomposition: 4 pi from Q8/Q10 thermal / gravity-bridge structure, and D = 3 from SU shell-count + two-face joint compatibility. The value is no longer treated as a free calibration. What remains open is the deeper covariant action or equivalent first-principles rule that produces the A_0 floor and the strong-field shell-count from one variational structure.
 
 **V_3 vacuum tone (G19).** Small fluctuations of A around its V_3 minimum at A_0 oscillate at characteristic frequency `ω = sqrt(V_3''(A_0) / M_P^2_red)` ~ 10 H_0 (about ten Hubble rates per cycle, vacuum-oscillation period ~7-8 Gyr). The framework's structural-floor commitment ties V_3's natural tone to cosmic-dynamics scales rather than Planck or microscopic scales. The specific factor (~10) inherits the empirical Omega_DE calibration of beta; the order of magnitude (cosmic, not Planck) is structural. This is the framework's first computed natural frequency from its commitments — one tone, not yet a spectrum, but at the right scale to suggest V_3's role in cosmic-scale physics.
 
@@ -485,12 +569,11 @@ Match: 0.04%
 
 **Status:** A_0 = 1/(12π) is derived, not calibrated. SU is a derived ruler (no fit parameters). The structural identity "1 SU = A_0" emerges as two independent derivations landing on the same object: the natural cosmological unit (from SU) and the minimum density for spacetime to exist (substance ontology). The "just happens to equal" is the framework's structural discovery.
 
-The remaining open piece is the rigorous first-principles origin of the "3" factor (currently tied to spatial dimensionality / radial-line-of-sight averaging, but the unifying argument linking it to Q8's 4π is still open theoretical work — see "A_0 void interpretation" section above and Open Problem #2).
+The strong-field branch now supplies a framework-internal origin for D = 3 through SU shell-count + two-face compatibility. The remaining deeper piece is the covariant action or equivalent principle that produces A_0, D = 3, and the shell-count closure together.
 
 ---
 
 The cosmological structure is now closed with one structural commitment and one calibrated parameter:
-
 
 
 ```text
@@ -707,96 +790,15 @@ The resolved-A record can be read as the universe's running ledger of what has h
 
 **Refinement: the ledger as present-state, not historical archive (presentism).** The "ledger" is best read as the present-moment configuration of A everywhere, transformed by every interaction, rather than as a stack of historical entries persisting as separate objects. The past does not have separate ontological existence; it shaped how the present is currently configured. "What happened at time t-1000" means asking how the present encodes that past through its current correlations. Each interaction is a moment of becoming that transforms the whole configuration, not a record being appended to a stack. This converts "no information loss" from an axiom into a structural consequence (the present configuration evolves consistently) and makes the framework's quantum interpretation a process ontology rather than a record ontology.
 
-The same A field plays both classical (magnitude) and quantum (resolution-status) roles. Resolution-event statistics suggest a route to deriving Born-rule probabilities, though this is open theoretical work.
+The same A field plays both classical (magnitude) and quantum (resolution-status) roles. The Born rule is structurally closed at the projection-geometry + pair-measure level; what remains open is deriving the full unresolved-support dynamics and the domain-specific Γ_res channels from a deeper action.
 
 ---
 
-## Falsifiable predictions
-
-Model-A makes specific predictions in regimes LCDM does not address, each with concrete observational targets:
-
-```text
-LIGO ringdown (spinless and Kerr):
-    Spinless eikonal:  tau_STAM / tau_GR_Schwarzschild = 1.000 (exact, G57, G66)
-    Kerr eikonal:      tau_STAM / tau_GR_Kerr = 1.000 (exact, all spin, G64)
-    Framework matches GR at the photon orbit; STAM-vs-GR wedge lives
-    INSIDE the photon orbit. Distinguishable only via:
-      - Higher overtones (n >= 1)
-      - Late-inspiral chirp shape
-      - LISA EMRI ringdowns
-      - Sub-leading WKB / full Regge-Wheeler
-    The old G1 prediction tau / tau_GR = 1.80 is RETIRED (used obsolete
-    k(A) = (1-A)(1-A^2)^2 form).
-
-G43: BNS merger engine time scales linearly with total binary mass:
-       tau_engine = tau_critical ≈ 0.62 × (M_total / M_sun) seconds
-     For GW170817 (M = 2.7 M_sun): predicted 1.68 s, observed 1.74 s
-     (3.6% match, no fitting). Falsifiable with future BNS+EM events.
-
-F6: Gravitational decoherence ~0.5 s for 1 micron silica nanoparticle
-    in superposition. Cavity-optomechanics frontier; achievable in the
-    next decade.
-
-PBH evaporation rate banding (G63 + G4): under formula β for Kerr,
-    spinning PBHs have uniform T = T_Kerr but EQUATORIALLY ENHANCED
-    emission RATE from super-radiance R(theta) = 1 + (v_matter/c)^2.
-    The earlier "T latitudinally banded" prediction (G3) is RETIRED
-    under the 2026-05-13 Kerr commitment; the rate enhancement is
-    the surviving distinguishing observable. Testable if PBH
-    evaporation is ever observed.
-
-PBH-DM: requires inflationary fluctuation amplitude sigma ~ 0.05
-    at the PBH-formation scale. Constrains specific inflation models
-    (USR, hilltop, single-field-with-bump).
-
-Primordial-mass remnants: Black holes never fully evaporate; final
-    state is the primordial inner-face mass. Testable in any future
-    PBH evaporation observation that should NOT reach zero mass.
-```
-
----
-
-## What is strongest so far
-
-1. **Weak-field recovery.** Newtonian gravity follows directly from `g = (c^2/2) grad A`. GPS, Shapiro, and lensing match GR weak-field predictions identically.
-
-2. **A_0 = 1/(12 pi) committed structurally.** Bridge term `b = A_0  x  c/H_0` matches historical Pantheon/Union3 fit to 0.04%. A_0 is no longer a calibrated parameter.
-
-3. **The thirds-of-A strong-field structure.** ISCO, photon sphere, and horizon fall at A = 1/3, 2/3, 1 — preserved exactly because g_tt is unchanged.
-
-4. **Black-hole thermodynamics from one rule.** `k_B T = hbar c |grad A| / (4 pi)` reproduces Hawking T (Schwarzschild + Kerr + de Sitter), Bekenstein-Hawking entropy, the first law, the Smarr relation, evaporation lifetime, and the generalized second law.
-
-5. **Strong-field metric structurally complete (spinless AND spinning, D=3).** Spinless: k(A) = (1−A) outside PS, k(A) = (1−A)·(1 − 5y⁴ + 4y⁵) inside with y = 3A − 2 (quintic Hermite, derived from the ledger-as-structural-channel write-density route Beta(D + 1, 2)). Kerr: A = 2Mr/(r² + a²), bubble at constant r = r_+ (Kerr horizon, oblate in flat-space embedding), hologram spins on stationary horizon. **D = 3 is framework-internal** (forced by SU shell-count + two-face joint compatibility, not anthropic). All metric structure derived from primitives (substance + presentism + ledger-channel + two-face + SU shell-count + elevator + natural measure) — no free parameters anywhere in the metric.
-
-6. **LIGO ringdown is exact GR for any spin.** Spinless: τ_STAM/τ_GR_Schw = 1 (G57, G66). Kerr: τ_STAM/τ_GR_Kerr = 1 for all spin (G62, G64). Both follow from k = (1−A) outside the photon orbit being exact GR there. The STAM-vs-GR wedge is pushed entirely inside the photon orbit (sub-leading observables only).
-
-7. **SN distance fits beat LCDM combined chi^2.** Model-A with V_3 modified Friedmann wins by 25-33 across Pantheon+/Union3/DES at the same number of free parameters. Predicts inter-catalog Pantheon+/Union3 tension within 27%.
-
-8. **CMB self-consistent closure at H_0 = 73.** Cumulative-A line-of-sight amplification structurally explains the H_0 tension. Internal solution exists for realistic cosmic-structure parameters.
-
-9. **PBH-DM compatibility for galactic dark matter.** Each PBH is a small bubble with the framework's existing thermodynamic/structural machinery. Galactic rotation curves close trivially with PBH-halo + cumulative A.
-
-10. **Six observational regimes, one A field.** Local gravity, propagation delay, BH thermodynamics, SN distances, CMB acoustic scale, and galactic DM all from the same A field with one structural constant (A_0 = 1/(12 pi)) and one calibrated parameter (beta).
-
-11. **Specific falsifiable predictions** — F6 decoherence, PBH-DM sigma constraint, G43 BNS engine time mass-scaling, primordial-mass remnants (BHs never fully evaporate), inside-PS LIGO O5+ overtones / LISA EMRIs as the STAM-vs-GR wedge. Distinguishable in regimes current LIGO doesn't precisely probe.
-
-12. **Substance velocity-cap as STAM-vs-GR wedge** (added 2026-05-12). Substance ontology forces motion through elevated A to be REALLY slowed. For GW170817: binary merger engine time = τ_critical = 1.677 s vs observed 1.74 s — 3.6% match, no fitting. Mass-scaling linear in M_total is the falsification handle.
-
-13. **Entropy derivation closed (2026-05-13).** α = 4 area-per-entry now derived structurally (G59) — both factors (α_H from two-face / pair structure, gravity-bridge from A's definition) do other framework work. Pair structure of Hawking emission derived from elevator argument (G60). Hawking T derived two independent ways (resolution rule + elevator self-consistency).
-
-14. **Stress-energy verified non-pathological (G65, 2026-05-13).** Conservation automatic (TOV residual at numerical noise), Kretschmann bounded (K_STAM < K_Schw near horizon — no hidden singularity), C² smooth at PS, SEC satisfied (no effective anti-gravity in the final-shell stress diagnostic — ghost-freedom is a separate perturbative / action-level check still pending). NEC_r and WEC violated in modified-gravity / dark-energy character — not pathological at the stress-energy level.
-
-15. **Quantum unit of resolution fixed (2026-05-13).** Each quantum physical interaction resolves exactly 1 SU = A_0. The cosmological and quantum readings of SU unify under this commitment. Hawking emission events each resolve 1 SU, tying the framework's natural unit to the per-event mass-energy bookkeeping via the elevator identity.
-
-16. **Born rule derived structurally (2026-05-13).** Two-step derivation: (a) projection-geometry theorem gives `u_i = ||P_i ψ|| = |ψ_i|` from four structural axioms (phase blindness, projector locality, unitary covariance, orthogonal refinement); (b) STAM ledger-measure step gives `p_i = u_i²` from paired write + reduction sampling of unresolved-A. Decoherence emerges as the structural consequence of paired events resolving alternatives into distinct ledger channels before recombination — not a separate postulate. The same pair structure does three framework jobs (metric closure α_H = 2, entropy α = 4, Born-rule squaring) — one primitive, three derivations.
-
----
-
-## Major open problems
+## Open problems and verification backlog
 
 1. **Lagrangian for A.** The framework's k(A) is now uniquely derived from primitives (substance + presentism + ledger-channel + two-face + SU shell-count + elevator + natural measure → quintic Hermite via Beta(D + 1, 2) write-density), but the action principle producing this specific k(A) is still missing. G25–G27 attempted standard scalar-tensor formulations and found ghost regions plus R_s-dependent V; G33 inverted to A-as-fundamental and found a 1-parameter family, since superseded by the structural derivation chain in G58–G60. The open question now is sharply: what action S[A, g_μν] reproduces both `k(A) = (1−A)` outside the photon orbit and `k(A) = (1−A)·(1 − 5y⁴ + 4y⁵)` inside?
 
-2. **Structural origin of the "3" factor in 1/(12π).** Closed 2026-05-13: D = 3 is forced by joint compatibility of SU shell-count + two-face refinement + the Beta(D + 1, 2) horizon exponent. The "3" is framework-internal, not anthropic. (Two-face gives α_H = 2 in any D → horizon order automatically = 3; SU shell-count requires horizon order = D; joint compatibility ⇒ D = 3.)
+2. **D = 3 / "3" factor — closed structurally; action-level lift remains open.** Closed 2026-05-13: D = 3 is forced by joint compatibility of SU shell-count + two-face refinement + the Beta(D + 1, 2) horizon exponent. The "3" is framework-internal, not anthropic. (Two-face gives α_H = 2 in any D → horizon order automatically = 3; SU shell-count requires horizon order = D; joint compatibility ⇒ D = 3.)
 
 3. **Realistic cosmic-structure modeling for f_LoS.** The CMB self-consistent solution depends on the line-of-sight A amplification factor. Computing this from realistic cosmic structure (N-body or analytic modeling) would close the cosmology branch.
 
@@ -817,7 +819,7 @@ What remains is **identifying specific L_μ and D_μ for particular interactions
 
 6. **Ghost-freedom check (perturbative / action-level).** G65's stress-energy verification confirmed SEC is satisfied across the final shell (no effective anti-gravity in the stress diagnostic), but **SEC satisfaction does not establish ghost-freedom**. Ghosts are action / perturbation-level pathologies — a separate check requires either (a) identifying the action principle for A (Open Problem #1) and confirming its quadratic kinetic operator has the right sign for all relevant modes, or (b) a direct perturbative analysis of the strong-field metric for negative-norm propagating modes. G25–G27 found ghost regions in standard scalar-tensor formulations; the framework's current k(A) avoids those, but the perturbative-mode question has not been re-asked under the committed metric.
 
-7. **G1 exact computation.** The ringdown damping prediction is currently eikonal-approximation. Exact Regge-Wheeler-type calculation on the Model-A metric would tighten the prediction.
+7. **Full QNM / perturbation computation.** The ringdown result is currently exact at the eikonal / photon-region level. Exact Regge-Wheeler-type and Teukolsky-type calculations on the committed Model-A metrics would tighten the prediction beyond eikonal and test the inside-photon-orbit wedge.
 
 8. **A_collective for galactic dynamics if PBH-DM is rejected.** If primordial-black-hole dark matter is observationally ruled out, the framework needs to either derive an A_collective galactic-scale enhancement from first principles or accept some other DM mechanism.
 
@@ -867,4 +869,4 @@ When the framework changes direction (as it did multiple times in development �
 
 ## Acknowledgments
 
-Development assisted by extensive conversation with Claude (Anthropic), particularly during the May 2026 push that produced the A_0 = 1/(12 pi) structural commitment, V_3 potential selection, CMB self-consistent closure, and PBH-DM compatibility analysis (G7-G14 script series); the May 11 (evening) refinement session that produced the substance-ontology articulation (water-tank conceptual exercise), the two-layer cosmological reading (G28+G29: V_3 expansion ≡ LCDM at H_0=73 by construction, photon-A traversal as separate distance bias), the G21 redux confirming GR-exact strong-field landmarks under corrected composition, the G31 confirmation that A_0 baseline does not bridge galactic DM, and the G33/G34 swing surfacing the 1-parameter ambiguity in k(A); the May 12 morning session that produced the substance velocity-cap candidate commitment (motion through elevated A is REALLY slowed) and the GW170817 engine time prediction matching observation to 3.6% without fitting (G42, G43 scripts); the May 12 evening session that produced the strong-field metric structural derivation (A_0 = 1/(4πD), ord_{A=1} k(A) = D, smoothstep closure profile inside the photon sphere) and the Σ = D × A shell coordinate reformulation, dissolving the k(A) family ambiguity (G44–G56 scripts); and the May 13 session that produced the ledger-as-structural-channel write-density route Beta(D + 1, 2) → quintic Hermite F(y) = 1 − 5y⁴ + 4y⁵ for the final-shell closure profile (G58 / G66), the structural closure of α = 4 entropy from outer-face pair × gravity-bridge (G59), the elevator-argument derivation of Hawking pair structure (G60), the framework-internal D = 3 forcing via joint SU + two-face compatibility, the Kerr extension committed under A = 2Mr/(r²+a²) with the bubble at r = r_+ and hologram spinning on the stationary horizon (G62, G64), the stress-energy non-pathology verification (G65), the quantum-unit commitment unifying the cosmological and quantum readings of SU (each quantum physical interaction resolves exactly 1 SU = A_0), the weak-field-as-coarse-grained-SU-writes reading, the structural derivation of the Born rule (projection-geometry theorem for u_i = ||P_i ψ|| + STAM ledger-measure step p_i = u_i² from paired write + reduction sampling, with decoherence as the consequence of paired events resolving alternatives into distinct ledger channels), the first-principles QM action chain (substance velocity-cap → proper time → relativistic action → non-rel Lagrangian → path integral → Born-rule resolution; G67–G68), and the structural form for the resolution-rate functional Γ_res = Σ_μ ⟨L_μ† L_μ⟩ D_μ (Lindblad-analog, with SU-support / write-rate distinction `0 ≤ Γ_res ≤ (A/A_0)/τ_P`) — closing the major spinless and spinning strong-field arcs, fixing the unit of counting for resolution-event statistics, deriving the QM action from STAM primitives, articulating the open-quantum-systems formalism inside STAM, and showing that one pair-structure primitive does three structural jobs (metric closure, boundary entropy, Born-rule squaring).
+Development assisted by coding and conversation with Claude (Anthropic) and ChatGPT (OpenAI)
