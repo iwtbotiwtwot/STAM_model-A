@@ -4,7 +4,7 @@
 
 Author: **Sean Brady**
 Status: **Proposed theoretical framework / active research program**
-Snapshot: **May 13, 2026 — strong-field arc structurally complete in spinless AND spinning cases, with the metric derived from minimum-commitment quantum/write-density route. Spinless: k(A) = (1−A) outside the photon sphere (exact GR); k(A) = (1−A)·F(Σ) inside, F(Σ) = 1 − 4(Σ−2)³ + 3(Σ−2)⁴ (quartic Hermite, C² at PS, C¹ at horizon). Σ = 3A is the natural shell coordinate (landmarks ISCO Σ=1, PS Σ=2, horizon Σ=3). Derivation: D = 3 spatial write channels + 2 horizon-pair channels (outer-face pair structure: write + reduction) → Beta(D, 2) closure density p(y) = 12y²(1−y) → F = 1 − 4y³ + 3y⁴, the minimum-commitment quantum/write-density profile. SU shell-count + two-face joint compatibility forces D = 3 (framework-internal, not anthropic). Kerr: A(r, θ; M, a) = 2Mr/(r²+a²) places the bubble at r = r_+ (Kerr horizon, constant BL coord, oblate when embedded), hologram spins on stationary horizon, T uniform = T_Kerr, LIGO ringdown = exact GR-Kerr for all spin. Entropy α = 4 = (outer-face pair × gravity-bridge) structurally derived (G18 caveat closes). Pair structure derived from elevator argument (write IS reduction on outer face). Hawking T derived two independent ways. Stress-energy verified non-pathological. Spinless ringdown = exact GR; Kerr ringdown = exact GR-Kerr; the STAM-vs-GR wedge lives inside the photon orbit and is observable only at sub-leading WKB precision. Quantum-unit commitment: each quantum physical interaction resolves exactly 1 SU = A_0 of substance — unifying the cosmological ruler reading of SU with the quantum write reading. Weak-field A(r) is the continuum / coarse-grained limit of many SU writes. Born rule derived structurally: `u_i = ||P_i ψ|| = |ψ_i|` is a projection-geometry theorem (four axioms: phase blindness, projector locality, unitary covariance, orthogonal refinement); `p_i = u_i²` is a STAM ledger-measure result from the principle that resolution-event phase volume scales as the square of unresolved support amplitude. The same pair structure (outer-face: write + reduction is one event with two coupled aspects) does three framework jobs — α_H = 2 in the strong-field metric, α = 4 in boundary entropy, |ψ|² squaring in the Born rule. Decoherence is the structural consequence of paired events resolving alternatives into distinct ledger channels before recombination, not a separate postulate. Bell / CHSH violation reproduced exactly at the Tsirelson bound (G67). First-principles QM action chain: substance velocity-cap → proper time dτ = dt√(1−A)√(1−v²/c²) → relativistic action S = −mc²·τ → non-relativistic L = KE − mΦ with Φ = c²A/2 → path integral in unresolved support → Born rule at resolution events. SU support `N_SU(x) = A(x)/A_0` and actual write rate `dN_write = Γ_res × dτ` are distinct quantities. Γ_res now has committed structural form: `Γ_res = Σ_μ ⟨L_μ† L_μ⟩ D_μ` (Lindblad-analog with L_μ as physical write channels and D_μ as channel distinguishability) bounded by `0 ≤ Γ_res ≤ (A/A_0)/τ_P` (interaction-gating from below; SU support capacity from above). Per-channel split via Born rule p_i = |ψ_i|² gives dN_i = Γ_res p_i dτ. Remaining work is identifying specific L_μ and D_μ for particular interactions — domain-of-application, not structural gap.**
+Snapshot: **May 13, 2026 — strong-field arc structurally complete in spinless AND spinning cases, with the metric derived from the ledger-as-structural-channel write-density route. Spinless: k(A) = (1−A) outside the photon sphere (exact GR); k(A) = (1−A)·F(Σ) inside, F(Σ) = 1 − 5(Σ−2)⁴ + 4(Σ−2)⁵ (quintic Hermite, C³ at PS, C¹ at horizon). Σ = 3A is the natural shell coordinate (landmarks ISCO Σ=1, PS Σ=2, horizon Σ=3). Derivation: D + 1 = 4 spatial-side channels (3 spatial + 1 ledger as structural channel) + 2 horizon-pair channels (outer-face pair structure: write + reduction) → Beta(D + 1, 2) = Beta(4, 2) closure density p(y) = 20y³(1−y) → F = 1 − 5y⁴ + 4y⁵. SU shell-count + two-face joint compatibility forces D = 3 (framework-internal, not anthropic). Kerr: A(r, θ; M, a) = 2Mr/(r²+a²) places the bubble at r = r_+ (Kerr horizon, constant BL coord, oblate when embedded), hologram spins on stationary horizon, T uniform = T_Kerr, LIGO ringdown = exact GR-Kerr for all spin. Entropy α = 4 = (outer-face pair × gravity-bridge) structurally derived (G18 caveat closes). Pair structure derived from elevator argument (write IS reduction on outer face). Hawking T derived two independent ways. Stress-energy verified non-pathological at the stress-diagnostic level (conservation, bounded curvature, SEC satisfied; ghost-freedom requires a separate perturbative / action-level check, still open). Spinless ringdown = exact GR; Kerr ringdown = exact GR-Kerr; the STAM-vs-GR wedge lives inside the photon orbit and is observable only at sub-leading WKB precision. Quantum-unit commitment: each quantum physical interaction resolves exactly 1 SU = A_0 of substance — unifying the cosmological ruler reading of SU with the quantum write reading. Weak-field A(r) is the continuum / coarse-grained limit of many SU writes. Born rule derived structurally: `u_i = ||P_i ψ|| = |ψ_i|` is a projection-geometry theorem (four axioms: phase blindness, projector locality, unitary covariance, orthogonal refinement); `p_i = u_i²` is a STAM ledger-measure result from the principle that resolution-event phase volume scales as the square of unresolved support amplitude. The same pair structure (outer-face: write + reduction is one event with two coupled aspects) does three framework jobs — α_H = 2 in the strong-field metric, α = 4 in boundary entropy, |ψ|² squaring in the Born rule. Decoherence is the structural consequence of paired events resolving alternatives into distinct ledger channels before recombination, not a separate postulate. Bell / CHSH violation reproduced exactly at the Tsirelson bound (G67). First-principles QM action chain: substance velocity-cap → proper time dτ = dt√(1−A)√(1−v²/c²) → relativistic action S = −mc²·τ → non-relativistic L = KE − mΦ with Φ = c²A/2 → path integral in unresolved support → Born rule at resolution events. SU support `N_SU(x) = A(x)/A_0` and actual write rate `dN_write = Γ_res × dτ` are distinct quantities. Γ_res now has committed structural form: `Γ_res = Σ_μ ⟨L_μ† L_μ⟩ D_μ` (Lindblad-analog with L_μ as physical write channels and D_μ as channel distinguishability) bounded by `0 ≤ Γ_res ≤ (A/A_0)/τ_P` (interaction-gating from below; SU support capacity from above). Per-channel split via Born rule p_i = |ψ_i|² gives dN_i = Γ_res p_i dτ. Remaining work is identifying specific L_μ and D_μ for particular interactions — domain-of-application, not structural gap.**
 
 ---
 
@@ -145,7 +145,7 @@ g_rr = 1 / k(A)                           (Model-A modification)
 
 k(A) = (1 - A)                            for A ≤ 2/3   (outside PS — exact GR)
 k(A) = (1 - A) · F(y),  y = 3A - 2        for 2/3 < A < 1
-F(y) = 1 - 4y³ + 3y⁴                      (quartic Hermite, C² at PS, C¹ at horizon)
+F(y) = 1 - 5y⁴ + 4y⁵                      (quintic Hermite, C³ at PS, C¹ at horizon)
 ```
 
 Equivalently in shell-coordinate Σ:
@@ -153,10 +153,55 @@ Equivalently in shell-coordinate Σ:
 ```text
 k(Σ) = (1 - Σ/3)                          for Σ ≤ 2
 k(Σ) = (1 - Σ/3) · F(Σ)                   for 2 < Σ < 3
-F(Σ) = 1 - 4(Σ - 2)³ + 3(Σ - 2)⁴          (quartic Hermite)
+F(Σ) = 1 - 5(Σ - 2)⁴ + 4(Σ - 2)⁵          (quintic Hermite)
 ```
 
-**Note (2026-05-13).** Two candidate forms were explored: the quartic Hermite F = 1 − 4y³ + 3y⁴ (Beta(D, 2) under D spatial + 2 horizon-pair channels — the minimum-commitment "quantum/write-density" route) and the quintic Hermite F = 1 − 5y⁴ + 4y⁵ (Beta(D+1, 2) under an added ledger-as-fourth-channel reading, G58). The framework commits to the **quartic** under the minimum-commitment principle: the ledger is the universe's record of writes but not a separate write-channel in the configuration measure. The eikonal LIGO ringdown prediction is τ_STAM/τ_GR = 1 exactly under both (verified G66).
+### Current unified branch
+
+Model-A's current unified branch is organized by one field, one unit, one shell coordinate, and one final-shell closure profile:
+
+```
+A = physical accumulation field
+1 SU = A_0 = 1/(12π)
+Σ(A) = A / (4π A_0) = 3A
+```
+
+The strong-field landmarks become integer shell counts:
+
+```
+Σ = 1  →  ISCO
+Σ = 2  →  photon sphere
+Σ = 3  →  horizon
+```
+
+The spinless strong-field radial factor:
+
+```
+k(A) = 1 − A                       for A ≤ 2/3
+```
+
+so the exterior through the photon sphere is **GR-exact** (weak-field tests pass automatically, eikonal ringdown matches Schwarzschild).
+
+Inside the photon sphere:
+
+```
+k(A) = (1 − A) · F(y)              with y = 3A − 2 = Σ − 2,  for 2/3 < A < 1
+```
+
+**Because the ledger is treated as a structural channel** (committed 2026-05-13), the spatial-side channel count is D + 1 = 4 (3 spatial + 1 ledger), and the final-shell closure density is **Beta(4, 2)**:
+
+```
+p(y) = 20 y³ (1 − y)
+F(y) = 1 − 5 y⁴ + 4 y⁵             — quintic Hermite (C³ at PS, C¹ at horizon)
+```
+
+Therefore the explicit metric is:
+
+```
+k(A) = (1 − A) · [1 − 5(3A − 2)⁴ + 4(3A − 2)⁵]    for 2/3 < A < 1
+```
+
+This keeps weak-field tests and photon-sphere / eikonal ringdown GR-exact, while placing the STAM-vs-GR wedge inside the photon sphere.
 
 ### Natural shell coordinate
 
@@ -168,9 +213,9 @@ The natural strong-field variable is **Σ = A / (4π A_0) = D × A** (= 3A for D
 
 The thirds-of-A landmarks are integer shells in Σ. The final-shell radial closure profile F(Σ) operates on the third shell: 2 < Σ < 3 (equivalently 2/3 < A < 1).
 
-### Derivation chain (quantum/write-density route, minimum-commitment)
+### Derivation chain (quantum/write-density route, ledger-as-channel)
 
-The strong-field metric is derived from the framework's structural primitives — substance ontology, presentism, two-face refinement, SU shell-count, elevator identity, and natural measure on the configuration manifold:
+The strong-field metric is derived from the framework's structural primitives — substance ontology, presentism, ledger-as-structural-channel, two-face refinement, SU shell-count, elevator identity, and natural measure on the configuration manifold:
 
 1. **A_0 = 1 / (4π D)** from substance baseline: 4π from Q8 thermal × gravity-bridge, D from spatial dimensionality. For D = 3: A_0 = 1/(12π).
 
@@ -178,19 +223,19 @@ The strong-field metric is derived from the framework's structural primitives �
 
 3. **Final-shell coordinate y = Σ − 2 ∈ (0, 1).** F(Σ) is interpreted as the survival fraction of unresolved radial closure inside the final shell; the closure density is p(y) = −dF/dy.
 
-4. **Channel structure.** Final-shell closure is distributed across D spatial write channels and 2 horizon-pair channels (outer-face pair structure: write component + reduction component, both on the outer face — the elevator identity). The ledger is the universe's record of writes but not a separate write-channel in the configuration measure (minimum commitment).
+4. **Channel structure (ledger as structural channel, committed 2026-05-13).** Final-shell closure is distributed across **D + 1 = 4 spatial-side channels** (D = 3 spatial directions + 1 ledger / self-reference channel) and **2 horizon-pair channels** (outer-face pair structure: write component + reduction component, both on the outer face — the elevator identity). Total: 6 structural channels.
 
-5. **Configuration volume on the final shell.** Under uniform per-entry measure (natural measure on the configuration manifold), the spatial-vs-horizon-pair split has Beta(α_S = D, α_H = 2) density. For D = 3: p(y) = 12y²(1 − y), giving survival F(y) = 1 − I_y(3, 2) = **1 − 4y³ + 3y⁴** (the quartic Hermite).
+5. **Configuration volume on the final shell.** Under uniform per-entry measure (natural measure on the configuration manifold), the spatial-vs-horizon-pair split has Beta(α_S = D + 1, α_H = 2) density. For D = 3: p(y) = 20 y³ (1 − y), giving survival F(y) = 1 − I_y(4, 2) = **1 − 5y⁴ + 4y⁵** (the quintic Hermite).
 
-   The "minimal" candidate p(y) = 12y²(1 − y) has four structural properties: starts at zero at PS, turns on smoothly inside the final shell, returns to zero at the horizon, integrates to one completed final-shell closure.
+   p(y) = 20 y³ (1 − y) has the structural properties: starts at zero at PS, turns on smoothly inside the final shell, returns to zero at the horizon, integrates to one completed final-shell closure. The y³ touch at PS gives C³ smoothness (matches outside-PS GR through third derivative); the (1 − y)¹ touch at horizon gives C¹ closure with the expected order-D zero.
 
 6. **k(A) = (1 − A) outside the photon sphere.** No STAM modification where light can escape; weak-field tests pass automatically.
 
 7. **D = 3 forced by joint compatibility.** ord_{A=1} k = α_H + 1 = 3 automatically from the two-face commitment (α_H = 2, D-independent). SU shell-count separately requires ord = D. Joint compatibility ⇒ D = 3 framework-internally (not anthropic).
 
-Near the horizon: F ~ 6(3 − Σ)² = 54(1 − A)², so k = (1 − A) · F ~ 54(1 − A)³, giving ord_{A=1} k(A) = 3, preserving the SU shell-count result n_h = D − 1 = 2.
+Near the horizon: F ~ 10(1 − y)² (leading order), so k = (1 − A) · F ~ 90(1 − A)³, giving ord_{A=1} k(A) = 3, preserving the SU shell-count result.
 
-**Interpretation.** A is the physical accumulation field; SU is the minimum accumulation unit (1 SU = A_0); Σ is the strong-field shell count; F(Σ) is the unresolved final-shell survival profile. Strong field supplies the boundary domain 2 < Σ < 3, but the *shape* of F(Σ) is derived from final-shell resolution density (the write-density route) rather than from a global constant-n metric ansatz.
+**Interpretation.** A is the physical accumulation field; SU is the minimum accumulation unit (1 SU = A_0); Σ is the strong-field shell count; F(Σ) is the unresolved final-shell survival profile. Strong field supplies the boundary domain 2 < Σ < 3, but the *shape* of F(Σ) is derived from final-shell resolution density (the write-density route under the ledger-as-channel commitment) rather than from a global constant-n metric ansatz.
 
 ### Predictions under the committed metric
 
@@ -203,7 +248,7 @@ Near the horizon: F ~ 6(3 − Σ)² = 54(1 − A)², so k = (1 − A) · F ~ 54(
 | NEC at A = 1/2 | 1/2 | 1/2 | Schwarzschild (F = 1, no STAM modification) |
 | **LIGO ringdown spinless (PS)** | **2/3** | **1/3** | **= GR Schwarzschild exactly** (G57, G66) |
 | **LIGO Kerr ringdown (any spin)** | — | — | **= GR-Kerr exactly** (G62, G64) |
-| Inside-PS strong field | (2/3, 1) | quartic Hermite ramp | sub-leading WKB / late-inspiral / EMRI distinguishers |
+| Inside-PS strong field | (2/3, 1) | quintic Hermite ramp | sub-leading WKB / late-inspiral / EMRI distinguishers |
 | Horizon | A → 1 | (1−A)³ × (10/3) | k → 0 with order D = 3 |
 
 **LIGO ringdown is exact GR for any spin under the current commitment.** Both formulas (spinless and Kerr) match GR-equivalent Lyapunov at the photon orbit, because k = (1−A) "outside the photon sphere" is exact GR there. The framework's STAM-vs-GR wedge lives entirely inside the photon orbit, observable only via higher overtones, late-inspiral chirp, or LISA EMRIs.
@@ -240,18 +285,18 @@ The previous "static-limit" reading (A = 2Mr/Σ, Σ = r² + a² cos²θ) — whi
 
 ### Stress-energy verification (G65, 2026-05-13)
 
-The framework's quartic Hermite metric is non-pathological (verified G65 — the verification was done initially on the quintic form, with the same conclusions holding for the committed quartic by the same arguments):
+The framework's quintic Hermite metric is non-pathological (verified G65, run on the quintic form which is the committed branch):
 
 - **Conservation automatic** (TOV residual at numerical noise level — Bianchi identity)
 - **Curvature bounded throughout final shell** (Kretschmann K_STAM peaks at ~0.46 in M=1 units, *less* than Schwarzschild's K = 0.75 at the horizon — no hidden singularity)
 - **C² smooth at PS** (stress-energy → 0 quadratically as A → 2/3+)
-- **SEC satisfied** throughout final shell (no anti-gravity / ghost behavior)
+- **SEC satisfied** throughout final shell (no effective anti-gravity behavior in the final-shell stress diagnostic; **ghost-freedom is a separate question** requiring perturbative / action-level check)
 - **NEC_r and WEC violated** for most of the final shell — characteristic of modified-gravity / dark-energy-like effective stress-energy (consistent with F3's earlier w ≈ −1 finding); not a pathology
 - Effective stress-energy reads as tension-dominated (p_r < 0, p_t > 0) with NEC_t satisfied
 
 ### What's still open in strong field
 
-- **Lagrangian for A**: the metric is uniquely derived from primitives, but the action principle that produces this k(A) is still missing. The remaining open question is: what action principle yields k(A) = (1−A) outside PS and (1−A)·(1 − 4y³ + 3y⁴) inside?
+- **Lagrangian for A**: the metric is uniquely derived from primitives, but the action principle that produces this k(A) is still missing. The remaining open question is: what action principle yields k(A) = (1−A) outside PS and (1−A)·(1 − 5y⁴ + 4y⁵) inside?
 - **Inside-PS observable distinguishers**: late-inspiral chirp, higher overtones, LISA EMRIs. Current LIGO precision doesn't reach this regime.
 - **Spectral details of Hawking emission**: framework gives T and per-entry structure, but the full spectral distribution still requires QFT machinery beyond cell-counting.
 
@@ -374,7 +419,7 @@ Both routes use different framework primitives and land on the same Hawking T to
 
 Both factors do other framework work:
 
-- **α_H = 2** (outer-face pair structure: write component + reduction component) enters the bulk closure density Beta(α_S=D, α_H=2) that gives the quartic Hermite F. The two-face commitment supplies it geometrically.
+- **α_H = 2** (outer-face pair structure: write component + reduction component) enters the bulk closure density Beta(α_S = D + 1, α_H = 2) = Beta(4, 2) that gives the quintic Hermite F. The two-face commitment supplies it geometrically.
 - **Gravity-bridge factor 2** is in A's definition (A = 2GM/(c²r)), the natural-unit framework (1 SU = A_0 = 1/(4πD)), and the resolution rule (k_B T = (1/4π)ℏc|∇A|).
 
 Neither factor is invoked specifically for entropy. The G18 "good suspects, not derivation" caveat is now closed: α = 4 is the unique decomposition under primitives that exist for independent structural reasons. Pair structure itself is derived from the elevator argument (G60), not stated.
@@ -534,7 +579,7 @@ p_i = u_i² = |ψ_i|²    — the Born rule, derived from STAM pair structure
 
 The same pair structure (outer-face / unresolved-support: write + reduction is one event with two coupled aspects) does three structural jobs across the framework:
 
-- α_H = 2 in the strong-field metric (Beta(D, 2) → quartic Hermite)
+- α_H = 2 in the strong-field metric (Beta(D + 1, 2) → quintic Hermite)
 - α = 4 = (pair × gravity-bridge) in boundary entropy (G59)
 - p_i = u_i² in the Born rule (this section)
 
@@ -560,11 +605,11 @@ Two distinct quantities at the quantum scale, often conflated, must be kept sepa
 
 ```
 N_SU(x) = A(x) / A_0                            — SU support / occupancy at x
-dN_write = Γ[A, ψ, interaction] × dτ / τ_P     — actual resolution-event rate
+dN_write = Γ_res[A, ψ, interaction] · dτ        — actual resolution-event rate
 ```
 
 - **N_SU(x)** is the **structural carrying capacity** of unresolved support at x — how many SU's worth of A are present. At cosmic baseline, A(x) ≈ A_0, so N_SU ≈ 1 per Planck-scale cell (the minimum support to maintain manifold).
-- **Γ[A, ψ, interaction]** is the **missing rate functional** that governs when SU support is actually converted to ledger writes. Depends on substance density, on the unresolved state, and on the interaction context.
+- **Γ_res[A, ψ, interaction]** is the **resolution-rate functional** that governs when SU support is actually converted to ledger writes. Its structural form (Lindblad-analog) is committed (see below); the domain-specific identification of L_μ and D_μ for particular interactions is open.
 
 The two are independent: high SU support does not automatically mean high write rate. A region with elevated A has more structural support for resolution events, but actual writes happen only when physical interactions draw from that support and produce a definite ledger update.
 
@@ -647,9 +692,10 @@ The QM action emerges as **mass-in-Planck-units × proper-Planck-ticks** along t
 
 **What remains open in the QM-from-STAM chain:**
 
-- **The resolution-rate functional Γ[A, ψ, interaction]** — the framework's analog of decoherence-rate operators. Boundary cases are constrained (cosmic baseline, BH horizon, detector interactions), but the general form is open.
-- **ℏ as a structural input** — the framework treats ℏ as a Planck-scale primitive alongside c, G. A deeper derivation of ℏ from substance ontology would close the loop but may be beyond scope.
-- **QFT extension** — multi-particle fields, second quantization, gauge interactions. The framework's structural picture extends naturally (fields as unresolved-A configurations; gauge couplings as Γ-modifying interactions), but the explicit derivation is substantial work.
+- **Domain-specific identification of L_μ and D_μ** for particular physical interactions (QFT scattering, decoherence in condensed matter, etc.). The structural form of Γ_res is committed (Lindblad-analog with SU-quantized writes — see the next subsection); applying it to specific systems is the open part.
+- **Deeper Hilbert / unresolved-support dynamics from action principle** — the framework's quantum-resolution structure is closed at the projection-geometry + pair-measure level, but the action principle producing the full unresolved-support dynamics + Γ_res channels from a deeper Lagrangian is not yet identified. This is the quantum analog of the metric's "Lagrangian for A" open problem.
+- **ℏ as a structural input** — the framework treats ℏ as a Planck-scale primitive alongside c and G. A deeper derivation of ℏ from substance ontology would close the loop but may be beyond scope.
+- **QFT extension** — multi-particle fields, second quantization, gauge interactions. The framework's structural picture extends naturally (fields as unresolved-A configurations; gauge couplings as Γ_res-modifying interactions), but the explicit derivation is substantial work.
 
 The model separates states into resolved (A-state confirmed by interaction; path is definite) and unresolved (no physical interaction yet; path is indeterminate).
 
@@ -720,7 +766,7 @@ Primordial-mass remnants: Black holes never fully evaporate; final
 
 4. **Black-hole thermodynamics from one rule.** `k_B T = hbar c |grad A| / (4 pi)` reproduces Hawking T (Schwarzschild + Kerr + de Sitter), Bekenstein-Hawking entropy, the first law, the Smarr relation, evaporation lifetime, and the generalized second law.
 
-5. **Strong-field metric structurally complete (spinless AND spinning, D=3).** Spinless: k(A) = (1−A) outside PS, k(A) = (1−A)·(1 − 4y³ + 3y⁴) inside with y = 3A − 2 (quartic Hermite, derived from the minimum-commitment write-density route Beta(D, 2)). Kerr: A = 2Mr/(r² + a²), bubble at constant r = r_+ (Kerr horizon, oblate in flat-space embedding), hologram spins on stationary horizon. **D = 3 is framework-internal** (forced by SU shell-count + two-face joint compatibility, not anthropic). All metric structure derived from primitives (substance + presentism + two-face + SU shell-count + elevator + natural measure) — no free parameters anywhere in the metric.
+5. **Strong-field metric structurally complete (spinless AND spinning, D=3).** Spinless: k(A) = (1−A) outside PS, k(A) = (1−A)·(1 − 5y⁴ + 4y⁵) inside with y = 3A − 2 (quintic Hermite, derived from the ledger-as-structural-channel write-density route Beta(D + 1, 2)). Kerr: A = 2Mr/(r² + a²), bubble at constant r = r_+ (Kerr horizon, oblate in flat-space embedding), hologram spins on stationary horizon. **D = 3 is framework-internal** (forced by SU shell-count + two-face joint compatibility, not anthropic). All metric structure derived from primitives (substance + presentism + ledger-channel + two-face + SU shell-count + elevator + natural measure) — no free parameters anywhere in the metric.
 
 6. **LIGO ringdown is exact GR for any spin.** Spinless: τ_STAM/τ_GR_Schw = 1 (G57, G66). Kerr: τ_STAM/τ_GR_Kerr = 1 for all spin (G62, G64). Both follow from k = (1−A) outside the photon orbit being exact GR there. The STAM-vs-GR wedge is pushed entirely inside the photon orbit (sub-leading observables only).
 
@@ -738,7 +784,7 @@ Primordial-mass remnants: Black holes never fully evaporate; final
 
 13. **Entropy derivation closed (2026-05-13).** α = 4 area-per-entry now derived structurally (G59) — both factors (α_H from two-face / pair structure, gravity-bridge from A's definition) do other framework work. Pair structure of Hawking emission derived from elevator argument (G60). Hawking T derived two independent ways (resolution rule + elevator self-consistency).
 
-14. **Stress-energy verified non-pathological (G65, 2026-05-13).** Conservation automatic (TOV residual at numerical noise), Kretschmann bounded (K_STAM < K_Schw near horizon — no hidden singularity), C² smooth at PS, SEC satisfied (no ghost behavior). NEC_r and WEC violated in modified-gravity / dark-energy character — not pathological.
+14. **Stress-energy verified non-pathological (G65, 2026-05-13).** Conservation automatic (TOV residual at numerical noise), Kretschmann bounded (K_STAM < K_Schw near horizon — no hidden singularity), C² smooth at PS, SEC satisfied (no effective anti-gravity in the final-shell stress diagnostic — ghost-freedom is a separate perturbative / action-level check still pending). NEC_r and WEC violated in modified-gravity / dark-energy character — not pathological at the stress-energy level.
 
 15. **Quantum unit of resolution fixed (2026-05-13).** Each quantum physical interaction resolves exactly 1 SU = A_0. The cosmological and quantum readings of SU unify under this commitment. Hawking emission events each resolve 1 SU, tying the framework's natural unit to the per-event mass-energy bookkeeping via the elevator identity.
 
@@ -748,15 +794,15 @@ Primordial-mass remnants: Black holes never fully evaporate; final
 
 ## Major open problems
 
-1. **Lagrangian for A.** The framework's k(A) is now uniquely derived from primitives (substance + presentism + two-face + SU shell-count + elevator + natural measure → quartic Hermite via minimum-commitment Beta(D, 2) write-density), but the action principle producing this specific k(A) is still missing. G25–G27 attempted standard scalar-tensor formulations and found ghost regions plus R_s-dependent V; G33 inverted to A-as-fundamental and found a 1-parameter family, since superseded by the structural derivation chain in G58–G60. The open question now is sharply: what action S[A, g_μν] reproduces both `k(A) = (1−A)` outside the photon orbit and `k(A) = (1−A)·(1 − 4y³ + 3y⁴)` inside?
+1. **Lagrangian for A.** The framework's k(A) is now uniquely derived from primitives (substance + presentism + ledger-channel + two-face + SU shell-count + elevator + natural measure → quintic Hermite via Beta(D + 1, 2) write-density), but the action principle producing this specific k(A) is still missing. G25–G27 attempted standard scalar-tensor formulations and found ghost regions plus R_s-dependent V; G33 inverted to A-as-fundamental and found a 1-parameter family, since superseded by the structural derivation chain in G58–G60. The open question now is sharply: what action S[A, g_μν] reproduces both `k(A) = (1−A)` outside the photon orbit and `k(A) = (1−A)·(1 − 5y⁴ + 4y⁵)` inside?
 
-2. **Structural origin of the "3" factor in 1/(12π).** Closed 2026-05-13: D = 3 is forced by joint compatibility of SU shell-count + two-face refinement + the Beta(D, 2) horizon exponent. The "3" is framework-internal, not anthropic. (Two-face gives α_H = 2 in any D → horizon order automatically = 3; SU shell-count requires horizon order = D; joint compatibility ⇒ D = 3.)
+2. **Structural origin of the "3" factor in 1/(12π).** Closed 2026-05-13: D = 3 is forced by joint compatibility of SU shell-count + two-face refinement + the Beta(D + 1, 2) horizon exponent. The "3" is framework-internal, not anthropic. (Two-face gives α_H = 2 in any D → horizon order automatically = 3; SU shell-count requires horizon order = D; joint compatibility ⇒ D = 3.)
 
 3. **Realistic cosmic-structure modeling for f_LoS.** The CMB self-consistent solution depends on the line-of-sight A amplification factor. Computing this from realistic cosmic structure (N-body or analytic modeling) would close the cosmology branch.
 
 4. **BAO direct test under self-consistent STAM cosmology.** Simple constant-A version failed at 22 sigma. Structure-dependent A line-of-sight test under V_3 cosmology is open.
 
-5. **First-principles Born rule from resolution-event statistics — CLOSED structurally (2026-05-13).** The Born rule decomposes into a projection-geometry theorem (`u_i = |ψ_i|` from four axioms: phase blindness, projector locality, unitary covariance, orthogonal refinement) plus a STAM ledger-measure result (`p_i = u_i²` from the principle that resolution-event phase volume scales as the square of unresolved support amplitude). The same pair structure that gives α_H = 2 in the metric and α = 4 in entropy gives the |ψ|² squaring in probability. Decoherence is not a separate postulate but the structural consequence of paired events resolving alternatives into distinct ledger channels before recombination. Bell / CHSH violation reproduced exactly at the Tsirelson bound (G67). First-principles QM action chain in place: substance velocity-cap → proper time → relativistic action S = −mc²·τ → non-relativistic L = KE − mΦ (with Φ = c²A/2) → path integral in unresolved support → Born-rule at resolution events.
+5. **Born rule — structurally closed at projection-geometry + pair-measure level (2026-05-13).** The Born rule decomposes into a projection-geometry theorem (`u_i = |ψ_i|` from four axioms: phase blindness, projector locality, unitary covariance, orthogonal refinement) plus a STAM ledger-measure result (`p_i = u_i²` from the principle that resolution-event phase volume scales as the square of unresolved support amplitude). The same pair structure that gives α_H = 2 in the metric and α = 4 in entropy gives the |ψ|² squaring in probability. Decoherence is not a separate postulate but the structural consequence of paired events resolving alternatives into distinct ledger channels before recombination. Bell / CHSH violation reproduced exactly at the Tsirelson bound (G67). First-principles QM action chain in place: substance velocity-cap → proper time → relativistic action S = −mc²·τ → non-relativistic L = KE − mΦ (with Φ = c²A/2) → path integral in unresolved support → Born-rule at resolution events. **Still open at the deeper level**: deriving the full Hilbert / unresolved-support dynamics and the domain-specific Γ_res channels (see 5a) from a deeper action principle. The kinematic / probability-measure layer is closed; the action / dynamics layer is open and tied to Open Problem #1 (Lagrangian for A).
 
 5a. **Resolution-rate functional Γ_res — STRUCTURAL FORM COMMITTED (2026-05-13).** The framework adopts an open-quantum-systems formalism with STAM-specific interpretation:
 
@@ -769,9 +815,11 @@ with bounds `0 ≤ Γ_res ≤ (A/A_0)/τ_P` from interaction-gating below and SU
 
 What remains is **identifying specific L_μ and D_μ for particular interactions** — the framework's analog of "which Lindblad operators apply to which physical systems." This is a domain-of-application question (QFT, scattering, decoherence-in-condensed-matter, etc.), not a structural gap in the framework's quantum-resolution dynamics. The structural piece is closed; particular-case applications remain.
 
-6. **G1 exact computation.** The ringdown damping prediction is currently eikonal-approximation. Exact Regge-Wheeler-type calculation on the Model-A metric would tighten the prediction.
+6. **Ghost-freedom check (perturbative / action-level).** G65's stress-energy verification confirmed SEC is satisfied across the final shell (no effective anti-gravity in the stress diagnostic), but **SEC satisfaction does not establish ghost-freedom**. Ghosts are action / perturbation-level pathologies — a separate check requires either (a) identifying the action principle for A (Open Problem #1) and confirming its quadratic kinetic operator has the right sign for all relevant modes, or (b) a direct perturbative analysis of the strong-field metric for negative-norm propagating modes. G25–G27 found ghost regions in standard scalar-tensor formulations; the framework's current k(A) avoids those, but the perturbative-mode question has not been re-asked under the committed metric.
 
-7. **A_collective for galactic dynamics if PBH-DM is rejected.** If primordial-black-hole dark matter is observationally ruled out, the framework needs to either derive an A_collective galactic-scale enhancement from first principles or accept some other DM mechanism.
+7. **G1 exact computation.** The ringdown damping prediction is currently eikonal-approximation. Exact Regge-Wheeler-type calculation on the Model-A metric would tighten the prediction.
+
+8. **A_collective for galactic dynamics if PBH-DM is rejected.** If primordial-black-hole dark matter is observationally ruled out, the framework needs to either derive an A_collective galactic-scale enhancement from first principles or accept some other DM mechanism.
 
 ---
 
@@ -794,7 +842,7 @@ Model-A is a structured theoretical research program with one structurally-commi
 
 Where the framework departs from LCDM and is therefore distinguishable in principle: inside-PS LIGO observables (higher overtones, late-inspiral chirp, LISA EMRIs), F6 decoherence, super-radiance-enhanced rate banding for spinning BH Hawking emission, primordial-mass remnants, BNS engine-time mass-scaling (G43), the structural CMB-tension closure mechanism. None of these have been observationally settled yet.
 
-The framework is **not** presented as complete. The strong-field metric + Kerr + entropy + stress-energy verification arc (G57–G66, 2026-05-13) closed the major spinless and spinning structural derivations. Significant open problems remain: Lagrangian for A, realistic cosmic-structure modeling for f_LoS, BAO test under V_3, first-principles Born rule from resolution statistics, spectral details of Hawking emission. Its value is that it creates a unified language with one structural constant (A_0), one calibrated cosmological parameter (β), framework-internal D = 3, and accountable falsification targets — rather than a collection of independent ad-hoc components.
+The framework is **not** presented as complete. The strong-field metric + Kerr + entropy + stress-energy verification arc (G57–G66, 2026-05-13) closed the major spinless and spinning structural derivations. The Born rule is structurally closed at the projection-geometry + pair-measure level (theorem + STAM ledger-measure squaring); what remains open at the quantum level is deriving the full unresolved-support dynamics and the domain-specific L_μ / D_μ channels in Γ_res from a deeper action. Other significant open problems: Lagrangian for A (the action principle producing the committed k(A)), realistic cosmic-structure modeling for f_LoS, BAO test under V_3, spectral details of Hawking emission, and the perturbative / action-level check of ghost-freedom (the stress-energy diagnostic only addresses the SEC, not the action-level question). Its value is that it creates a unified language with one structural constant (A_0), one calibrated cosmological parameter (β), framework-internal D = 3, and accountable falsification targets — rather than a collection of independent ad-hoc components.
 
 ---
 
@@ -819,4 +867,4 @@ When the framework changes direction (as it did multiple times in development �
 
 ## Acknowledgments
 
-Development assisted by extensive conversation with Claude (Anthropic), particularly during the May 2026 push that produced the A_0 = 1/(12 pi) structural commitment, V_3 potential selection, CMB self-consistent closure, and PBH-DM compatibility analysis (G7-G14 script series); the May 11 (evening) refinement session that produced the substance-ontology articulation (water-tank conceptual exercise), the two-layer cosmological reading (G28+G29: V_3 expansion ≡ LCDM at H_0=73 by construction, photon-A traversal as separate distance bias), the G21 redux confirming GR-exact strong-field landmarks under corrected composition, the G31 confirmation that A_0 baseline does not bridge galactic DM, and the G33/G34 swing surfacing the 1-parameter ambiguity in k(A); the May 12 morning session that produced the substance velocity-cap candidate commitment (motion through elevated A is REALLY slowed) and the GW170817 engine time prediction matching observation to 3.6% without fitting (G42, G43 scripts); the May 12 evening session that produced the strong-field metric structural derivation (A_0 = 1/(4πD), ord_{A=1} k(A) = D, smoothstep closure profile inside the photon sphere) and the Σ = D × A shell coordinate reformulation, dissolving the k(A) family ambiguity (G44–G56 scripts); and the May 13 session that produced the minimum-commitment quantum/write-density route Beta(D, 2) → quartic Hermite F(y) = 1 − 4y³ + 3y⁴ for the final-shell closure profile (G58 / G66), the structural closure of α = 4 entropy from outer-face pair × gravity-bridge (G59), the elevator-argument derivation of Hawking pair structure (G60), the framework-internal D = 3 forcing via joint SU + two-face compatibility, the Kerr extension committed under A = 2Mr/(r²+a²) with the bubble at r = r_+ and hologram spinning on the stationary horizon (G62, G64), the stress-energy non-pathology verification (G65), the quantum-unit commitment unifying the cosmological and quantum readings of SU (each quantum physical interaction resolves exactly 1 SU = A_0), the weak-field-as-coarse-grained-SU-writes reading, the structural derivation of the Born rule (projection-geometry theorem for u_i = ||P_i ψ|| + STAM ledger-measure step p_i = u_i² from paired write + reduction sampling, with decoherence as the consequence of paired events resolving alternatives into distinct ledger channels), the first-principles QM action chain (substance velocity-cap → proper time → relativistic action → non-rel Lagrangian → path integral → Born-rule resolution; G67–G68), and the structural form for the resolution-rate functional Γ_res = Σ_μ ⟨L_μ† L_μ⟩ D_μ (Lindblad-analog, with SU-support / write-rate distinction `0 ≤ Γ_res ≤ (A/A_0)/τ_P`) — closing the major spinless and spinning strong-field arcs, fixing the unit of counting for resolution-event statistics, deriving the QM action from STAM primitives, articulating the open-quantum-systems formalism inside STAM, and showing that one pair-structure primitive does three structural jobs (metric closure, boundary entropy, Born-rule squaring).
+Development assisted by extensive conversation with Claude (Anthropic), particularly during the May 2026 push that produced the A_0 = 1/(12 pi) structural commitment, V_3 potential selection, CMB self-consistent closure, and PBH-DM compatibility analysis (G7-G14 script series); the May 11 (evening) refinement session that produced the substance-ontology articulation (water-tank conceptual exercise), the two-layer cosmological reading (G28+G29: V_3 expansion ≡ LCDM at H_0=73 by construction, photon-A traversal as separate distance bias), the G21 redux confirming GR-exact strong-field landmarks under corrected composition, the G31 confirmation that A_0 baseline does not bridge galactic DM, and the G33/G34 swing surfacing the 1-parameter ambiguity in k(A); the May 12 morning session that produced the substance velocity-cap candidate commitment (motion through elevated A is REALLY slowed) and the GW170817 engine time prediction matching observation to 3.6% without fitting (G42, G43 scripts); the May 12 evening session that produced the strong-field metric structural derivation (A_0 = 1/(4πD), ord_{A=1} k(A) = D, smoothstep closure profile inside the photon sphere) and the Σ = D × A shell coordinate reformulation, dissolving the k(A) family ambiguity (G44–G56 scripts); and the May 13 session that produced the ledger-as-structural-channel write-density route Beta(D + 1, 2) → quintic Hermite F(y) = 1 − 5y⁴ + 4y⁵ for the final-shell closure profile (G58 / G66), the structural closure of α = 4 entropy from outer-face pair × gravity-bridge (G59), the elevator-argument derivation of Hawking pair structure (G60), the framework-internal D = 3 forcing via joint SU + two-face compatibility, the Kerr extension committed under A = 2Mr/(r²+a²) with the bubble at r = r_+ and hologram spinning on the stationary horizon (G62, G64), the stress-energy non-pathology verification (G65), the quantum-unit commitment unifying the cosmological and quantum readings of SU (each quantum physical interaction resolves exactly 1 SU = A_0), the weak-field-as-coarse-grained-SU-writes reading, the structural derivation of the Born rule (projection-geometry theorem for u_i = ||P_i ψ|| + STAM ledger-measure step p_i = u_i² from paired write + reduction sampling, with decoherence as the consequence of paired events resolving alternatives into distinct ledger channels), the first-principles QM action chain (substance velocity-cap → proper time → relativistic action → non-rel Lagrangian → path integral → Born-rule resolution; G67–G68), and the structural form for the resolution-rate functional Γ_res = Σ_μ ⟨L_μ† L_μ⟩ D_μ (Lindblad-analog, with SU-support / write-rate distinction `0 ≤ Γ_res ≤ (A/A_0)/τ_P`) — closing the major spinless and spinning strong-field arcs, fixing the unit of counting for resolution-event statistics, deriving the QM action from STAM primitives, articulating the open-quantum-systems formalism inside STAM, and showing that one pair-structure primitive does three structural jobs (metric closure, boundary entropy, Born-rule squaring).
