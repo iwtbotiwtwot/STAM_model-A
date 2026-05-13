@@ -4,7 +4,7 @@
 
 Author: **Sean Brady**
 Status: **Proposed theoretical framework / active research program**
-Snapshot: **May 12, 2026 — updated to add substance velocity-cap as V_4 candidate commitment (motion through elevated A is REALLY slowed, not just observed-slowed) and GW170817 engine time prediction (1.677 s predicted vs 1.74 s observed, 3.6% match without fitting). Builds on May 11 evening substance-ontology refinement, two-layer cosmological reading, and k(A) family ambiguity findings.**
+Snapshot: **May 12, 2026 (evening) — strong-field metric is now structurally complete in the spinless case. A_0 = 1/(4πD) and n_h = D−1 both derived from spatial dimensionality (D=3 ⇒ A_0 = 1/(12π), n_h = 2). Strong-field metric: k(A) = (1−A) outside the photon sphere (exact GR); k(A) = 27(1−A)³(2A−1) inside (smoothstep closure). Natural shell coordinate Σ = D × A puts ISCO, photon sphere, horizon at integer shells (Σ = 1, 2, 3). LIGO ringdown consistency clean. Builds on the morning's substance velocity-cap commitment and GW170817 engine time work, and on May 11 evening substance ontology + two-layer cosmology.**
 
 ---
 
@@ -125,37 +125,76 @@ Synthetic checks recover the input mass to floating-point precision when the exp
 
 ## Strong-field position
 
-The current strong-field metric is:
+**(Spinless case structurally complete as of 2026-05-12 evening session.)**
+
+The strong-field metric in its final form:
 
 ```text
-g_tt = -(1 - A) c^2                      (matches GR's form)
-g_rr = 1 / [ (1 - A) (1 - A^2)^2 ]       (Model-A modification, n=2 commitment)
+g_tt = -(1 - A) c^2                          (matches GR's form, unchanged)
+g_rr = 1 / k(A)                              (Model-A modification)
+
+k(A) = (1 - A)                  for A ≤ 2/3  (Σ ≤ 2: outside photon sphere — exact GR)
+k(A) = 27(1 - A)^3 (2A - 1)     for 2/3 < A < 1  (final-shell smoothstep closure)
 ```
 
-**Three structural principles narrow k(A) to a 1-parameter family** (refined 2026-05-11):
+### Natural shell coordinate
 
-1. **Weak-field GR recovery at first order in A** (so all GPS / Shapiro / lensing tests pass).
-2. **A = 1 as the universe's edge** (so SU / proper-time integrals diverge there).
-3. **Thirds-of-A preservation** (ISCO at A = 1/3, photon sphere at A = 2/3, horizon at A = 1; depends on g_tt only).
+The natural strong-field variable is **Σ = A / (4π A_0) = D × A** (= 3A for D=3):
 
-These three principles narrow k(A) to the family `k_n(A) = (1-A)(1-A^2)^n` for n ≥ 1, but do NOT uniquely fix n. The earlier claim that "three principles force k(A)" was overstated — they admit a family. Model-A commits to **n=2** specifically based on:
+- Σ = 1 → ISCO (A = 1/3)
+- Σ = 2 → photon sphere (A = 2/3)
+- Σ = 3 → horizon (A = 1)
 
-- G17's g_rr second-order coefficient ratio Model-A:GR = 3 (the "third integer 3" in the framework's recurring theme; equals n+1)
-- G18's (2×2)=4 area-per-entry ledger decomposition matching Bekenstein-Hawking entropy (matches when there are two pair factors)
-- The pair-squared form (1-A²)² as the framework's structural primitive
+The thirds-of-A landmarks are integer shells in Σ. The final-shell radial closure profile F(Σ) operates on the third shell: 2 < Σ < 3 (equivalently 2/3 < A < 1).
 
-But n=1 (with k = (1-A)(1-A²)) is also viable: it gives NEC crossover at exactly A = 1/2, logarithmic horizon divergence (the original "logarithmic" wording), and QNM ratio closer to LIGO precision. Several G33/G34 framework signatures depend on this choice:
+### Derivation chain (no free parameters)
 
-| signature | n=1 | n=2 (committed) |
-|---|---|---|
-| QNM eikonal τ/τ_GR | 3/√5 ≈ 1.342 | 9/5 = 1.800 |
-| F3 NEC crossover | 1/2 exactly | ≈0.44 |
-| Proper-time divergence | logarithmic | (1-A)^(-1/2) |
-| g_rr 2nd-order ratio | 2 | 3 |
+The strong-field metric is now derived from two structural inputs:
 
-The 1-parameter ambiguity is real and is currently the framework's central open metric question (sharpening of the Lagrangian-for-A gap). A fixing point will come from either an exact LIGO QNM observation of a spinless ringdown, or a non-circular structural derivation that picks out a specific n.
+1. **A_0 = 1 / (4π D)**: substance baseline from spatial dimensionality. For D = 3: A_0 = 1/(12π). The 4π is the Q8 thermal × gravity-bridge factor (framework-internal); the D is spatial dimensionality.
 
-The deviation factor (1 - A^2)^n is within ~1% of unity for A < 0.05 (everywhere we currently measure) regardless of n. All weak-field GR tests pass automatically. The framework departs from GR at second order in A and at the boundary itself; the size of the second-order departure (coefficient n+1 in g_rr) is what n parameterizes.
+2. **ord_{A=1} k(A) = D**: the SU shell-count fixes the horizon closure order to equal the dimensionality. For k(A) = (1-A)(1-A²)^n, this gives 1 + n = D, hence n_h = D − 1 = 2 in our universe.
+
+3. **k(A) = (1 − A) outside the photon sphere**: no STAM modification where light can escape. The PS is the structural boundary; outside it, the framework reproduces GR exactly. All weak-field tests pass automatically.
+
+4. **C¹ continuity at PS and horizon**: F_r(2/3) = 1, F_r(1) = 0, F_r'(2/3) = 0, F_r'(1) = 0. The unique minimum-degree polynomial satisfying these conditions is the Hermite cubic smoothstep, giving the closed form F_r(A) = 27(1-A)²(2A-1) inside the PS.
+
+The "27" coefficient = D³ in general dimensions. The (2A − 1) factor's zero at A = 1/2 is algebraically present but physically dormant (outside PS where F_r = 1 by definition).
+
+### Predictions under the committed metric
+
+| Probe | A | k(A) | Prediction |
+|---|---:|---|---|
+| Solar System / Cassini | tiny | (1−A) | GR exact |
+| GPS clocks | tiny | (1−A) | GR exact |
+| Pulsar binary Shapiro | low | (1−A) | GR exact at relevant A |
+| ISCO | 1/3 | 2/3 | GR Schwarzschild |
+| NEC at A=1/2 | 1/2 | 1/2 | Schwarzschild (F_r=1, no STAM modification) |
+| **LIGO ringdown (PS)** | **2/3** | **1/3** | **= GR Schwarzschild** |
+| **LIGO Kerr a=0.67** | — | — | **τ_STAM/τ_GR_Kerr ≈ 0.87** (13% deficit, within ±20–30% precision) |
+| Inside-PS strong field | (2/3, 1) | smoothstep ramp | falsifiable predictions |
+| Horizon | A → 1 | (1−A)³ × (2A−1) | k → 0 with order D = 3 |
+
+**LIGO ringdown consistency is now structurally clean.** The framework's k(A) = (1-A) at the photon sphere reproduces GR exactly; the spinning Kerr remnant deficit of ~13% is well within current LIGO precision.
+
+### Generalization to dimension D
+
+```text
+A_0 = 1/(4πD)
+ord_{A=1} k(A) = D
+n_h = D − 1
+α_entropy = 2(D − 1)
+Σ = D × A, with landmarks at Σ = 1, 2, ..., D
+```
+
+For D = 3 (our universe), the framework's strong-field metric is fully determined.
+
+### What's still open in strong field
+
+- **STAM-Kerr extension**: under "static bubble + rotating matter" commitment, how does k(A) extend? Two readings (naive A_Kerr_BL vs static-bubble) give different predictions; the static-bubble reading gives the τ_STAM/τ_GR_Kerr ≈ 0.87 estimate above.
+- **G18 entropy re-derivation**: the pair-squared (1−A²)² that gave the (2 sides × 2 gravity-bridge) = 4 decomposition is replaced by (1−A)³(2A−1). The α = 4 likely emerges via α = 2(D−1) decomposition, but explicit re-derivation needed.
+- **F(Σ) shape refinement**: smoothstep is minimum-commitment C¹ form. Higher-order smoothness or V_3-tied alternatives could be distinguished by inside-final-shell observables (BBH late-inspiral chirp, QNM higher overtones).
+- **Lagrangian for A**: still open. The framework's k(A) is now fully determined by structural arguments, but the action principle producing this k(A) is missing.
 
 ---
 
@@ -431,7 +470,7 @@ PBH-DM: requires inflationary fluctuation amplitude sigma ~ 0.05
 
 4. **Black-hole thermodynamics from one rule.** `k_B T = hbar c |grad A| / (4 pi)` reproduces Hawking T (Schwarzschild + Kerr + de Sitter), Bekenstein-Hawking entropy, the first law, the Smarr relation, evaporation lifetime, and the generalized second law.
 
-5. **Strong-field metric is Model-A-narrowed.** Three Model-A principles (weak-field recovery + boundary at A = 1 + thirds-of-A preservation) narrow k(A) to the 1-parameter family `k_n = (1-A)(1-A^2)^n` for n ≥ 1. Model-A's specific commitment to n=2 (giving the (1-A^2)^2 modification) is structurally motivated but admits a viable alternative at n=1; see "Strong-field position" section. The framework's strong-field metric is shaped by its own commitments rather than borrowed from elsewhere, but the n choice is currently a 1-parameter ambiguity.
+5. **Strong-field metric is structurally complete (spinless case, D=3).** Both A_0 = 1/(4πD) and n_h = D−1 are derived from spatial dimensionality. The metric: k(A) = (1−A) outside the photon sphere (exact GR), k(A) = 27(1−A)³(2A−1) inside (smoothstep closure). No free parameters. The previous k_n(A) family ambiguity (n=1 vs n=2) is dissolved by the recognition that n is not a constant — it's f_r(A) varying smoothly inside the final shell, with the closure order at horizon fixed by dimensionality. LIGO ringdown consistency is automatic (GR exact at the photon sphere).
 
 6. **Spinning bubble framework.** Static bubble + rotating holographic matter gives non-uniform Hawking T (T_pole = T_Kerr exactly via identity), super-radiance enhancement, no Penrose extraction.
 
@@ -451,9 +490,9 @@ PBH-DM: requires inflationary fluctuation amplitude sigma ~ 0.05
 
 ## Major open problems
 
-1. **Lagrangian for A; or non-Lagrangian principle that picks out k_n specifically.** Specifying the action `S[A, g_uv]` (or alternative structural principle) that produces both the Poisson-like source equation and a unique strong-field metric. G25-G27 attempted standard scalar-tensor formulations and found ghost regions plus Rs-dependent V; G33 inverted to A-as-fundamental and found the k(A) family is 1-parameter ambiguous (k_n for n ≥ 1 satisfying all stated principles). The Lagrangian gap is now the sharper question: what principle picks n out of {1, 2, 3, ...}?
+1. **Lagrangian for A.** Specifying the action `S[A, g_uv]` (or alternative structural principle) that produces both the Poisson-like source equation and the now-derived strong-field metric. The k(A) family ambiguity is dissolved (2026-05-12 evening: ord_{A=1} k = D fixes n_h = D−1, smoothstep f_r is the minimum-commitment closure), but the action principle generating this specific k(A) is still missing. G25-G27 attempted standard scalar-tensor formulations and found ghost regions plus Rs-dependent V; G33 inverted to A-as-fundamental and found the k(A) family was 1-parameter ambiguous, since superseded by the structural derivation. The remaining open question is: what action principle produces k(A) = (1−A) outside PS and k(A) = 27(1−A)³(2A−1) inside?
 
-2. **Structural origin of the "3" factor in 1/(12 pi).** The 4 pi is independently derived (thermal prefactor); the 3 from spatial dimensionality currently rests on dimensional argument. Closing it would make A_0 fully derived.
+2. **Structural origin of the "3" factor in 1/(12 pi).** The 4π is independently derived (thermal prefactor); the "3" is explicitly the spatial dimensionality D in the unified formula A_0 = 1/(4πD). Substantially closed: the "3" is the dimensionality of space. The deeper "why D = 3" question is cosmological/anthropic rather than within Model-A's scope.
 
 3. **Realistic cosmic-structure modeling for f_LoS.** The CMB self-consistent solution depends on the line-of-sight A amplification factor. Computing this from realistic cosmic structure (N-body or analytic modeling) would close the cosmology branch.
 
@@ -511,4 +550,4 @@ When the framework changes direction (as it did multiple times in development �
 
 ## Acknowledgments
 
-Development assisted by extensive conversation with Claude (Anthropic), particularly during the May 2026 push that produced the A_0 = 1/(12 pi) structural commitment, V_3 potential selection, CMB self-consistent closure, and PBH-DM compatibility analysis (G7-G14 script series); the May 11 (evening) refinement session that produced the substance-ontology articulation (water-tank conceptual exercise), the two-layer cosmological reading (G28+G29: V_3 expansion ≡ LCDM at H_0=73 by construction, photon-A traversal as separate distance bias), the G21 redux confirming GR-exact strong-field landmarks under corrected composition, the G31 confirmation that A_0 baseline does not bridge galactic DM, and the G33/G34 swing surfacing the 1-parameter ambiguity in k(A); and the May 12 session that produced the substance velocity-cap candidate commitment (motion through elevated A is REALLY slowed) and the GW170817 engine time prediction matching observation to 3.6% without fitting (G42, G43 scripts).
+Development assisted by extensive conversation with Claude (Anthropic), particularly during the May 2026 push that produced the A_0 = 1/(12 pi) structural commitment, V_3 potential selection, CMB self-consistent closure, and PBH-DM compatibility analysis (G7-G14 script series); the May 11 (evening) refinement session that produced the substance-ontology articulation (water-tank conceptual exercise), the two-layer cosmological reading (G28+G29: V_3 expansion ≡ LCDM at H_0=73 by construction, photon-A traversal as separate distance bias), the G21 redux confirming GR-exact strong-field landmarks under corrected composition, the G31 confirmation that A_0 baseline does not bridge galactic DM, and the G33/G34 swing surfacing the 1-parameter ambiguity in k(A); the May 12 morning session that produced the substance velocity-cap candidate commitment (motion through elevated A is REALLY slowed) and the GW170817 engine time prediction matching observation to 3.6% without fitting (G42, G43 scripts); and the May 12 evening session that produced the strong-field metric structural derivation (A_0 = 1/(4πD), ord_{A=1} k(A) = D, smoothstep closure profile inside the photon sphere) and the Σ = D × A shell coordinate reformulation, dissolving the k(A) family ambiguity (G44–G56 scripts).
