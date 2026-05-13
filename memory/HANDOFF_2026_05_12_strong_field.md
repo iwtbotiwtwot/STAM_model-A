@@ -61,8 +61,8 @@ F(Σ) operates on D−1 < Σ < D (= 2 < Σ < 3 in our universe).
 ### The strong-field metric commitment
 
 ```
-k(A) = (1 − A)                     for A ≤ 2/3      (Σ ≤ 2: outside final shell — exact GR)
-k(A) = 27 (1 − A)³ (2A − 1)        for 2/3 < A < 1  (2 < Σ < 3: final-shell smoothstep closure)
+k(A) = (1 − A)                              for A ≤ 2/3      (Σ ≤ 2: outside final shell — exact GR)
+k(A) = 27 (1 − A)³ (9A² − 10A + 3)          for 2/3 < A < 1  (2 < Σ < 3: final-shell quartic closure)
 ```
 
 Equivalently:
@@ -70,9 +70,12 @@ Equivalently:
 ```
 k(A) = (1 − A) × F_r(A)
 
-F_r(A) = 1                          for A ≤ 2/3
-F_r(A) = 27 (1 − A)² (2A − 1)       for 2/3 < A < 1
-       = 1 − s(3A − 2),  s(x) = 3x² − 2x³  (smoothstep)
+F_r(A) = 1                                          for A ≤ 2/3
+F_r(A) = 27 (1 − A)² (9A² − 10A + 3)                for 2/3 < A < 1
+
+In Σ coordinates:
+F(Σ) = 1 − 4(Σ − 2)³ + 3(Σ − 2)⁴                     for 2 < Σ < 3
+     = (3 − Σ)² (3Σ² − 10Σ + 9)                      (closed form)
 ```
 
 **Derivation chain (no free parameters):**
@@ -82,20 +85,35 @@ F_r(A) = 27 (1 − A)² (2A − 1)       for 2/3 < A < 1
    binding boundary. All weak-field tests automatically pass.
 
 2. **Inside the final shell (2/3 < A < 1):** F_r(A) is the minimum-degree
-   polynomial satisfying:
-   - F_r(2/3) = 1 (continuity at PS)
-   - F_r(1) = 0 (closure at horizon)
-   - F_r'(2/3) = 0 (smooth onset at PS)
-   - F_r'(1) = 0 (smooth landing at horizon, gives order-2 zero)
+   polynomial satisfying asymmetric smoothness conditions:
+   - F(2) = 1, F'(2) = 0, **F''(2) = 0** (C² at PS — matches outside-PS GR
+     through second derivative, no kink at structural-onset boundary)
+   - F(3) = 0, F'(3) = 0 (C¹ at horizon — order-2 zero in F, total
+     k closure order D = 3 ✓)
 
-   The unique cubic Hermite polynomial with these conditions is the
-   smoothstep. Total k closure at horizon: order 3 = D. ✓
+   The unique quartic Hermite polynomial with these conditions is
+   F(u) = 1 − 4u³ + 3u⁴ where u = Σ − 2 = 3A − 2.
 
-3. **The "27" coefficient = D³ = 27**: structurally tied to dimensionality.
+3. **The asymmetric smoothness (C² at PS, C¹ at horizon) is structural:**
+   - PS = structural-onset boundary (smooth transition from exact GR)
+   - Horizon = saturation boundary (sharp closure with order-D zero)
 
-4. **The (2A − 1) factor**: appears algebraically from the smoothstep
-   factorization. Zero at A = 1/2 (outside PS — physically dormant). The
-   midpoint between A_0 and horizon, also the F3 NEC crossover for n=1.
+4. **The "27" coefficient = D³ = 27**: structurally tied to dimensionality.
+
+5. **The (9A² − 10A + 3) quadratic factor**: no real zeros (discriminant
+   100 − 108 < 0). No dormant algebraic artifacts. Cleaner than the
+   smoothstep's (2A − 1) factor which had a dormant zero at A = 1/2.
+
+**Note on the choice:** the earlier session phase landed on the cubic
+smoothstep F = (3-Σ)²(2Σ-3) as the minimum-degree C¹-both-ends form. Late
+session, Sean proposed the quartic 1 - 4(Σ-2)³ + 3(Σ-2)⁴ which adds C²
+continuity at the PS (the framework's GR-to-STAM boundary). The quartic is
+structurally more motivated because:
+- Outside PS is exact GR with all derivatives smooth
+- Smooth transition at PS avoids artificial kinks
+- Horizon retains C¹ closure (natural for saturation surface)
+- No dormant algebraic zeros
+Framework commits to the quartic form for v0.5 basis.
 
 ### Predictions under the committed metric
 
@@ -108,8 +126,8 @@ F_r(A) = 27 (1 − A)² (2A − 1)       for 2/3 < A < 1
 | NEC at A = 1/2 | 1/2 | (1−A) | Schwarzschild (no STAM) |
 | **LIGO ringdown (PS)** | **2/3** | **(1−A) = 1/3** | **= GR Schwarzschild** |
 | **LIGO Kerr a=0.67** | — | — | **τ_STAM/τ_GR_Kerr ≈ 0.87** (13% deficit, marginal) |
-| Inside-PS strong field | (2/3, 1) | smoothstep ramp | specific predictions |
-| Horizon | A → 1 | (1−A)³ × (2A−1) | k → 0 with order D = 3 |
+| Inside-PS strong field | (2/3, 1) | quartic Hermite ramp | specific predictions |
+| Horizon | A → 1 | (1−A)³ × (9A²−10A+3) | k → 0 with order D = 3 |
 
 **LIGO consistency is now clean.** The framework predicts GR exactly at the
 photon sphere (where current LIGO QNMs probe). The 13% deficit under

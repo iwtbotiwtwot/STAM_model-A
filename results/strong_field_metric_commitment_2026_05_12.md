@@ -27,8 +27,8 @@ ds² = −(1 − A) c² dt² + dr²/k(A) + r² dΩ²
 where A = R_s / r in the spinless case, R_s = 2GM/c², and:
 
 ```
-k(A) = (1 − A)                     for A ≤ 2/3       (Σ ≤ 2: outside final shell, exact GR)
-k(A) = 27(1 − A)³(2A − 1)          for 2/3 < A < 1   (2 < Σ < 3: final-shell closure)
+k(A) = (1 − A)                              for A ≤ 2/3       (outside final shell, exact GR)
+k(A) = 27(1 − A)³ (9A² − 10A + 3)           for 2/3 < A < 1   (final-shell closure)
 ```
 
 ## Final form (in Σ)
@@ -36,22 +36,31 @@ k(A) = 27(1 − A)³(2A − 1)          for 2/3 < A < 1   (2 < Σ < 3: final-she
 ```
 ds² = −(1 − Σ/D) c² dt² + dr²/k(Σ) + r² dΩ²
 
-k(Σ) = (1 − Σ/D)                                for Σ ≤ D − 1   (outside final shell, GR)
-k(Σ) = (1/D) × (D − Σ)^D × (closure factor)     for D−1 < Σ < D (final shell)
-
-For D = 3:
-   k(Σ) = (1 − Σ/3)                              for Σ ≤ 2
-   k(Σ) = (1/3)(3 − Σ)³(2Σ − 3)                  for 2 < Σ < 3
+k(Σ) = (1 − Σ/3)                                  for Σ ≤ 2     (outside final shell, GR)
+k(Σ) = (1/3)(3 − Σ)³ (3Σ² − 10Σ + 9)              for 2 < Σ < 3 (final-shell closure)
 ```
 
 Equivalently, defining the final-shell closure profile F(Σ):
 
 ```
 F(Σ) = 1                                          for Σ ≤ 2
-F(Σ) = (3 − Σ)²(2Σ − 3)                           for 2 < Σ < 3
+F(Σ) = 1 − 4(Σ − 2)³ + 3(Σ − 2)⁴                  for 2 < Σ < 3   (degree-4 quartic)
+     = (3 − Σ)²(3Σ² − 10Σ + 9)                    (closed form)
 
 ⇒ k(Σ) = (1 − Σ/3) × F(Σ)
 ```
+
+### Smoothness profile
+
+F(Σ) has **C² continuity at the photon sphere** (Σ = 2): F(2) = 1, F'(2) = 0, **F''(2) = 0**.
+F(Σ) has **C¹ continuity at the horizon** (Σ = 3): F(3) = 0, F'(3) = 0, F''(3) = 12 ≠ 0.
+
+This asymmetric smoothness is **structurally motivated**:
+
+- **PS is the structural-onset boundary** (light binding) — should be as smooth as possible to avoid artificial kinks where the framework reduces to exact GR
+- **Horizon is a true saturation boundary** (substance closure) — C¹ continuity is sufficient; the order-D zero at the horizon is the natural "sharp" closure of the bubble
+
+The (3Σ² − 10Σ + 9) quadratic factor has **no real zeros** (discriminant 100 − 108 < 0), so the closure profile has no dormant algebraic artifacts in or near the physical range.
 
 Equivalently, k(A) = (1 − A) × F_r(A) where F_r is the **final-shell radial
 closure profile**:
@@ -70,15 +79,22 @@ F_r(A) = 27(1 − A)²(2A − 1)         for 2/3 < A < 1
 3. Outside-PS metric:         k(A) = (1 − A)        (exact GR, automatic
                                                      by minimum-modification
                                                      consistency)
-4. Smoothness at PS:          F_r(2/3) = 1, F_r'(2/3) = 0
-5. Closure at horizon:        F_r(1) = 0, F_r'(1) = 0
-                              ord_{A=1} F_r(A) = D − 1 = 2 (so total k
-                                                            closure = D = 3)
-6. Minimum-degree polynomial: f_r is the cubic Hermite smoothstep with
-                              C¹ boundary conditions at PS and horizon
+4. Smoothness at PS (C²):     F(2) = 1, F'(2) = 0, F''(2) = 0
+                              (matches outside-PS GR through 2nd derivative)
+5. Closure at horizon (C¹):   F(3) = 0, F'(3) = 0
+                              ord_{Σ=3} F(Σ) = D − 1 = 2 (so total k closure = D = 3)
+6. Minimum-degree polynomial: F is the quartic Hermite polynomial with
+                              C² at PS, C¹ at horizon — uniquely determined
+                              by these boundary conditions
 ```
 
-The "27" coefficient = 3³ = D³ is structurally tied to dimensionality.
+**Asymmetric smoothness is structural:** the PS is a structural-onset boundary
+where the framework reduces to exact GR (smooth, no physical kink); the horizon
+is a saturation boundary where C¹ closure with order-D zero is the natural
+"sharp" bubble closure.
+
+The (3 − Σ)³ factor in k(Σ) gives the order-D = 3 zero at horizon, matching
+the SU shell-count for D = 3.
 
 ## Where each piece comes from
 
