@@ -241,8 +241,9 @@ print("G91a: Schwarzschild calibration in r*_GR coordinate")
 print("=" * 80, flush=True)
 print()
 
-# Build r*_GR grid: span well beyond the potential peak
-rs_min_GR = -200.0
+# Build r*_GR grid: span well beyond the potential peak.  Values much below
+# -60 invert to r - 2M smaller than double precision can represent.
+rs_min_GR = -60.0
 rs_max_GR =  400.0
 N_GR = 6001
 rs_grid_GR = np.linspace(rs_min_GR, rs_max_GR, N_GR)
@@ -387,14 +388,15 @@ if 'calib_ok' in dir() and calib_ok:
     ax.grid(True, alpha=0.3)
 
     ax = axes[1, 0]
-    mask = (t_GR >= t_fit_start) & (t_GR <= t_fit_end)
-    ax.plot(t_GR[mask], sig_GR[mask], 'tab:blue', linewidth=1, label='Schw')
+    mask_GR = (t_GR >= t_fit_start) & (t_GR <= t_fit_end)
+    mask_STAM = (t_STAM >= t_fit_start) & (t_STAM <= t_fit_end)
+    ax.plot(t_GR[mask_GR], sig_GR[mask_GR], 'tab:blue', linewidth=1, label='Schw')
     if popt_GR is not None:
-        ax.plot(t_GR[mask], damped_sinusoid(t_GR[mask], *popt_GR),
+        ax.plot(t_GR[mask_GR], damped_sinusoid(t_GR[mask_GR], *popt_GR),
                 'k--', alpha=0.7, label='Schw fit')
-    ax.plot(t_STAM[mask], sig_STAM[mask], 'tab:orange', linewidth=1, label='STAM')
+    ax.plot(t_STAM[mask_STAM], sig_STAM[mask_STAM], 'tab:orange', linewidth=1, label='STAM')
     if popt_STAM is not None:
-        ax.plot(t_STAM[mask], damped_sinusoid(t_STAM[mask], *popt_STAM),
+        ax.plot(t_STAM[mask_STAM], damped_sinusoid(t_STAM[mask_STAM], *popt_STAM),
                 'r--', alpha=0.7, label='STAM fit')
     ax.set_xlabel('t / M')
     ax.set_ylabel('ψ(t, r_obs)')
