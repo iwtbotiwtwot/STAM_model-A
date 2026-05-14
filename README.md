@@ -2,58 +2,142 @@
 
 **Model-A** is the current variable-accumulation version of the broader **Spacetime Accumulation Model (STAM)** research program. It explores whether gravity, clock behavior, propagation delay, black-hole horizons, thermodynamic behavior, cosmological distance effects, dark matter behavior, and quantum-style resolution can be described using one central idea: a dimensionless spacetime accumulation field called **A**.
 
-Author: **Sean Brady**
-Status: **Proposed theoretical framework / active research program**
-Snapshot: **May 13, 2026 — current unified branch. The framework's load-bearing kernel collapses to a clean F/R/f triad — F(y) is remaining manifold support, R(A) is 3D-space anisotropy response, f(A) is accumulated SU stiffness — corresponding to the framework's three ontological commitments (manifold, space, SU). Six primitives identified explicitly; after the 2026-05-13 G121–G124 batch, four remain (A, Σ=DA, 3+1 manifold-support, h=1−A) plus one microscopic-axiom-set (Poisson SU-write process). Strong-field spinless and Kerr metrics are structurally complete. The native action variable is the SU-normalized shell count Σ, not A as an ordinary scalar. The constrained double-LM shell-count action closes the ghost-free Lagrangian embedding for the committed Schwarzschild and Kerr strong-field sectors (G70–G84); G122 hardens this to a uniqueness theorem under the counted-scalar primitive. G70's d ln f/dA expression for the action coupling is now first-principles derived (the polynomial 45A²−33A−13 is the (tt−θθ) Einstein-tensor anisotropy of (h, k) stripped of universal shell-count primitives; D=3 is algebraically privileged as the unique dimension where the clean (F−1) + AyF'_y decomposition exists). Outside the photon region the metric remains GR/Kerr exact; the STAM-vs-GR wedge lives inside the photon orbit. G90 derives a power-law near-horizon tortoise-distance enhancement. G108 derives the rigorous axial perturbation potential V_exact = V_geom + (√f)''/√f directly from S[Σ,g,λ₁,λ₂] by parity decomposition; G109 convergence study locks the spinless ℓ=2, n=0 axial QNM shift vs GR at **4.977%** (converged to 0.002 pp; calibration 0.80% vs Leaver). G110/G112 extend axial to ℓ=3 (2.10%) and ℓ=4 (1.16%). G114 first-pass polar (M_eff Zerilli + canonical correction) breaks Schwarzschild isospectrality by ~13% at ℓ=2 (5.62% polar vs 4.98% axial). G85 closes the exact Kerr spheroidal photon-region surface r_pr(θ; a) in closed form (supersedes G84's sin²θ ansatz which is off up to 39% at extremal). G119 builds a numerically sound Kerr STAM wave base across all spins a ∈ [0, 0.99]. G120a establishes the GR Kerr QNM reference table via qnm. **G121** hardens p(y) = Beta(D+1, 2) via three converging derivations (Bayesian conjugate + order-statistic + maximum entropy). **G122** derives the constrained shell-count action as the unique covariant action under Σ-as-count. **G124** delivers the first formal microscopic Poisson SU-write model + explicit coarse-graining theorem (mean-field 1D demo: error 4.85% vs Poisson noise floor 9.3%). **G123** completes tier-1 matter coupling (Jordan-frame minimal coupling, all precision tests pass by construction). **G113-redux** found that the QNM signature is action-correction-dominated (not metric-modification); n=1 remains open. The historical G92–G94 "diagnostic" numerics and G118/G118v2 Kerr proxy shifts are superseded / retired as framework predictions (G118v2 spin sweep is historical diagnostic only). Quantum resolution, weak-field gravity, horizon closure, entropy, Born-rule structure, and Γ_res are tied through the same A/SU/Σ hierarchy. Remaining open work: standalone Kerr QNM solver to < 0.5% (G120b/c attempts FAILED), then STAM Kerr predictions; n=1+ overtones (Leaver continued fraction or Sasaki-Nakamura); rigorous polar reduction; Hawking spectral machinery; cosmology pipeline; tier-2 matter sector (substance excitations) → QFT extension.**
+**Author:** Sean Brady
+**Status:** Proposed theoretical framework / active research program
+**Date:** May 13, 2026
 
 ---
 
-## Current unified branch
+## TL;DR
 
-Model-A's current unified branch is organized by one field, one unit, one shell coordinate, and one final-shell closure profile:
+Spacetime is a substance with local density `A`. Each quantum interaction resolves exactly 1 SU = A_0 = 1/(12π) of it, and these accumulate as an integer-landmark shell count Σ = 3·A (ISCO at Σ=1, photon sphere at Σ=2, horizon at Σ=3). Inside the final shell (Σ ∈ (2, 3)), the manifold's remaining traversable support `F(y)` runs out; outside it, the framework reduces to GR exactly. From this one structure — substance + SU writes + final-shell closure — the framework reproduces Newtonian gravity, GR weak-field, Bekenstein-Hawking entropy and the Hawking temperature law, dark-energy-like cosmology, the Born rule, the GW170817 engine time to 3.6% with no fitting, and a locked ringdown signature at LIGO-O5 frequency.
 
-```
-A = physical accumulation field
-1 SU = A_0 = 1/(12π)
-Σ(A) = A / (4π A_0) = 3A
-```
+### Load-bearing formulas
 
-The strong-field landmarks become integer shell counts:
+```text
+A = 2GM/(c²r)                          substance density (weak-field)
+A_0 = 1/(4π·D) = 1/(12π) ≈ 0.02653     cosmic vacuum baseline = 1 SU
+Σ = D·A = 3A                           SU shell count (D = 3 spatial dim)
+y = Σ - 2 = 3A - 2 ∈ (0, 1)            final-shell coordinate
 
-```
-Σ = 1  →  ISCO
-Σ = 2  →  photon sphere
-Σ = 3  →  horizon
-```
+h(A) = 1 − A                           velocity-cap factor (g_tt = -h c²)
+k(A) = 1 − A                           radial factor outside PS (A ≤ 2/3)
+k(A) = (1 − A) · F(y)                  radial factor inside PS (A > 2/3)
+F(y) = 1 − 5y⁴ + 4y⁵                   remaining manifold support
+p(y) = 20 y³(1 − y) = −F'(y)           closure density, Beta(D+1, 2)
+R(A) = −(45A² − 33A − 13)/[30 A (1−A)] 3D-space anisotropy response
+d ln f / dA = R(A) · p(y) / F(y)       SU stiffness coupling, f(2/3) = 1
 
-The spinless strong-field radial factor:
-
-```
-k(A) = 1 − A                       for A ≤ 2/3
-```
-
-so the exterior through the photon sphere is **GR-exact** (weak-field tests pass automatically, eikonal ringdown matches Schwarzschild).
-
-Inside the photon sphere:
-
-```
-k(A) = (1 − A) · F(y)              with y = 3A − 2 = Σ − 2,  for 2/3 < A < 1
+g = (c²/2) ∇A                          weak-field gravity (Newton)
+k_B T = (1/4π) ℏ c |∇A|                boundary thermal rule
+S = A_h / (4 ℓ_P²)                     Bekenstein-Hawking entropy
+b = A_0 · c / H_0                      cosmological bridge term
 ```
 
-**Because manifold-support is treated as a structural channel** (committed 2026-05-13; G121 hardens this to a Bayesian conjugate-prior uniqueness theorem), the spatial-side channel count is D + 1 = 4 (3 spatial directions + 1 manifold-support open-face slot), and the final-shell closure density is **Beta(4, 2)**:
+### The F / R / f triad architecture
+
+| Quantity | Role | Maps to |
+|---|---|---|
+| **F(y)** | remaining traversable manifold support (survival function) | the **manifold** |
+| **R(A)** | 3D-space curvature anisotropy response (Einstein tensor (tt−θθ)) | the **3D space** |
+| **f(A)** | accumulated SU stiffness coupling in the action | the **SU writes** |
+
+All three derive from the shell-count measure plus the metric ansatz; none is independently chosen.
+
+### The primitives
+
+The framework's load-bearing kernel reduces to **four explicit primitives plus one microscopic axiom-set** (after the 2026-05-13 G121–G124 batch):
+
+1. **A** — escape/traversal-cap variable
+2. **Σ = D·A** — SU-normalized shell count
+3. **D = 3** spatial + 1 manifold-support open-face — dimensional anchor (also algebraically privileged)
+4. **h(A) = 1 − A** — velocity-cap (V_4)
+5. **Microscopic axiom-set**: spacetime Poisson point process for SU writes, rate density Γ_res(x), each event = 1 A_0 (G124)
+
+Derived from these: F(y), k(A), R(A), f(A), Z(A), V(A), the constrained shell-count action S[Σ,g,λ₁,λ₂], and every observable prediction below.
+
+### Snapshot (one line)
+
+Strong-field spinless and Kerr metrics structurally complete; constrained shell-count action ghost-free and unique under Σ-as-count; rigorous spinless ℓ=2 axial QNM shift locked at **4.977%**; first formal microscopic SU-write model in place; remaining open work in (i) precision Kerr QNM extraction, (ii) cosmology pipeline data fitting, (iii) tier-2 matter sector / QFT extension.
+
+---
+
+## Technical abstract
+
+### Strong-field metric (D = 3)
 
 ```
-p(y) = 20 y³ (1 − y)
-F(y) = 1 − 5 y⁴ + 4 y⁵             — quintic Hermite (C³ at PS, C¹ at horizon)
+ds² = −h(A) c² dt² + dr² / k(A) + r² dΩ²
+h(A) = 1 − A     (everywhere)
+k(A) = 1 − A                                       for A ≤ 2/3   (exterior + PS)
+k(A) = (1 − A) · [1 − 5(3A − 2)⁴ + 4(3A − 2)⁵]    for 2/3 < A < 1  (inside PS)
 ```
 
-Therefore the explicit metric is:
+Exterior through the photon sphere is GR-exact (all weak-field precision tests pass automatically; eikonal ringdown matches Schwarzschild). The STAM-vs-GR wedge lives strictly inside the photon orbit.
+
+### Kerr extension
 
 ```
-k(A) = (1 − A) · [1 − 5(3A − 2)⁴ + 4(3A − 2)⁵]    for 2/3 < A < 1
+A(r, θ; M, a) = 2 M r / (r² + a²)
+A = 1 at r = r_+ (Kerr horizon; bubble at constant Boyer-Lindquist r)
+Equatorial-plane k(A) reduces to spinless form
+LIGO Kerr ringdown eikonal = exact GR-Kerr (all spin)
 ```
 
-This keeps weak-field tests and photon-sphere / eikonal ringdown GR-exact, while placing the STAM-vs-GR wedge inside the photon sphere.
+### Derivation chain
+
+```
+substance ontology + 1 SU = A_0 (G124 Poisson process)
+  → D direction-activations + 1 open-face + Laplace's insufficient reason
+  → Beta(D + 1, 2) closure density                         [G121 uniqueness]
+  → F(y) = 1 − 5y⁴ + 4y⁵                                   (remaining manifold support)
+  → k(A) = (1−A) · F(y)                                    (velocity gate × manifold-support gate)
+  → cubic horizon vanishing k ~ (1−A)³ = 1 + 2 split
+  → Einstein anisotropy G^t_t − G^θ_θ = (A²y⁴/4M²)(45A²−33A−13)
+  → R(A) = 3D-space anisotropy response factor
+  → d ln f / dA = R(A) · p(y)/F(y)                         (SU stiffness coupling)
+  → constrained shell-count action S[Σ,g,λ₁,λ₂]            [G122 uniqueness under Σ-as-count]
+  → axial QNM 4.977% / polar 5.62% at ℓ=2 (LIGO O5+ signature)
+```
+
+### Action statement
+
+```
+S[Σ, g, λ₁, λ₂] = (1/16πG) ∫ d⁴x √(−g) [
+    f(Σ) R
+  + λ₁ ((∇Σ)² − W(Σ))                  λ₁: source-determined shell-count gradient
+  + λ₂ (u^μ ∂_μ Σ)                     λ₂: shell count preserved along substance flow
+  − 2 V(Σ)
+]
+```
+
+Σ is a counted, non-propagating scalar; only the graviton is dynamical. Ghost-free in all angular sectors for committed Schwarzschild and Kerr backgrounds. **G122 uniqueness theorem**: this is the unique covariant 2nd-order action consistent with treating Σ as a counted scalar.
+
+### Headline locked predictions
+
+| Observable | Prediction | Status |
+|---|---|---|
+| Weak-field tests (GPS, Shapiro, lensing, BBN, CMB peaks) | GR-exact | Passes by construction |
+| Bekenstein-Hawking entropy | S = A_h/(4 ℓ_P²) | Reproduced from manifold-support cell counting |
+| Hawking T (Schw, Kerr, de Sitter) | from k_B T = ℏc|∇A|/(4π) | Reproduced |
+| Bridge term b (Pantheon historical) | A_0 · c/H_0 ≈ 355 Mly | 0.04% match |
+| SN fits vs ΛCDM (Pantheon+/Union3/DES) | wins by Δχ² ≈ 25–33 | Locked |
+| GW170817 engine time (M = 2.7 M_☉) | τ_critical = 1.677 s vs obs 1.74 s | 3.6% match, no fitting |
+| Spinless axial QNM shift ℓ=2 n=0 | **4.977%** | G108/G109 rigorous |
+| Spinless axial QNM shifts ℓ=3, 4 | 2.10%, 1.16% | G110/G112 rigorous |
+| Polar/axial isospectrality break ℓ=2 | **~13%** | G114 first-pass |
+| Near-horizon tortoise enhancement | (dr*/dr)_STAM/GR = 1/√F(y); power-law not log | G90 metric |
+| Primordial-mass remnant | BHs never fully evaporate | Structural |
+| F6 gravitational decoherence | ~0.5 s for 1 μm silica | Falsification handle |
+
+### What's open
+
+- **Technical gates**: standalone Kerr QNM solver < 0.5% (blocks Kerr STAM ringdown predictions); n=1 spinless overtones (Leaver CF or Sasaki-Nakamura); rigorous polar reduction (G114-rigorous); F6 specific number from L_μ identification.
+- **Cosmology pipeline**: realistic f_LoS modeling; BAO direct test under V_3; chronometer tension with H_0 = 73.
+- **Deep theoretical**: tier-2 matter coupling (substance excitations / TOE / QFT extension); deriving the Poisson axioms themselves from more fundamental discrete law.
+
+Three numbered Open Problems remain fully open (all in the cosmology/data-fitting layer); foundational layer is essentially closed.
+
 ---
 
 ## Headline results — what is strongest so far
@@ -211,9 +295,29 @@ Primordial-mass remnants: Black holes never fully evaporate; final
 
 ## Detailed framework
 
+The sections below follow this order:
+
+1. **Core idea** — substance ontology, A as accumulation field
+2. **Weak-field foundation** — Newton, GPS clocks, Shapiro delay, mass-estimator consistency
+3. **Strong-field metric** — derivation chain, predictions table, Kerr extension, stress-energy verification
+4. **Action principle** — constrained shell-count formulation, G70–G84 elimination chain, G122 uniqueness
+5. **QNM / ringdown** — rigorous spinless axial, polar isospectrality break, Kerr status
+6. **Substance velocity-cap (V_4)** — GW170817 engine-time prediction
+7. **Black-hole interpretation** — outward-collapse, two-face refinement, Hawking mechanism
+8. **A_0 void interpretation** — structural floor, SU-write microscopic reading
+9. **Thermodynamics** — Hawking T, Bekenstein-Hawking entropy from manifold-support counting
+10. **Cosmological branch** — SU = A_0 identity, V_3 modified Friedmann, two-layer reading
+11. **Quantum interpretation** — Born rule derivation, Γ_res Lindblad form, QM action chain
+12. **Microscopic SU-write process** (G124) — Poisson model + coarse-graining theorem
+13. **Matter coupling** (G123) — Jordan-frame minimal coupling, tier-1 closure
+
+Followed by **Open problems** and **Speculative parking-lot**.
+
+---
+
 The sections below preserve the technical derivations, numerical checks, and open-problem record behind the current branch.
 
-## Core idea
+## 1. Core idea
 
 Model-A begins with one organizing variable:
 
@@ -249,7 +353,7 @@ The purpose of Model-A is not to claim the framework is finished. The purpose is
 
 ---
 
-## Weak-field foundation
+## 2. Weak-field foundation
 
 The weak-field limit is the **continuum / coarse-grained version of many SU writes** (under the 2026-05-13 quantum-unit commitment: each quantum physical interaction resolves 1 SU = A_0 of substance). In the bulk, the smooth A(r) field is the macroscopic density that emerges from averaging over many discrete quantum write events. The weak-field successes below are what shows up at scales where the SU granularity is far below resolution — Newton's law, GPS clocks, Shapiro delay, lensing, orbital mechanics — are all the continuum limit of the framework's quantum substrate.
 
@@ -285,7 +389,7 @@ The same threshold appears from the escape-speed relation `A = v_escape^2 / c^2`
 
 ---
 
-## GPS-style clock result
+### 2.1 GPS-style clock result
 
 Model-A writes the weak-field clock-rate relation as `dtau/dt ~= 1 - A/2`. For an Earth-surface clock vs a circular-orbit satellite clock, the total rate shift is:
 
@@ -302,7 +406,7 @@ This result reproduces standard GPS engineering values; the importance is that b
 
 ---
 
-## Shapiro-style propagation delay
+### 2.2 Shapiro-style propagation delay
 
 For signal propagation, Model-A uses:
 
@@ -321,7 +425,7 @@ The same A field that produces local acceleration through `grad(A)` produces pro
 
 ---
 
-## Mass-estimator consistency
+### 2.3 Mass-estimator consistency
 
 The same source mass is recovered from horizon radius, acceleration, orbital velocity, Shapiro delay, gravitational shift, and lensing-scale expressions:
 
@@ -338,7 +442,7 @@ Synthetic checks recover the input mass to floating-point precision when the exp
 
 ---
 
-## Strong-field position
+## 3. Strong-field metric
 
 **(Spinless and Kerr cases structurally complete as of 2026-05-13.)**
 
@@ -475,7 +579,7 @@ The framework's quintic Hermite metric is non-pathological (verified G65, run on
 
 ---
 
-## Action principle: constrained shell-count formulation
+## 4. Action principle: constrained shell-count formulation
 
 **The G70–G84 action arc closes the Lagrangian-level embedding of the committed strong-field sectors at the constrained shell-count level. Ordinary scalar, multi-scalar, aether, cuscuton, and mimetic routes fail; the successful formulation treats Σ as a constrained SU shell-count field with two Lagrange multipliers. The scalar shell-count mode does not propagate; only the graviton remains dynamical.**
 
@@ -659,7 +763,7 @@ Scripts: [G69](scripts/G69_exact_effective_stress_tensor.py)–[G120c](scripts/G
 
 ---
 
-## Substance velocity-cap (V_4 candidate commitment, added 2026-05-12)
+## 5. Substance velocity-cap (V_4 candidate commitment, added 2026-05-12)
 
 The substance ontology forces a new structural commitment: **motion through elevated A is REALLY slowed**, not just observationally. This is the operational consequence of treating A as real substance density rather than coordinate artifact, combined with the magic-bell prohibition (no view-from-nowhere observation).
 
@@ -692,7 +796,7 @@ Scripts: [G42](scripts/G42_doughnut_threshold_corrected.py) (threshold-only corr
 
 ---
 
-## Black-hole interpretation
+## 6. Black-hole interpretation
 
 In Model-A, a black hole is interpreted as a 2D bubble surface, not a deep interior region.
 
@@ -718,7 +822,7 @@ The framework's BH life cycle: formation presses primordial mass to the inner fa
 The "horizon doesn't spin, hologram does" principle applies specifically to the outer face's holographic content. PBHs are "thin outer face" objects (formed primordially with little subsequent accretion), predicting evaporation signatures differing from stellar BHs both in standard ways (low spin) and in framework-specific ways (sparse outer-face content). Information that "fell" into the BH lives on the inner face permanently; information from accretion lives on the outer face and gets emitted as Hawking radiation. The information paradox dissolves with a definite mechanism rather than as a slogan.
 
 **Pair structure of Hawking emission derived from the elevator argument (G60, 2026-05-13).** Each emission event at A=1 is ONE event with two structural aspects, both on the outer face: an outward write (substance leaves) and a horizon reduction (outer face mass decreases). The "elevator gets lighter when someone steps off" — the act of leaving IS the act of reducing weight; they're inseparable. This derives the framework's pair structure of Hawking emission from no-interior + substance conservation + two-face refinement, replacing the earlier "stated structural consequence" framing.
-## A_0 void interpretation
+## 7. A_0 void interpretation
 
 The 4 pi is the prefactor that appears in the thermal-emission rule k_B T = hbar c |grad A| / (4 pi), independently derived in Q8/Q10 as 2 pi (thermal-state imaginary-time periodicity) x 2 (Model-A gravity bridge factor c^2/2). The 3 is the count of spatial dimensions over which A must be non-zero for a 3D manifold to exist.
 
@@ -736,7 +840,7 @@ A_0 status (updated 2026-05-13): structural commitment. Observationally distingu
 
 ---
 
-## Thermodynamics
+## 8. Thermodynamics
 
 Model-A reproduces the standard black-hole thermodynamic results from a single rule:
 
@@ -781,7 +885,7 @@ Neither factor is invoked specifically for entropy. The G18 "good suspects, not 
 
 ---
 
-## Cosmological branch
+## 9. Cosmological branch
 
 ### SU = A_0 structural identity (V_4 landed 2026-05-11)
 
@@ -886,7 +990,7 @@ Model-A is naturally compatible with primordial-black-hole dark matter (PBH-DM).
 
 ---
 
-## Quantum interpretation
+## 10. Quantum interpretation
 
 Model-A uses a physical, not conscious, definition of observation:
 
@@ -1065,6 +1169,152 @@ The same A field plays both classical (magnitude) and quantum (resolution-status
 
 ---
 
+## 11. F / R / f triad architecture (2026-05-13 evening)
+
+The framework's load-bearing kernel collapses to a clean three-piece architecture mapping math onto the framework's three ontological commitments:
+
+| Quantity | Physical role | Ontological commitment |
+|---|---|---|
+| **F(y) = 1 − 5y⁴ + 4y⁵** | remaining traversable manifold support (survival function of final-shell closure) | the **manifold** |
+| **R(A) = −(45A²−33A−13)/[30A(1−A)]** | 3D-space curvature anisotropy response (Einstein-tensor (tt−θθ) anisotropy in shell-count primitives) | the **3D space** |
+| **f(A)** (from `d ln f/dA = R(A) · p(y)/F(y)`, f(2/3) = 1) | accumulated SU stiffness coupling in the gravitational action | the **SU writes** |
+
+### Derivation as one chain
+
+```
+shell-count measure p(y) = Beta(D+1, 2)   [G121 uniqueness theorem]
+   ↓
+F(y) = 1 - ∫₀^y p   (manifold-support survival)
+   ↓                                        h(A) = 1 - A   (V_4 velocity-cap, independent primitive)
+   ↘                                              ↙
+              k(A) = h(A) · F(y)
+                   ↓
+   Einstein anisotropy: G^t_t − G^θ_θ = (A² y⁴ / 4M²)(45A² − 33A − 13)
+                   ↓
+   R(A) = -(45A²-33A-13)/[30A(1-A)]   (3D-space anisotropy response factor)
+                   ↓
+   d ln f/dA = R(A) · p(y)/F(y)   (closure hazard sources SU stiffness)
+                   ↓
+   f(A) integrated, anchored f(2/3) = 1
+```
+
+### Cubic horizon vanishing reads as 1 + 2
+
+Near A → 1: `F(y) ~ (1−y)² = 9(1−A)²`, so `k(A) = h·F ~ (1−A)·(1−A)² = (1−A)³`. The cubic vanishing splits cleanly:
+- **1 power** from the velocity-cap gate `h(A) = 1 − A`
+- **2 powers** from F's quadratic vanishing at horizon (the manifold-support double-zero)
+
+### D = 3 is algebraically privileged
+
+The clean (F − 1) + A·y·F'_y decomposition of the Einstein anisotropy exists **only at D = 3** (sympy-verified, 2026-05-13 evening). At D = 3 exactly two algebraic coincidences cooperate simultaneously:
+1. `6(D − 3) = 0` → the F-coefficient becomes A-independent (= 4 = 4(D−2))
+2. `3A − 2 = y` → the F'_y coefficient becomes D · A · y (matches y at D=3)
+
+At D = 4, 5, ... the decomposition fragments. This is a real dimensional uniqueness result: the framework's structural form is privileged at D = 3 by algebraic conspiracy, independent of the shell-count + two-face joint-compatibility argument.
+
+---
+
+## 12. Microscopic SU-write process (G124, 2026-05-13 evening)
+
+The framework's microscopic content is formalized as a **spacetime Poisson point process** of SU-write events.
+
+### Definition
+
+```
+d N_events(x) = Γ_res(x) · dV_proper(x)
+```
+
+Properties:
+- (P1) Event count `N(R)` in any region R is Poisson-distributed with mean `∫_R Γ_res dV_proper`
+- (P2) Events in disjoint regions are independent (Poisson axiom)
+- (P3) Each event deposits exactly **1 SU = A_0** of substance density (12π Planck cells bulk, or 4 Planck cells on horizon — see two scale-conjugate readings below)
+- (P4) Rate cap: `Γ_res(x) ≤ (A(x)/A_0) / τ_P` everywhere
+- (P5) At A = 1 boundary, events are forced into exchange pairs (saturation rule from G60 elevator argument)
+
+### Two scale-conjugate readings of 1 SU
+
+The atomic unit A_0 = 1 SU has different geometric footprints depending on context:
+
+| Context | Statement | Reading |
+|---|---|---|
+| Natural unit | A_0 = 1 SU | SU is the ruler; A_0 is one tick |
+| Bulk volumetric | 1 SU = 12π Planck cells | At A_0 baseline density, one SU spreads over a 4πD = 12π minimum cell |
+| Horizon holographic | 1 SU = 4 Planck cells | α_H × gravity-bridge = 2 × 2 (G59) — Bekenstein-Hawking area-per-bit |
+| Density normalization | A_0 = 1/(12π) | Same primitive in Planck-cell-density units |
+
+These are **not three independent facts** — they are scale-faces of the single primitive `A_0 = 1 SU` viewed through bulk vs. horizon geometry.
+
+### Coarse-graining theorem
+
+Define the macroscopic accumulation as a spatial average over a Planck-scale neighborhood V_cg with `ℓ_P³ ≪ V_cg ≪ macroscopic`:
+
+```
+A_cg(x, t) = (A_0 / V_cg) · |{events in past-cone of (x,t) ∩ V_cg}|
+          → A_0 · ∫₀^τ Γ_res(x, t') dt'        (mean-field, fluctuations 1/√N)
+```
+
+This is the framework's first explicit coarse-graining map: from discrete SU events to smooth A field. Numerical 1D demo (G124, point-source rate density): **mean relative error 4.85% vs Poisson noise floor 9.3%** — within the fluctuation band, no systematic bias.
+
+### Connection to constrained shell-count action
+
+The two LM constraints C_1 ((∇Σ)² = W) and C_2 (u^μ ∂_μ Σ = 0) of section 4's action are **macroscopic shadows of the Poisson process**:
+- C_1: mean-field gradient of cumulative event density (source-determined)
+- C_2: Σ co-moves with substance flow (count along substance worldlines)
+
+**The constrained shell-count action is the mean-field effective action of the Poisson SU-write process.**
+
+### What remains primitive after G124
+
+1. **Poisson axioms themselves** — independence of events in disjoint regions is a simplicity assumption; deeper discrete law (graph spacetime, causal sets, spin foam) could derive Poisson from more fundamental structure.
+2. **Functional form of Γ_res(x)** — Lindblad-analog with specific L_μ channels open per interaction type (see section 10).
+3. **Saturation rule at A = 1** — currently structural from G60 elevator argument; could be derived from a more rigorous no-crossing geometric argument.
+
+These three are the remaining microscopic primitives, replacing what was previously "no formal microscopic model at all".
+
+---
+
+## 13. Matter coupling (G123, 2026-05-13 evening)
+
+### Tier 1 — Jordan-frame minimal coupling (closed)
+
+Standard matter sectors couple minimally to the framework's metric `g_μν` (Jordan frame). Since the framework's metric reduces to GR-exact `k = 1 − A` everywhere outside the photon sphere (A ≤ 2/3), **all standard precision tests pass by construction**:
+
+| Test | Typical A | STAM = GR? |
+|---|---:|---|
+| Atomic clocks (Earth) | A ~ 10⁻⁹ | YES (f = 1 outside PS) |
+| GPS time corrections | A ~ 10⁻⁹ | YES |
+| Shapiro delay (Sun) | A < 10⁻⁶ | YES |
+| Light bending (Sun) | A < 10⁻⁶ | YES |
+| Mercury perihelion | A ~ 10⁻⁸ | YES |
+| Lunar laser ranging | A ~ 10⁻⁹ | YES |
+| BBN abundances | A ~ 10⁻³⁰ | YES |
+| CMB acoustic peaks | A ~ 10⁻⁵ | YES |
+| Galactic dynamics | A < 10⁻⁶ outside SMBHs | YES |
+| Pulsar timing (binary) | A < 10⁻¹ outside PS | YES |
+
+Every standard precision test passes Model-A by construction.
+
+### Observable deviations live inside PS
+
+Inside the photon sphere (A > 2/3), the modified `k(A) = (1−A)·F(y)` produces:
+- **Modified accretion-disk plunge spectra**: photons emitted along plunge trajectories inside PS experience the F(y)-modified tortoise structure (G90's power-law enhancement)
+- **Hawking greybody factor shifts**: emitted Hawking quanta scatter through V_exact (G103/G108)
+- **Atomic spectra near PS**: extreme gravitational redshift modifications for matter very close to A = 1
+
+These are the framework's matter-side observational signatures, all gated on observational access to inside-PS regions (EHT next-gen photon-ring; LISA EMRI; future PBH evaporation if detected).
+
+### Tier 2 — substance excitations (open)
+
+The deep version of matter coupling reads particles as **localized substance excitations** in the framework's substance ontology:
+- Each particle of mass m contributes Σ_particle = m/m_Planck SU writes per Compton tick
+- The Standard Model emerges from coarse-graining substance excitation modes
+- Gauge couplings appear as Γ_res-modifying interactions between substance modes
+- QFT extension would be the explicit second-quantization on the substance manifold
+
+This is the framework's TOE move and a multi-year program. The G124 Poisson SU-write model provides the necessary microscopic foundation; substance-excitation modes would extend it to many-particle / gauge sectors.
+
+---
+
 ## Open problems and verification backlog
 
 1. **Action principle / ghost-free embedding — CLOSED for committed strong-field sectors; precision perturbation work remains; microscopic Poisson model in place.** The Lagrangian-level embedding is the constrained shell-count action `S[Σ,g,λ₁,λ₂]`, not an ordinary scalar action for A. G70–G78 ruled out the obvious low-derivative continuum embeddings; G79–G84 closed the constrained Σ-action for Schwarzschild and Kerr; **G122 hardens this to a uniqueness theorem under the counted-scalar primitive** (the LM structure is forced once Σ is treated as a non-propagating counted scalar). G90–G94 identified the near-horizon traversal-distance enhancement and first calibrated action-aware low-ℓ QNM diagnostic. **G124 delivers the first formal microscopic SU-write model** (spacetime Poisson point process + coarse-graining theorem; constrained shell-count action is the mean-field effective action). Remaining work: exact axial perturbation equation from the constrained Σ-action (Open #7), matter coupling tier 2 (substance excitations / TOE, Open #9), precision Kerr photon-region treatment, and deeper deriving the Poisson axioms themselves from more fundamental discrete law.
@@ -1121,15 +1371,21 @@ These are explicitly "we cannot know" territory — speculative, unfalsifiable f
 
 ## Current status
 
-Model-A is a structured theoretical research program with one structurally committed constant (A_0 = 1/(12 pi)), one calibrated cosmological parameter (beta), and a coherent A/SU/Σ hierarchy across weak-field gravity, strong-field horizon structure, thermodynamics, cosmology, and quantum resolution.
+Model-A is a structured theoretical research program with **one structurally committed constant** (A_0 = 1/(12π), now derived from D + 4π primitives), **one calibrated cosmological parameter** (β), and a coherent A/SU/Σ hierarchy across weak-field gravity, strong-field horizon structure, thermodynamics, cosmology, and quantum resolution.
 
-The current branch is no longer missing an action in the broad sense. The standard scalar-field attempts failed, but those failures clarified the correct variable: **Σ is a constrained SU shell-count field**, with **A = Σ/3** recovered as the weak-field continuum density. The double-LM constrained shell-count action now embeds the committed Schwarzschild and Kerr strong-field sectors without a propagating scalar ghost.
+After the 2026-05-13 batch (G108–G124), the framework's load-bearing kernel reduces to the **F / R / f triad** (manifold / space / SU; see section 11) plus **four explicit primitives** (A, Σ = D·A, D = 3 + 1 manifold-support, h = 1−A) plus **one microscopic axiom-set** (Poisson SU-write process; see section 12). Everything else is derived. The constrained shell-count action (section 4) is unique under the counted-scalar primitive (G122 uniqueness theorem); p(y) = Beta(D+1, 2) is the unique posterior under three converging Bayesian / order-statistic / max-entropy derivations (G121); the Poisson coarse-graining theorem (G124) reproduces the smooth Σ field from discrete SU writes.
 
-The framework reproduces all currently-tested weak-field predictions of GR identically, preserves GR/Kerr eikonal ringdown at the photon region, and places its strong-field wedge inside the photon orbit. G90 derives a direct near-horizon traversal-distance enhancement; G91–G94 give the first calibrated action-aware low-ℓ axial QNM diagnostic, with a robust percent-level shift around 5.4% in the current setup. This QNM result is a derived diagnostic prediction candidate, not yet the final observable theorem until the full axial perturbation equation is derived from the constrained Σ-action.
+The framework reproduces all currently-tested weak-field predictions of GR identically, preserves GR/Kerr eikonal ringdown at the photon region, and places its strong-field wedge inside the photon orbit. Locked predictions:
+- **Spinless ℓ=2 axial QNM shift: 4.977%** (G108/G109 rigorous, calibration 0.80% vs Leaver)
+- **Polar/axial isospectrality break ~13% at ℓ=2** (G114 first-pass)
+- **Near-horizon tortoise enhancement (dr*/dr)_STAM/GR = 1/√F(y)** (G90; power-law not log)
+- **GW170817 engine time 1.677 s vs observed 1.74 s** (3.6% match, no fitting)
+- **Bridge term b = A_0 · c/H_0 ≈ 355 Mly** (0.04% match to historical fit)
+- **SN distance fits beat ΛCDM combined χ² by 25–33** across Pantheon+/Union3/DES
 
-Where the framework departs from LCDM / standard GR and is distinguishable in principle: near-horizon traversal-distance enhancement, action-aware low-ℓ ringdown diagnostics, late-inspiral / higher-overtone / EMRI observables, F6 decoherence, super-radiance-enhanced rate banding for spinning BH Hawking emission, primordial-mass remnants, BNS engine-time mass-scaling (G43), and the structural CMB-tension closure mechanism. None of these have been observationally settled yet.
+The framework is **not** presented as complete. **Three numbered Open Problems are fully open** (all in the cosmology / data-fitting layer: realistic f_LoS modeling, BAO direct test under V_3, A_collective backup if PBH-DM rejected). **Technical gates** (standalone Kerr QNM solver, n=1 overtones, rigorous polar reduction, F6 specific number, cosmology pipeline data fitting) and **deep theoretical** items (tier-2 matter coupling, QFT extension, deriving the Poisson axioms from more fundamental discrete law) remain. **The foundational layer is essentially closed.**
 
-The framework is **not** presented as complete. Remaining major work includes: deriving the full axial perturbation equation from the constrained Σ-action, matter coupling for the shell-count action, full Kerr spheroidal photon-region normalization, Hawking spectral machinery, realistic cosmological line-of-sight modeling, BAO/chronometer/CMB pipeline tests, domain-specific Γ_res channel models, and QFT extension. Its value is that it creates a unified language with one structural constant (A_0), one calibrated cosmological parameter (β), framework-internal D = 3, a constrained action principle, and accountable falsification targets — rather than a collection of independent ad-hoc components.
+The framework's value is that it creates a unified language with one structural constant (A_0), one calibrated cosmological parameter (β), framework-internal-and-algebraically-privileged D = 3, a constrained action principle that's unique under the counted-scalar primitive, a first formal microscopic SU-write process, and accountable falsification targets — rather than a collection of independent ad-hoc components.
 
 ---
 
