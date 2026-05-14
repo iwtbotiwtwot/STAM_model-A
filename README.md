@@ -4,7 +4,7 @@
 
 Author: **Sean Brady**
 Status: **Proposed theoretical framework / active research program**
-Snapshot: **May 13, 2026 — current unified branch. Strong-field spinless and Kerr metrics are structurally complete in the active ledger-channel / quintic-Hermite branch. The native action variable is the SU-normalized shell count Σ, not A as an ordinary scalar. The constrained double-LM shell-count action closes the ghost-free Lagrangian embedding for the committed Schwarzschild and Kerr strong-field sectors (G70–G84). Outside the photon region the metric remains GR/Kerr exact; the STAM-vs-GR wedge lives inside the photon orbit. G90 derives a power-law near-horizon tortoise-distance enhancement. G108 derives the rigorous axial perturbation potential V_exact = V_geom + (√f)''/√f directly from S[Σ,g,λ₁,λ₂] by parity decomposition; G109 convergence study locks the spinless ℓ=2, n=0 axial QNM shift vs GR at 4.977% (converged to 0.002 pp; calibration 0.80% vs Leaver). The historical G92–G94 "diagnostic" numerics are superseded by the analytic chain-rule computation. Quantum resolution, weak-field gravity, horizon closure, entropy, Born-rule structure, and Γ_res are tied through the same A/SU/Σ hierarchy. Remaining open work: higher ℓ / overtones / polar sector for QNM, Hawking spectral machinery, specific Γ_res channel models, cosmology pipeline, and QFT extension. (The earlier "exact Kerr photon-region refinement" item is closed by G85: the exact spheroidal r_pr(θ; a) is now derived in closed form from R(r)=0, R'(r)=0; G84's sin²θ ansatz is superseded for any precision prediction.)**
+Snapshot: **May 13, 2026 — current unified branch. Strong-field spinless and Kerr metrics are structurally complete in the active manifold-support / quintic-Hermite branch. The native action variable is the SU-normalized shell count Σ, not A as an ordinary scalar. The constrained double-LM shell-count action closes the ghost-free Lagrangian embedding for the committed Schwarzschild and Kerr strong-field sectors (G70–G84). Outside the photon region the metric remains GR/Kerr exact; the STAM-vs-GR wedge lives inside the photon orbit. G90 derives a power-law near-horizon tortoise-distance enhancement. G108 derives the rigorous axial perturbation potential V_exact = V_geom + (√f)''/√f directly from S[Σ,g,λ₁,λ₂] by parity decomposition; G109 convergence study locks the spinless ℓ=2, n=0 axial QNM shift vs GR at **4.977%** (converged to 0.002 pp; calibration 0.80% vs Leaver). G110/G112 extend axial to ℓ=3 (2.10%) and ℓ=4 (1.16%). G114 first-pass polar (M_eff Zerilli + canonical correction) breaks Schwarzschild isospectrality by ~13% at ℓ=2 (5.62% polar vs 4.98% axial). G85 closes the exact Kerr spheroidal photon-region surface r_pr(θ; a) in closed form (supersedes G84's sin²θ ansatz which is off up to 39% at extremal). G119 builds a numerically sound Kerr STAM wave base across all spins a ∈ [0, 0.99]. G120a establishes the GR Kerr QNM reference table via qnm. The historical G92–G94 "diagnostic" numerics and G118/G118v2 Kerr proxy shifts are superseded / retired as framework predictions (G118v2 spin sweep is historical diagnostic only). Quantum resolution, weak-field gravity, horizon closure, entropy, Born-rule structure, and Γ_res are tied through the same A/SU/Σ hierarchy. Remaining open work: standalone Kerr QNM solver to < 0.5% (G120b/c attempts FAILED), then STAM Kerr predictions; n=1+ overtones (Leaver continued fraction); rigorous polar reduction; Hawking spectral machinery; cosmology pipeline; QFT extension.**
 
 ---
 
@@ -544,6 +544,12 @@ The numerical history matters:
 | G94 | Robustness sweep (FD) | 22/25 calibrated rows; FD action-aware shift mean 5.384% ± 0.118% |
 | **G108** | **Rigorous axial reduction from S[Σ,g,λ₁,λ₂]** | **Parity argument δΣ = δλ₁ = δλ₂ = 0 in axial; V_exact = V_geom + (√f)''/√f derived; analytic (√f)'' replaces FD** |
 | **G109** | **Convergence study (rs_min sweep −300 to −2000)** | **Locked: ℓ=2, n=0 axial shift = 4.977% (converged to 0.002 pp; calibration 0.80%)** |
+| **G118v2** | **First-pass Kerr ringdown spin sweep on G119 base** | Shift 4.6% → 14% across a ∈ [0, 0.99]; absolute frequencies NOT Kerr QNMs (V_base = Kerr-Δ-aware Schw-RW analog) |
+| **G119** | **Kerr STAM wave base geometry** | All 9 sampled spins numerically sound; Δ_STAM = Δ·F(y_K), cubic horizon vanishing, no imaginary structure |
+| G119b | WKB-PT sanity check on Kerr base | Failed cross-check with G118v2 TD; WKB-PT too sensitive to local peak curvature for STAM correction |
+| **G120a** | **GR Kerr QNM reference table via qnm (l=m=2, n=0)** | PASS 5/5 spins; Re(ω) 0.374→0.672, |Im(ω)| 0.089→0.065; A_lm spheroidal eigenvalues recorded |
+| G120b | Direct Teukolsky amplitude shooting (own solver attempt) | FAILED <0.5% calibration — 10²² growth, A_in noise > signal; converged to anti-QNM (positive Im(ω)) |
+| G120c | Log-derivative (Riccati) shooting on Teukolsky (own solver attempt) | FAILED <0.5% calibration — leading-order BC phase drift; \|mismatch\| ≈ \|Y\| at qnm ω |
 
 **G90 traversal-distance result.** For the committed final-shell metric:
 
@@ -588,7 +594,43 @@ Monotonic decrease with ℓ confirms the framework's eikonal-recovery commitment
 
 **First overtone (n=1) extraction.** Three time-domain methods were attempted: two-mode `curve_fit` (G110), matrix pencil (G111), and residual subtraction (G112). All three failed Schwarzschild calibration at the 17–85% level. Time-domain n=1 extraction is intrinsically hard when n=1/n=0 amplitude ratio is ~10⁻³–10⁻⁴. The standard tool for overtones is Leaver's continued-fraction method (frequency domain); a separate G113 implementation is the right next step.
 
-Scripts: [G69](scripts/G69_exact_effective_stress_tensor.py)–[G94](scripts/G94_QNM_robustness_sweep.py) for the full action and QNM diagnostic chain. Summaries in [results/](results/).
+### Wave-branch state (session close 2026-05-13)
+
+```
+Spinless rigorous closure (G108/G109/G110/G112):
+  ℓ=2  n=0  axial      4.977%      RIGOROUS / LOCKED
+  ℓ=3  n=0  axial      2.101%      RIGOROUS / LOCKED
+  ℓ=4  n=0  axial      1.158%      RIGOROUS / LOCKED
+  (Monotonic decrease confirms eikonal recovery)
+
+Spinless first-pass (G114):
+  ℓ=2  n=0  polar      5.620%      FIRST-PASS
+  ℓ=3  n=0  polar      2.324%      FIRST-PASS
+  ℓ=4  n=0  polar      1.206%      FIRST-PASS
+  Isospectrality break vs axial:  13% at ℓ=2 → 4% at ℓ=4
+
+Kerr geometric foundation:
+  r_pr_exact(θ; a)  closed form    CLOSED (G85, G116)
+  Kerr STAM wave base, all spins   CLOSED (G119)
+  GR Kerr QNM reference table      CLOSED (G120a, via qnm)
+
+Kerr ringdown predictions:
+  Standalone Kerr QNM solver < 0.5%   OPEN (G120b, G120c failed)
+  STAM Kerr QNM table                 BLOCKED on standalone solver
+
+Overtones:
+  n = 1 axial spinless             OPEN (3 time-domain methods failed)
+  n ≥ 2                            OPEN
+
+Retired / superseded:
+  G92/G94 "5.35% / 5.384%" diagnostic    →  superseded by G109 4.977%
+  G84 sin²θ Kerr photon-region ansatz    →  superseded by G85 exact
+  G118 Schwarzschild-base Kerr ringdown  →  broke at high spin
+  G118v2 / G119b Kerr proxy spin sweeps  →  historical diagnostic only
+                                            (Sean explicitly retired at G120 stage)
+```
+
+Scripts: [G69](scripts/G69_exact_effective_stress_tensor.py)–[G120c](scripts/G120c_kerr_qnm_riccati_solver.py) for the full action and QNM chain. Summaries in [results/](results/).
 
 
 ---
