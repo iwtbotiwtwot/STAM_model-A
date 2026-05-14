@@ -162,7 +162,8 @@ Three numbered Open Problems remain fully open (all in the cosmology/data-fittin
 
 10. **CMB self-consistent closure at H_0 = 73.** Cumulative-A line-of-sight amplification structurally explains the H_0 tension. Internal solution exists for realistic cosmic-structure parameters.
 
-11. **PBH-DM compatibility for galactic dark matter.** Each PBH is a small bubble with the framework's existing thermodynamic/structural machinery. Galactic rotation curves close trivially with PBH-halo + cumulative A.
+11. **PBH-DM compatibility for galactic dark matter.** Each PBH is a small bubble with the framework's existing thermodynamic/structural machinery. Galactic rotation curves close trivially with PBH-halo + cumulative A. Using the inside/outside concept interior matter
+never leaves.
 
 12. **Six observational regimes, one A field.** Local gravity, propagation delay, BH thermodynamics, SN distances, CMB acoustic scale, and galactic DM all from the same A field with one structural constant (A_0 = 1/(12 pi)) and one calibrated parameter (beta).
 
@@ -798,7 +799,7 @@ Scripts: [G42](scripts/G42_doughnut_threshold_corrected.py) (threshold-only corr
 
 ## 6. Black-hole interpretation
 
-In Model-A, a black hole is interpreted as a 2D bubble surface, not a deep interior region.
+In Model-A, a black hole is interpreted as a 2D bubble surface with an interior and exterior hologram on the horizon, not a deep interior region.
 
 ```text
 A < 1  -> spacetime exists
